@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+
+/*
+// 一个人的工资
+var a1 = 10000;
+var a2 = 8000;
+var a3 = 100000;
+var a4
+var a5
+*/
+
+/*
+
+// 定义了数组 a
+// 现在这里有3个元素，分别是 a[0],  a[1], a[2]
+// 【注意】 没有 a[3] 这个元素
+// 在内存中是【连续】排列的
+var a = [10000, 8000, 10000];
+
+// a.length  是数组中有多少个元素，称为 数组的长度
+document.write( a.length );
+// 找不到的属性就是 undefined
+// document.write( a.xxx );
+
+
+
+// object  数组在 JS 中是一种特殊的对象
+// document.write(typeof a);
+
+
+var stu = {
+	name: "zhangsan",
+	age: 18
+};
+
+// 获取学生对象中的 姓名
+// document.write( stu.name );
+// 找不到就是  undefined;
+// document.write( stu.xxx );
+
+
+
+
+// document.write( a[3] );
+// document.write( a[0] );
+
+
+// 定了10间酒店： 101， 102， 103 ...
+//  101 + 0     ==> a[0]
+//  101 + 1     ==> a[1]
+
+//*/
+
+
+// 数据类型： Number, String, Boolean, Object, undefined, Function
+
+
+/*
+var a = ["张三", "李四", "隔壁的老王"];
+
+document.write( a[2] );
+//*/
+
+/*
+//       a[0]   a[1]   a[2]
+var a = [true, false, true];
+
+// true
+document.write( a[2] );
+//*/
+
+
+
+/*
+var a = [  {xxx: 1},  {xxx: 2}  ];
+
+// 数组中第一个元素是一个对象， 输出这个对象中  xxx 的属性值 
+document.write( a[0].xxx );
+//*/
+
+/*
+// 数组中的元素，类型可以不一样
+// 【建议】 数组中的元素类型，最好保持一样
+var a = ["老王", 48, true, "有小孩了"];
+
+// document.write( a[3] );
+
+// 访问数组中的元素，格式： 数组名[ 表达式  ]
+//  [] 中的内容称为下标
+
+// true
+// document.write(     a[ 1 + 1 ]  );
+
+
+var i = 1;
+
+// 因为 ++i 表达式的值是 2
+// document.write(     a[++i]   ); 
+
+
+
+// i++ 表达式的值： 1
+// i++ 功能： 将 i+1 赋值给 i
+// 48
+document.write(     a[i++]   ); 
+
+// true 因为i的值自增1了，所以 i 就等于 2
+document.write(     a[i]   ); 
+
+//*/
+
+/*
+var a = [1, 2, 3, 4, 5];
+
+
+//document.write( a[0] + ", " );
+//document.write( a[1] + ", " );
+//document.write( a[2] + ", " );
+
+
+// 通过循环来显示数组中的所有元素，称为 数组的遍历
+for (var i = 0; i < a.length; i++)
+{
+	document.write( a[i] + ", " );
+}
+//*/
+
+
+
+// 【练习】
+// 求出数组中所有元素的和
+// var a = [23, 12, 10, 9, 100];
+
+
+// document.write( a[0] + a[1] + a[2] + a[3] + a[4] );
+
+/*
+var sum = 0;
+
+
+for (var i = 0; i <= 4; i++)
+{
+	sum = sum + a[i];
+}
+// 将这个结构等价替换成 循环，节省时间
+sum = sum + a[0];
+sum = sum + a[1]; 
+sum = sum + a[2]; 
+sum = sum + a[3]; 
+sum = sum + a[4]; 
+*/
+
+
+
+/*
+var sum = 0;
+for (var i = 0; i <= 4; i++)
+{
+	// 遇到错误，不要慌张
+	// 优雅的打开 F12， 轻轻的设个断点，抓住这只虫子
+	// var sum = 0;
+	sum = sum + a[i];
+}
+document.write(sum);
+//*/
+
+
+/*
+var a = [23, 12, 10, 9, 100];
+
+// 系统可以默认以 ， 分割元素的形式输出数组中的值
+document.write( a );
+//*/
+
+
+/*
+var a = [];
+
+// JS 可以通过 下标 动态新增元素
+// 尽管之前没有元素
+a[0] = "张三";
+
+// 结果：
+//   张三
+//   出错
+// document.write( a[0] );
+
+// 可以一次添加很多元素
+// 中间没有赋值的元素 结果是 undefined
+a[100] = "老王";
+
+
+// document.write( a[10] );
+// document.write( a.length );
+
+//*/
+
+
+/*
+var a = [1, 2, 3, 4, 5];
+
+// a.length 可以修改
+// 可以通过 a.length 来删除 / 新增 元素可以
+a.length = 1;
+
+document.write(a);
+
+//*/
+
+
+
+/*
+var a = [];
+
+for (var i = 0; i < 100; i++)
+{
+	a[i] = i;
+}
+
+// document.write( a );
+
+// 产生 (0, 1) 之间的随机数
+// 函数是 系统对象 Math 中的一个函数
+// 在浏览器打开网页的时候，系统会自动创建好了，
+// 我们只需要调用即可
+var d = Math.random();
+
+// document.write( d );
+
+
+// 那么，如果我想产生 (0, 10) 之间的随机数呢？
+// d = d * 10;
+// document.write( d );
+
+// 那么，如果我想产生 [0, 10) 之间的随机【整数】呢？
+d = parseInt(d * 10);
+document.write( d );
+//*/
+
+// 那如果我想产生【4】个[0, 10) 之间的随机整数呢？
+
+/*
+for (var i = 0; i < 4; i++)
+{
+
+	var d = parseInt( Math.random() * 10 );
+
+	document.write(d);
+
+}
+//*/
+
+/*
+var a = [];
+
+for (var i = 0; i < 4; i++)
+{
+	var d = parseInt( Math.random() * 10 );
+
+	a[i] = d;
+}
+
+document.write(a);
+//*/
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

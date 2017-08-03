@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 1-1/2+1/3-1/4…..1/100 </title>
+
+<script>
+//求出1-1/2+1/3-1/4…..1/100的和
+	var sum=0;
+	for (var i=1; i<=100; i++)
+	{
+		if (i%2 == 0)
+		{
+			sum=sum+(-1/i);
+		}
+		else //if (i%2 != 0)
+		{
+			sum=sum+(1/i);
+		}
+	}
+	document.write(sum);
+
+
+	//辅助：
+	//100以内所有奇数和
+	/*
+	var sum = 0;
+	for(i=1;i<100;i=i+2){
+		sum=sum+i;
+	}
+	document.write(sum)
+	*/
+
+//100以内所有的偶数和
+	/*
+	var sum=0;
+	for(i=0;i<=100;i=i+2){
+		sum=sum+i;
+	}
+	document.write(sum);
+	*/
+
+//1+2+3……+99+100;
+	/*
+	var sum=0;
+	for(i=0;i<=100;i=i+1){
+		sum=sum+i;
+	}
+	document.write(sum);
+	*/
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

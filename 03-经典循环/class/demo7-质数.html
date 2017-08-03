@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+// 判断一个数 n 是不是质数
+// 只能被 1 和 自己 整除的数字 称为： 质数， 素数
+// 相当于： 只要 2..n-1 有一个数字能够整除 n，那么n 就不是质数
+
+
+// 思路：
+// (1) 循环 2..n-1
+// (2)  循环变量 与 n 是否整除，只要能整除，那么 n就不是质数
+// (3) 循环结束，还没有一个数能够整除，那么 n 就是质数
+/*
+var n = 11;
+var flag = true;
+
+for (var i = 2; i <= n-1; i++)
+{
+	if (n % i == 0)
+	{
+		flag = false;
+
+		// 说明不是质数
+		document.write("不是质数!");
+		break;
+	}
+}
+
+// 在这里怎么判断，有没有数字整除 了 n 呢？
+if (flag == true)
+{
+	// 如果等于 true 说明， flag = false; 这条语句没有执行
+	document.write("是质数!");
+}
+//*/
+/*
+// 以下代码是错误的判断
+var n = 11;
+
+for (var i = 2; i <= n-1; i++)
+{
+	if (n % i == 0)
+	{
+		// 说明 肯定不是质数
+		document.write("不是质数");
+
+		break;
+	} 
+	else 
+	{	
+		// n 不能被 i 整除，那么不能断定 是质数
+		document.write("是质数");
+	}
+}
+//*/
+
+
+
+//*
+
+var n = 11;
+
+for (var i = 2; i <= n-1; i++)
+{
+	if (n % i == 0)
+	{
+		// 说明 肯定不是质数
+		document.write("不是质数");
+
+		break;
+	} 
+}
+
+if (i == n)
+{
+	// 说明没有执行 break
+	document.write("是质数");
+}
+
+// 2
+// document.write("i的值：" + i);
+
+// 循环外部，来判断，有没有 被 n 整除  循环变量i 
+//*/
+
+
+
+/*
+var n = 11;
+
+var count = 0;
+
+for (var i = 2; i <= n-1; i++)
+{
+	if (n % i == 0)
+	{
+		// 说明存在一个数字 能够被 n 整除
+		count ++;
+	}
+}
+
+
+if (count == 0)
+{
+	// 说明没有一个数能够被 整除
+	document.write("是质数");
+}
+else 
+{
+	document.write("不是质数");
+}
+//*/
+
+
+
+// 【练习】判断467是不是质数
+/*
+var n = 467;
+
+var count = 0;
+
+for (var i = 2; i <= n-1; i++)
+{
+	if (n % i == 0)
+	{
+		// 说明不是质数
+		count++;
+	}
+}
+
+if (count == 0)
+{
+	// 说明没有一个，那么就是质数
+	document.write("是质数");
+}
+else 
+{
+	document.write("不是质数");
+}
+
+//*/
+
+
+// 打印 1000以内所有质数 （10K）
+// 思路
+//  (1) 循环 2..1000
+//  (2) 判断 这个变量 是否为质数
+
+
+/*
+for (var j = 2; j <= 1000; j++)
+{
+	// 判断 n 是否为质数
+	var n = j;
+
+	var count = 0;
+
+	for (var i = 2; i <= n-1; i++)
+	{
+		if (n % i == 0)
+		{
+			// 说明不是质数
+			count++;
+		}
+	}
+
+	if (count == 0)
+	{
+		// 说明没有一个，那么就是质数
+		document.write(n + ", ");
+	}
+
+}
+
+//*/
+
+
+// 只有一行
+// 只有一行，一个数字
+// 5行，每行只有1个数字
+/*
+for (var i = 1; i <= 5; i++)
+{
+
+	document.write(i + "行:");
+
+	// 【注意】var j = 1 每行都会执行
+	for (var j = 1; j <= 5; j++)
+	{
+		document.write(j + ", ");
+
+		// 只会终止最近的一个循环，外层循环不会终止
+		break;
+	}
+
+	document.write("<br>");
+
+}
+*/
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

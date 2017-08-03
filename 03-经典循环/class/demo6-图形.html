@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+// *******
+
+
+
+/*
+for (var i = 1; i <= 10; i++)
+{
+	document.write("*");
+}
+*/
+
+// **********
+// **********
+// **********
+// **********
+// **********
+
+/*
+// 循环中嵌套，两层循环
+for (var i = 1; i <= 5; i++)
+{
+
+	// document.write("**********<br>");
+
+	for (var j = 1; j <= 10; j++)
+	{
+		document.write("*");
+	}
+	document.write("<br>");
+
+
+}
+
+*/
+
+
+
+
+
+
+
+
+/*
+document.write("*       <br>");
+document.write("**　	<br>");
+document.write("***		<br>");
+document.write("****	<br>");
+document.write("*****	<br>");
+*/
+
+// 打印 10*10 的三角形
+
+
+/*
+
+for (var i = 1; i <= 10; i++)
+{
+	// 当前是打印 第 i 行 的星星数目
+
+	// 每行打印i颗星星
+	for (var j = 1; j <= i; j++)
+	{
+		document.write("*");
+	}
+
+	// 要求
+	//   行号   星星数目
+	//    1        1
+	//    2        2
+	//    3        3
+
+	// 那么可以推出： 星星数目 等于 行号
+
+	
+	document.write("<br>");
+}
+*/
+
+
+// 【练习】
+// 打印 16*16 的三角形
+// 思路：
+// (1) 循环打印16行
+// (2) 每行打印与行号相同的星星数目
+// (3) 每行要加上 <br>
+
+/*
+for (var i = 1; i <= 16; i++)
+{
+	for (var j = 1; j <= i; j++)
+	{
+		document.write("*");
+	}
+
+	document.write("<br>");
+}
+
+*/
+
+
+/*
+    *
+   **
+  ***
+ ****
+*****
+*/
+
+//*
+
+// 思路：
+// (1) 循环打印5行
+// (2) 先打印一部分空格
+// (3) 再打印与行号相同的星星数目
+// (4) 每行要加上 <br>
+
+var n = 3;
+
+for (var i = 1; i <= n; i++)
+{
+
+	// 先打印一部分空格
+	// 行号      空格数
+	//  1          4
+	//  2          3
+	//  3          2
+
+	// 空格数目 =   总数 - 行号
+	//               5 - i
+	for (var j = 1; j <= n-i; j++)
+	{
+		// &nbsp; 代表空格
+		document.write("&nbsp;");
+	}
+
+	// 再打印与行号相同的星星数目
+	for (var j = 1; j <= i; j++)
+	{
+		document.write("*");
+	}
+
+	document.write("<br>");
+}
+
+
+
+
+
+//*/
+
+
+
+
+// 9 * 9  乘法表
+
+// 1*1 = 1
+// 1*2 = 2  2*2 = 4
+
+
+// 4*4 乘法表
+// 思路
+// (1) 打印4行 1..4
+// (2)  每一行 打印 与 行号 相同的 式子
+// (3) 每打印一行，输出换行符
+
+/*
+for (var i = 1; i <= 4; i++)
+{
+	for (var j = 1; j <= i; j++)
+	{
+		document.write(  j + " * " + i + "  = " + (i*j) + " " );
+	}
+	document.write("<br>");
+}
+*/
+
+
+
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+	<div style="width:100px; height:200px;"></div>
+ </body>
+</html>

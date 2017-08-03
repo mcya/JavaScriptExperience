@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 03 </title>
+
+<script>
+	//输出1……100
+	/*
+	var a=1;
+	while (a<=100)
+	{
+		document.write(a+",");
+		a++;
+	}
+	*/
+
+	//输出1……100之间7的倍数！！
+	/*
+	var a=1;
+	while (a<=100)
+	{
+		if (a%7==0)
+		{
+			document.write(a+",");
+		}
+		a++;//a的增加方式，即是如果a是a++，那么a在范围内是以1递增对每一个适合的数进行循环操作。
+	}
+	*/
+
+	//输出1……100之间偶数
+	/*
+	var a=1;
+	while(a<=100){
+		if (a%2==0)
+		{
+			document.write(a+",");
+		}
+		a++;
+	}
+	*/
+
+	//小明本周上5天班，每天做同样的工作：输出"hello world"，但是星期4的早上，小明收到消息中了500W，他就直接提出了辞职，没有上班了。（break）
+	//while循环
+	/*
+	var a=1;
+	while (a<=5)
+	{
+		document.write("星期"+a+"：hello"+"<br>");
+		a++;
+		if (a==4)
+		{
+		document.write("星期"+a+"：中了500W跑了！！")
+		break;
+		}
+	}
+	*/
+	//for循环
+	/*
+	for(var i=1; i<=5; i++)
+	{
+		document.write("星期"+i+"：hello"+"<br>");
+		if (i==4)
+		{
+			document.write("星期"+i+"：中了500W跑了！！")
+			break;
+		}
+	}
+	*/
+
+	//小明本周上5天班，每天做同样的工作：输出"hello world"，但是星期二小明不想上班，请假一天；(continue)
+	//while循环
+	/*
+	var a=0;
+	//从0开始，a++;1 2 3 4 5；所以a的最大值是4;所以小于5
+	while (a<5)
+	{
+		a++;
+		if (a==2)
+		{
+			document.write("星期"+a+"：劳资今天不上班！"+"<br>");
+			continue;
+		}
+		document.write("星期"+a+"：hello world"+"<br>");
+	}
+	*/
+	//for循环
+	/*
+	for (var a=1; a<=5; a++)
+	{
+		if (a==2)
+		{
+			document.write("星期"+a+"：劳资今天不上班！"+"<br>");
+			continue;
+		}
+		document.write("星期"+a+"：hello world"+"<br>");
+	}
+	document.write(a);
+	
+	//循环结束后a的值是6，即，a的值是循环条件的最大值再加1
+	*/
+
+	//1+……+100之和
+	/*
+	var sum=0;
+	var i=1;
+	while (i<=100)
+	{
+		sum=sum+i;
+		i++;
+	}
+	document.write(sum);
+	//document.write(sum)写在while的外面，即循环结束了在输出sum
+	*/
+
+	//1……100之间7的倍数之和
+
+	//方法一：
+	/*
+	var sum=0;
+	var i=7;
+	while(i<=100){
+		sum=sum+i;
+		i+=7;
+	}
+	document.write(sum);
+	*/
+
+	//方法2：
+	/*
+	var sum=0;
+	var i=0;//需要定义i的数值
+	while (i<=100)
+	{
+		if (i%7==0)
+		{
+			sum=sum+i;
+		}
+		i++;//写在后面和前面是一样的
+	}
+	document.write(sum);//写在外面，只会覆盖sum=0的值，不会有冲突！！
+	*/
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

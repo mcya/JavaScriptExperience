@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 自增自减 </TITLE>
+  <meta charset="UTF-8" />
+  <script type="text/javascript">
+	var k=-2;
+	document.write("<br>")
+
+	document.write(++k + k++ + ++k + k);
+	//++k  -1
+	//++k + k++  -2
+	//++k + k++ + ++k  -1
+	//++k + k++ + ++k + k  0
+	//最后结果应该是0
+	/*
+	document.write(++k + k++ + ++k + k);
+	====>c=++k + k++ + ++k + k,document.write(c)
+	k=k+1；-1
+	k=k+1; 0
+	++k + k++ + ++k + k
+	k=k+1;
+	k=-2
+	*/
+	document.write("<br>")
+	document.write("-----------var a=2 b=3--------"+"<br>")
+	var a=2;
+	var b=3;
+
+	//c=a++ + b++;//=5
+	/*
+	a
+	b
+	a++ + b++;====>a+b
+	a=a+1
+	b=a+1
+	*/
+
+	//c=++a + ++b;//=7
+	/*
+	a=a+1;
+	b=b+1;
+	++a + ++b===>a+1 + b+1
+	*/
+
+	//c=++a + b++;//=6
+	/*
+	a=a+1;
+	c=++a + b++;===>a+1 + b
+	b=b+1;
+	*/
+
+	c=a++ + ++b;//=6
+	/*
+	b=b+1;
+	c=a++ + ++b;===>a + b+1
+	a=a+1;	
+	*/
+	document.write("a值:"+a+"<br>");
+	document.write("b值:"+b+"<br>");
+	document.write("c值:"+c+"<br>");
+  </script>
+ </HEAD>
+
+ <BODY>
+  
+ </BODY>
+</HTML>

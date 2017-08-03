@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+	<title>计算器</title>
+	<meta charset="UTF-8" />
+	<!---- 这一句不能少，否则无法正确显示中文 ----->
+	<script type="text/javascript">
+		function calc(){
+			var a=num1.value;
+			var b=num2.value;
+			a=parseInt(a);
+			b=parseInt(b);
+			document.write(a+b);
+		}
+	</script>
+ </head>
+ <body>
+	<input type="text" value="" id="num1" /> +
+	<input type="text" value="" id="num2" />
+	<input type="button" value="计算" onclick="calc()" />
+	<!--------
+	<TITLE> 计算器 </TITLE>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+	 function calc(){
+		var a=num1.value;
+		var b=num2.value;
+		a=parseInt(a);
+		b=parseInt(b);
+		c=a+b;
+		document.write(c);
+	}
+	</script>
+	</HEAD>
+
+	<BODY>
+	<input type="text" value="" id="num1">+
+	<input type="text" value="" id="num2">
+	<input type="button" value="计算" onclick="calc()" />
+	----------->
+  <!-- onclick：鼠标单击时 --->
+ </BODY>
+</HTML>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<style>
+div {
+	float: left;
+	width: 300px;
+	border: 1px solid black;
+}
+
+div img {
+	width: 300px;
+}
+
+div h3 {
+	text-align: center;
+	font-size: 30px;
+}
+
+</style>
+
+<script>
+
+//*
+
+var arr = [];
+//一共有五幅图，所以0到50的随机数只是在这五个块中进行排序，所以只需要产生5个(i个)大的块中产生0~50的随机数
+for (var i = 1; i <= 5; i++)
+{
+	// 随机产生 [0, 50) 之间的整数价格
+	var price = parseInt(Math.random() * 50);
+
+	arr.push(price);
+}
+
+// 选择排序法
+//   选择最小的放到 a[0]
+
+// 1. 需要选择多少次？ arr.length-1
+for (var i = 0; i <arr.length-1; i++)
+{
+	// 2. 比较的是下标 i 与 i+1, i+2, ... arr.length-1
+	for (var j = i+1; j < arr.length; j++)
+	{
+		// 3. 比较的是 i 与 j
+		if (arr[i] > arr[j])
+		{
+			var t = arr[i];
+			arr[i] = arr[j];
+			arr[j] = t;
+		}
+	}
+}
+
+for (var i = 0; i < arr.length; i++)
+{
+	addShoes( arr[i] );
+}
+
+// price： 价格
+function addShoes(price) 
+{
+	document.write("<div>");
+	document.write("<img src='s1.jpg' />");
+	document.write("<h3>" + price + "</h3>");
+	document.write("</div>");
+
+}
+
+
+//先是产生一组随机数，然后把随机数压到数组中，再把数组中的数据进行排序,排序之后再进行输出
+//此处的大体上的变化在于函数的变化，上面的三个for仅仅只是对价格数据做一个排序处理
+
+
+
+//*/
+
+
+</script>
+
+ </head>
+
+ <body>
+
+ </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<style>
+div {
+	float: left;
+	width: 300px;
+	border: 1px solid black;
+}
+
+div img {
+	width: 300px;
+}
+
+div h3 {
+	text-align: center;
+	font-size: 30px;
+}
+
+</style>
+
+<script>
+
+//*
+// price： 价格
+function addShoes(price) 
+{
+	document.write("<div>");
+	document.write("<img src='s1.jpg' />");
+	document.write("<h3>" + price + "</h3>");
+	document.write("</div>");
+
+}
+
+var arr = [];
+for (var i = 1; i <= 5; i++)
+{
+	// 随机产生 [0, 50) 之间的整数价格
+	var price = parseInt(Math.random() * 50);
+	arr.push(price);
+}
+
+// 【在这里写选择排序算法】
+	//function fined()
+	//{
+		for (i=0; i<arr.length; i++)
+		{
+			for (j=i+1; j<arr.length; j++)
+			{
+				if (arr[i]>arr[j])
+				{
+					var t=arr[i];
+					arr[i] = arr[j];
+					arr[j] = t;
+				}
+			}
+		}
+	//}
+
+for (var i = 0; i < arr.length; i++)
+{
+	addShoes( arr[i] );
+}
+
+//*/
+
+
+</script>
+
+ </head>
+
+ <body>
+
+ </body>
+</html>

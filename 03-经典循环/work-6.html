@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 九九乘法表 </title>
+
+<script>
+//输出九九乘法表
+// 思路
+// (1) 打印9行 1..9
+// (2) 对于乘法两边的数值，每一个都需要一个for循环
+// (3) 每个乘法式子的第一个数值即为该行的行数
+// (4) 每打印一行，输出换行符
+
+	for (i=1; i<=9; i++)
+	{
+		for (j=1; j<=i; j++)
+		{
+			document.write(i + "*" + j + "=" + i*j + ";")
+		}
+		document.write("<br>")
+	}
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

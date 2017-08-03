@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 洪水计算 </TITLE>
+  <meta charset="UTF-8" />
+  <script type="text/javascript">
+  //原题目解法：
+  //为抵抗洪水，战士连续作战89小时，编程计算共多少天零多少小时?
+  /*
+  document.write("为抵抗洪水，战士连续作战89小时，编程计算共多少天零多少小时？"+"<br>")
+  var a=89;
+  var b;
+  b=a/24;
+  b=parseInt(b);
+  c=a%24;
+  document.write("为抵抗洪水，战士连续作战89小时，编程计算共："+b+"天，零"+c+"小时");
+  */
+  //扩展：
+  /*
+	function time(){
+		var a=num.value;
+		var b,c;
+		b=a/24;
+		b=parseInt(b);
+		c=a%24;
+		document.write(b+"天"+c+"小时")
+	}
+	*/
+	function time(){
+		var hour = num.value;
+		var day = parseInt( hour / 24 );
+		//可以直接连在一起
+		var h = hour%24;
+		document.write(day+"天"+h+"小时")
+	}
+  </script>
+ </HEAD>
+	<p>为抵抗洪水，战士连续作战的小时数是：<input type="text" value="" id="num" /></p>
+	<p>共：<input type="button" value="计算" onclick="time()" /></p>
+ <BODY>
+  
+ </BODY>
+</HTML>

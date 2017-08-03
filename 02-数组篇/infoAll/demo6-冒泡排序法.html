@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+/*
+var a = [1, 3, 5, 2, 4 ];
+
+// 思路：
+//   选择一个最大的，放到最后一个位置
+
+//【1, 3,】 5, 2, 4
+//1, 【3, 5,】 2, 4
+//1, 3, 【2, 5,】 4
+//1, 3, 2, 【4, 5】
+
+for (var j = 0; j < a.length-1; j++)
+{
+	for (var i = 0; i < a.length - 1; i++)
+	{
+		// 【注意】 比较相邻的两个元素
+		if (a[i] > a[i+1])
+		{
+			// 交换这两个元素
+			var t = a[i];
+			a[i] = a[i+1];
+			a[i+1] = t;
+		}
+	}
+
+}
+
+document.write(a);
+//*/
+
+// 【练习】
+// var a = [1, 5, 3, 2, 4];
+// 1. 先将一个大泡泡冒到最顶端
+// 2. 外层添加一个 循环 a.length-1 次
+// 3. 可以 将 比较的循环 优化成 a.length-1-外层循环变量
+
+var a = [1, 5, 3, 2, 4];
+
+
+// 序号
+// 0: 0, 1, 2, 3, 【4】        4
+// 1: 0, 1, 2,【3】            3
+// 2: 0, 1, 【2】              2         4-序号
+
+
+for (var j = 0; j < a.length-1; j++)
+{
+
+	// i最大值: a.length-1
+	// i+1:  a.length
+	for (var i = 0; i < a.length-1-j; i++)
+	{
+		if (a[i] > a[i+1])
+		{
+			var t = a[i];
+			a[i] = a[i+1];
+			a[i+1] = t;
+		}
+	}
+
+
+}
+
+
+
+document.write(a);
+
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

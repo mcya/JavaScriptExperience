@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 水仙花数 </title>
+
+<script>
+//求100-999之间的水仙花数。abc =a^3+b^3+c^3
+	for (i=100; i<=999; i++)
+	{
+		var a=parseInt(i%10);
+		var b=i/10;
+		b=parseInt(b%10);
+		c=parseInt(i/100);
+		if (i == a*a*a+b*b*b+c*c*c)
+		{
+			document.write(i+"是水仙花数<br>");
+		}
+	}
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 摄氏度 </TITLE>
+  <meta charset="UTF-8" />
+  <script type="text/javascript">
+  /*
+  题目：
+  小明要到美国旅游，可是那里的温度是以华氏度为单位记录的。它需要一个程序将华氏温度（80度）转换为摄氏度，并以华氏度和摄氏度为单位分别显示该温度。
+  -----摄氏度与华氏度的转换公式为：摄氏度 = 5/9.0*(华氏度-32)保留3位小数
+  */
+  function sheshi(){
+	var a=num.value;
+	var b;
+	b=(5/9)*(a-32)
+	b=b.toFixed(3);
+	document.write(b);
+  }
+  /*
+  98=64+32+2
+  1100010
+  */
+  </script>
+ </HEAD>
+
+ <BODY>
+	<p>请输入华氏度：<input type="text" value="" id="num" /></p>
+	<input type="button" value="摄氏度计算" id="show" onclick="sheshi()"> 
+ </BODY>
+</HTML>

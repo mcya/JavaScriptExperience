@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> s=a+aa+aaa+aaaa+….+aa...a </title>
+
+<script>
+//求s=a+aa+aaa+aaaa+….+aa...a的值，其中a是一个数字。例如2+22+222+2222
+//  2     =2*10^0;
+//  22    =2*10^1+2*10^0
+//  222   =2*10^2+2*10^1+2*10^0
+//  2222  =2*10^3+2*10^2+2*10^1+2*10^0
+//  22222 =2*10^4+2*10^3+2*10^2+2*10^1+2*10^0
+
+	var sum=0;
+	var s=0;
+	var a=2;
+	
+	for (j=0; j<=3; j++)
+	{
+		s=a*Math.pow(10,j)+s;
+		for (i=1; i<=3; i++)
+		{
+			sum=sum+s;
+		}
+		
+	}
+	
+	document.write(sum);
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

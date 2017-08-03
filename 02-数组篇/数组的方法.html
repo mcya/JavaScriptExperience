@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+	//数组
+	/* 
+	var a=[ {xxx:1},{sss:2} ]
+	document.write( a[0].xxx );
+	//*/
+
+
+//数组的遍历---
+	/*
+	var a=[23,12,10,9,100];
+	for (i=0; i<=a.length-1; i++)
+	{
+		document.write(a[i]+",")
+	}
+	//*/
+
+	//求出数组中素有元素之和----数组遍历
+	/*
+	var a=[23,12,10,9,100];
+	var sum=0;
+	for (var i=0; i<=a.length-1; i++)
+	{
+		//var sum=0;
+		//总是写错！！具有初始值的变量必须定义在循环的外面！！
+		sum=sum+a[i];
+	}
+	document.write(sum);
+	//*/
+
+	//Math.random产生（0,1）之间的随机数
+
+	//输出 (0,1) 之间的随机数
+	/*
+	var a=Math.random();
+	document.write(a);
+	//*/
+
+	// (0,10) 的随机数
+	/*
+	var a=Math.random() * 10;
+	document.write(a);
+	//*/
+
+	//(0,10) 的随整数
+	/*
+	var a=parseInt( Math.random()*10 )
+	document.write(a)
+	//*/
+
+	//4个(0,10) 的随整数
+	/*
+	for (i=0; i<4; i++)
+	{
+		var a=parseInt( Math.random()*10 );
+		document.write(a);//document。write必须写在for循环里面
+	}
+	//*/
+	
+
+//a.push()表示压入
+	//1-100能够被7整除的数字压入数组
+	/*
+	var a=[];
+	for (i=1; i<=100; i++)
+	{
+		if (i%7==0)
+		{
+			a.push(i);
+		}
+	}
+	document.write(a);
+	//*/
+
+
+//a.pop()表示删除数组最后一个元素
+	/*
+	var a=[9,15,25]
+	a.pop();//===> 输出9 15
+	//a=a.pop();//===>输出  25
+	//==> a.pop() 即 a=a.pop() 可以将删除的元素返回
+	document.write(a);
+	//*/
+
+//a.shift();表示删除数组中的第一个元素
+	/*
+	var a=[68,78,88,98]
+	//a.shift();//===>输出 78 88 98
+	a=a.shift();//===>输出 68
+	//==>a.shift()类似如上的pop可以返回该删除元素
+	document.write(a)
+	//*/
+
+//a.unshift();在数组的第一个位置添加元素
+	/*
+	var a=[18,28,38]
+	a.unshift(8);//===>输出 8,18,28,38
+	//a=a.unshift(8);// 4
+	//a.unshift没有返回值！！
+	document.write(a);
+	//*/
+
+//利用arguments存储数据，她会存储函数中所有 参数 的值！！记住，是参数！！  参数！！ 
+	//输入任意多的数值，并且对这些数据求和。
+	//*
+	function sum()
+	{
+		var sum=0;
+		for (var i=0; i<=arguments.length-1; i++)
+		{
+			sum=sum+arguments[i];
+		}
+		return sum;
+	}
+	document.write( sum(500,15,5) );
+	//*/
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

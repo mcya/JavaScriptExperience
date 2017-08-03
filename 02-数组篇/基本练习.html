@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 作业 </title>
+
+<script>
+
+
+//1~~~冒泡排序
+	/*
+	var a=[5,2,0,6,9]
+	function fined()
+	{
+		for (i=0; i<=a.length-1; i++)
+		{
+			for (j=0; j<=a.length-1-i; j++)
+			{
+				//if (a[j]>a[j+1])//从小到大排序
+				if (a[j]<a[j+1])//从大到小排序
+				{
+					var t=a[j+1];
+					a[j+1] = a[j];
+					a[j] = t;
+				}
+			}
+		}
+	}
+	fined();
+	document.write(a);
+	//*/
+
+
+
+//2~~~~随机生成一个五位以内的数，然后输出该数共有多少位，每位分别是什么
+	//分析：
+	//   一个随机数，数值大小是0~9999---随机数实现
+	//   这个数的位数是多少---length
+	//   每位分别是什么---个位、十位、百位、千位
+	//   5/1000===>0...5
+	//   5555/1000===>5...555取整
+	//   ===>可以从length的具体值判断，分别对 千百十个 求
+	//document.write(num)
+	/*
+	function data()
+	{	var num=( parseInt( Math.random()*10000 ) );
+		var len=num.toString().length;
+		var one=num%10;
+		document.write("这个数是"+num+"<br>长度是："+len)
+		document.write("<br>个位是："+one)
+		switch(len)
+		{
+			case 1: break;
+			case 2:
+				document.write("<br>十位是："+( parseInt(num/10)) );
+				break;
+			case 3:
+				document.write("<br>十位是："+( ( parseInt(num/10) )%10 ) );
+				document.write("<br>百位是："+( parseInt(num/100) ) )
+				break;
+			case 4:
+				document.write("<br>十位是："+( ( parseInt(num/10) )%10 ) );
+				document.write("<br>百位是："+( ( parseInt(num/100) )%10 ) );
+				document.write("<br>千位是："+( parseInt(num/1000)) );
+				break;
+			default:document.write("")
+		}
+	}
+	data();
+	//*/
+	
+
+
+//3~~~~山上有一口缸可以装50升水，现在有15升水。老和尚叫小和尚下山挑水，每次可以挑5升。问：小和尚要挑几次水才可以把水缸挑满？通过编程解决这个问题。
+	//15
+	//sum=sum+i
+	//count计数
+	
+	//方法1：
+	/*
+	function water(n)
+	{
+		var sum=15;
+		var count=0;
+		for (var i=0; ;i++ )
+		{
+			sum=sum+n;
+			if (sum==50)
+			{
+				count+=1;
+				break;
+			}
+			else if ( (sum-n)>50 && sum!=50 )
+			{
+				break;
+			}
+			count++;
+		}
+		return count;
+		
+	}
+	a=water(3);//每次挑的水，可输入任意数值
+	document.write( a );
+	//*/
+
+	//方法2：
+	/*
+	var sum=50;
+	var water=5;
+	var count=(sum-15)/5
+	document.write( count );
+	//*/
+
+
+
+//4~~~有一个从小到大排好序的数组。现输入一个数，要求按原来的规律将它插入数组中
+	
+	//方法1：（冒泡排序）
+	/*
+	var a=[2,5,8,9];
+	function insert()
+	{	
+		for (i=0; i<a.length-1; i++)
+		{
+			for (j=0; j<a.length-1; j++)
+			{
+				if (a[j]>a[j+1])
+				{
+					var t=a[j+1];
+					a[j+1] = a[j];
+					a[j]=t;
+				}
+			}
+		}
+	}
+	a.push(15);//插入的数字
+	insert();
+	document.write(a);
+	//*/
+	
+	//方法2：--sort
+	/*
+	var a=[2,5,8,9];
+	a.push(6);
+	a.sort( function (a,b){ return a-b;});
+	document.write(a);
+	//*/
+
+//5~~~~开发一个标题为“FlipFlop”的游戏应用程序。它从1计数到100，遇到3的倍数就替换为单词“Flip”，5的倍数就替换为单词“Flop”，既为3的倍数又为5的倍数则替换为单词“FlipFlop”
+
+	/*
+	function game()
+	{
+		var count=0;
+		for (i=1; i<=100; i++)
+		{
+			if (i%3==0 && i%5!=0)
+			{
+				document.write("Flip-3，");
+			}
+			else if (i%5==0 && i%3!=0)
+			{
+				document.write("Flop-5，");
+			}
+			else if (i%3==0 && i%5==0)
+			{
+				document.write("FlipFlop，")
+			}
+			else 
+				document.write(i+"，");
+			count++;
+			if (count%10==0)
+			{
+			 document.write("<br><br>")
+			}
+		}
+	}
+	
+	game();
+	//*/
+
+//生成13位条形码(6K)
+//Ean-13码规则：第十三位数字是前十二位数字经过计算得到的校验码。
+//例如：690 123 456 789
+//第三位计算其校验码的过程为：
+//    @前十二位的奇数位和6+0+2+4+6+8=26===>a[i]  %2
+//     @前十二位的偶数位和9+1+3+5+7+9=34===>a[i] %2
+//       @将奇数和与偶数和的三倍相加26+34*3=128==> *3
+//          @取结果的个位数：128的个位数为8===>%10
+//             @用10减去这个个位数10-8=2==>10-n
+//所以校验码为2（注：如果取结果的个位数为0，那么校验码不是（10-0=10），而是0）实现方法ean13（）计算验证码，输入12位条码，返回带验证码的条码。
+//例如：输入：692223361219输出：6922233612192
+	/*
+	var a=[7,7,5,8,1,3,1,4,9,5,2,7];
+	var sum1=0,sum2=0;		
+	for ( var i=0; i<=11; i++)
+	{
+		if (i%2 == 0)
+		{
+			var sum1 = sum1 + a[i];
+		}
+		else if (i%2 == 1)
+		{
+			var sum2 = sum2 + a[i];
+		}
+	}
+	var sum = sum1*3 + sum2;
+	var s = sum % 10;
+	if (s==0)
+	{
+		var n = 0;
+	}
+	else if(s != 0)
+		var n = 10-s;
+	a.push(n);
+	document.write(a);
+	//*/
+	//不要想那么复杂，用了一个晚上函数，真是个傻子！还不得！
+
+	
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

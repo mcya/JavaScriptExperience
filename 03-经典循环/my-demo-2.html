@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> img </title>
+
+<script>
+
+	//输出 small_1.jpg 到 small_11.jpg 11张图片
+	/*
+	for (i=1; i<=11; i++)
+	{
+	document.write("<img src='images/small_" + i + ".jpg' width='150' />")
+	}
+	*/
+
+	//嵌套循环，两层循环
+	//5行5列的星星
+	/*
+	for (var i=0; i<=5; i++)
+	{
+		//===>下面的这个for循环完成一行的*，表示一行的星星数。
+		//===>星星数是固定的，5个。
+		for (var j=0; j<=5; j++)
+		{
+			document.write("*")
+		}
+		document.write("<br>")
+		//外围的for是了能够输出五行！
+	}
+	*/
+
+
+	/*
+	打印出如下样式的*
+	*
+	**　
+	***
+	****
+	*****
+	-------------
+	*/
+	/*
+	for (var i=0; i<=16; i++)
+	{
+		//===>下面的这个for循环完成一行的*，表示一行有的星星数。
+		//===>星星数是变化的，每行的星星数等于行号。
+		for (var j=0; j<=i; j++)
+		{
+			document.write("*")
+		}
+		document.write("<br>")
+	}
+	*/
+
+
+	/*
+	打印出如下样式的*
+			*
+		   **
+		  ***
+		 ****
+		*****
+	*/
+	//总体上看是一个大的行，需要一个for;
+	//在行中又有好几个列，所以还需要一个for;
+	//而在一行中的好几列是由两部分内容组成的，即是空格和*号，这两部分不存在嵌套关系;
+	//所以需要两个for来并排来分别表示这一行中的两个内容；
+	//所以需要一个大的for来嵌套两个小的for;
+	//*
+	for (var i=0; i<=5; i++)
+	{
+		for (var j=1; j<=5-i; j++)
+		{
+			document.write("<div style='width:5px; height:5px; float:left;'>&nbsp;</div>")
+			//由于对不同的浏览器，空格所对应的长度不一样，所以为了保证星星能够整齐的显示，我们应该对空格和星星都设置成一个盒子，对盒子设置相同的宽高，再对盒子做一个浮动即可。
+		}
+		for (var j=1; j<=i; j++)
+		{
+			document.write("<div style='width:5px; height:5px; float:left;'>*</div>")
+		}
+		document.write("<br>")
+	}
+	//*/
+	
+	//质数
+
+
+
+	//循环判断是不是一个质数
+	//判断467是不是一个质数
+	//质数：只能被1和本身整除
+	
+	/*
+	//方法1，利用count计数，若count数值为0，设置fcount的初始值为0，就是质数，不为0说明执行了a%i==0，即存在另一个整除数，即不是质数。
+	
+	//方法2：利用一个参数flag,设置flag的初始值为true若，flag的值发生改变，即是flag=false，说明了已经执行了a%i==0语句，即存在另一个整除数，所以不是质数。若值不变则表示是质数。
+
+	//方法3：利用break的性质，执行即终止break所在的循环体。当没有执行a%i==0的时候，i的值和a相等，如果执行了就不相等。
+
+	//var count=0;//方法1
+	//var flag=true;//方法2：
+	var a=11;
+	for (i=2; i<=a-1; i++)
+	{
+		if (a%i==0)
+		{
+			//count++;//方法1
+			//flag=false;//方法2
+			document.write("不是质数");
+			break;
+		}
+	}
+	//if (count==0)
+	//if(flag==true)// 方法2：等号的写法：【 == 】
+	if(i==a)//方法3
+	{
+		document.write("是质数");
+	}
+	*/
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

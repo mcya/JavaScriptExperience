@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <meta charset="UTF-8">
+  <script>
+  //入职薪水10K，每年涨幅5%，50年后工资多少？
+  //type="text/javascript"
+  function money(){
+  var a=num.value;  
+  for(var i=1;i<=1;i++){
+	a=a+a*0.05;
+  }
+  //a=a.toFixed(2);
+  //为什么定义了a的尾数个位数就不能执行了呢？
+  //toFixed区分大小写
+  document.write(a);
+  }
+  </script>
+ </HEAD>
+
+ <BODY>
+  <p>您入职薪水是：<input type="text" id="num">元/月</p>
+  <p>50年后的月薪：<input type="button" value="计算" onclick="money()"></p>
+ </BODY>
+</HTML>

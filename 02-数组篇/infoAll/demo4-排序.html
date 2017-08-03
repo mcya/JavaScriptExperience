@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<style>
+div {
+	float: left;
+	width: 300px;
+	border: 1px solid black;
+}
+
+div img {
+	width: 300px;
+}
+
+div h3 {
+	text-align: center;
+	font-size: 30px;
+}
+
+</style>
+
+<script>
+
+/*
+// price： 价格
+function addShoes(price) 
+{
+	document.write("<div>");
+	document.write("<img src='s1.jpg' />");
+	document.write("<h3>" + price + "</h3>");
+	document.write("</div>");
+
+}
+
+
+
+document.write("<div style='clear: both'> <input type='button' value='按价格从低到高排序' /></div>");
+
+for (var i = 1; i <= 5; i++)
+{
+	// 随机产生 [0, 50) 之间的整数价格
+	var price = parseInt(Math.random() * 50);
+
+	addShoes(price);
+}
+
+
+//*/
+
+/*
+var a = [5, 1, 2, 3, 4];
+
+// 1, 5, 2, 3, 4  ==> 1, 2, 3, 4, 5
+// 将杂乱无章的数据 变成 从小到大 或者 从大到小的过程，称为 排序
+
+// document.write(a);
+
+// 思路：
+//  选择一个最小的放在 a[0]
+//   在【剩余】的部分中 选择一个最小的放在 a[1]
+
+for (var i = 1; i < a.length; i++)
+{
+	if (a[0] > a[i])
+	{
+		// 就 a[0] 互换 a[i]
+		var t = a[0];
+		a[0] = a[i];
+		a[i] = t;
+	}
+}
+
+
+
+//   在【剩余】的部分中 选择一个最小的放在 a[1]
+
+for (var i = 2; i < a.length; i++)
+{
+	if (a[1] > a[i])
+	{
+		var t = a[1];
+		a[1] = a[i];
+		a[i] = t;
+	}
+}
+
+//   在【剩余】的部分中 选择一个最小的放在 a[2]
+
+for (var i = 3; i < a.length; i++)
+{
+	if (a[2] > a[i])
+	{
+		var t = a[2];
+		a[2] = a[i];
+		a[i] = t;
+	}
+}
+
+
+
+document.write(a);
+
+//*/
+
+
+/*
+var a = 3;
+var b = 5;
+
+// 将a赋值给 t，相当于备份了一下 a
+var t = a;
+// 将b赋值给a，那么，a的值就是b
+a = b;
+
+// 将 t(a) 赋值给b,那么b的值就是 之前 a 的值
+b = t;
+
+
+document.write(a + ", " + b);
+//*/
+
+
+/*
+var a = [5, 1, 2, 3, 4];
+
+// 1, 5, 2, 3, 4  ==> 1, 2, 3, 4, 5
+// 将杂乱无章的数据 变成 从小到大 或者 从大到小的过程，称为 排序
+
+// document.write(a);
+
+// 思路：
+//  选择一个最小的放在 a[0]
+//   在【剩余】的部分中 选择一个最小的放在 a[1]
+
+
+for (var j = 0; j < a.length; j++)
+{
+	for (var i = j+1; i < a.length; i++)
+	{
+		if (a[j] > a[i])
+		{
+			// 就 a[j] 互换 a[i]
+			var t = a[j];
+			a[j] = a[i];
+			a[i] = t;
+		}
+	}
+}
+
+
+document.write(a);
+//*/
+
+
+/*
+var a = [5, 1, 2, 3, 4];
+
+// 思路:
+// 1. 选择最小的放在 a[0]
+// 2. 在 【剩余】(1..a.length-1)中选中最小的放在 a[1]
+// 3. 重复这个步骤。 
+
+// 想一想，要重复多少次？  a.length - 1 次
+
+// 重复 a.length-1 次
+for (var j = 0; j < a.length - 1; j++)
+{
+	
+	for (var i = j+1; i < a.length; i++)
+	{
+		if (a[j] > a[i])
+		{
+			var t = a[j];
+			a[j] = a[i];
+			a[i] = t;
+		}
+	}
+
+}
+
+document.write(a);
+//*/
+
+
+
+//【练习】 将数组排序
+var a = [5, 1, 2, 3, 4];
+// 1. 先最小的放到 a[0]  【先做这个】
+// 2. 整体排序 循环 a.length-1 【第一步没问题，再做这个】
+
+// 先将最小的放到 a[0]
+// 思路： a[0] 与 后面的一个个比较，只要发现后面的小，那么就交换
+
+
+// 因为需要选择 a.length-1次，同时，是从 第0个元素开始
+for (var j = 0; j < a.length - 1; j++)
+{
+
+
+	for (var i = j+1; i < a.length; i++)
+	{
+		if (a[j] > a[i])
+		{
+			// 交换 a[j] 与 a[i];
+
+			// 将 a[j] 备份到 t
+			var t = a[j];
+
+			// 将 a[i] 赋值给 a[j]
+			a[j] = a[i];
+
+			// 将备份好的 a[j] 再 赋值给 a[i]
+			a[i] = t;
+		}
+	}
+
+}
+
+
+document.write(a);
+
+
+// 这种排序的方法，我们称为   【选择】排序法
+
+
+
+</script>
+
+ </head>
+
+ <body>
+
+ </body>
+</html>

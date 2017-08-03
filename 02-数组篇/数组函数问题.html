@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+//1....100之间所有带7的函数
+
+	//有问题
+	/*
+	var arr=[];
+	function find()
+	{
+		for (i=1; i<=100; i++)
+		{
+			if (i%10==7 || parseInt(i/10)==7)
+			{			
+				arr.push(i);
+			}
+		}
+		//return arr;
+	}
+	find();
+	//函数需要执行了才能输出
+	document.write(arr);
+	//*/
+
+
+//选择排序法：
+	//排序：a=[5,1,3,4,2]
+	/*
+	function rank(a)
+	{
+		//前一个数的坐标表示
+		//a[0] a[1] a[2] a[3] a[4]
+		//这个for是进行a.length次比较
+		for (var i=0; i<a.length; i++)
+		{
+			//后一个数的表示
+			//a[1] a[2] a[3] a[4] a[5]
+			//这个for只是进行一次比较
+			for (var j=i+1; j<a.length; j++)
+			{
+				//排序，前一个大于后一个的情况！
+				if (a[i]>a[j])
+				{
+					var t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}
+			}
+		}
+	}
+	var a=[5,1,8,3,4];
+	rank(a);
+	document.write(a)；
+	//*/
+
+	//随机数的排序---选择排序法
+	/*
+	var arr=[]
+	for (; ; )
+	{
+	}
+	//*/
+
+
+
+//冒泡排序
+//==>数值大的往后排序
+//==>选择排序是数值小的往前排序；
+	//a=[1,5,3,2,4]
+	var a=[1,5,3,8,4];
+	function fined()
+	{
+		for (i=0; i<a.length-1; i++)
+		{
+			for (j=0; j<a.length-1-i; j++)
+			{
+				if (a[j]>a[j+1])
+				{
+					var t=a[j+1];
+					a[j+1] = a[j];
+					a[j] = t;
+				}
+			}
+		}
+	}
+	fined();
+	document.write(a)
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

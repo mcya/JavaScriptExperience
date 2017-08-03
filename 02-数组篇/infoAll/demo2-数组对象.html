@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+/*
+var a = [];
+
+// push 是对象 a 中的一个函数
+// 作用：将 数值、字符串、对象 等 数据 压入数组中
+// 压入： 在数组的【末尾】添加这个 元素
+a.push( 5 );
+a.push( "老王" );
+
+document.write( a[1] );
+
+// length 是对象 a 中的属性
+// document.write( a.length );
+//*/
+/*
+// 【练习】
+// 将 1..100 之间 所有能被 7 整除的数字，压入数组，
+// 并输出结果
+
+// 定义数组
+var a = [];
+
+
+// 将程序中的模块，分开。 称为 模块化编程
+//  1. 处理数据就做处理数据的事情
+//  2. 显示数据就做显示数据的事情
+// 压入所有的7的倍数的数字
+for (var i = 1; i <= 100; i++)
+{
+	if (i % 7 == 0)
+	{
+		// 说明 i 可以被7整除
+		a.push(i);
+	}
+}
+
+// 输出
+document.write(a);
+
+// 求出 100 之间，7的倍数所有数字 之和
+
+// 因为求和 与 取出数据 这两份代码分开
+// 相当于我分成了两个模块
+//  通过 模块划分，可以帮助 快速定位到 bug 的位置
+
+var sum = 0;
+for (var i = 0; i < a.length; i++)
+{
+	sum += a[i];
+}
+
+document.write(sum);
+//*/
+
+
+/*
+var a = [1, 2, 3, 4];
+
+
+// pop 是对象 a 中的一个方法(函数)
+// 作用： 删除数组中的最后一个元素
+a.pop();
+
+document.write(a);
+
+//*/
+
+
+/*
+var a = [1, 2, 3, 4];
+
+// shift 是对象 a 中的一个方法(函数)
+// 作用： 删除数组中第一个元素
+//        并且可以将这个元素返回
+var b = a.shift();
+
+document.write(b);
+//*/
+
+
+/*
+var a = [1, 2, 3, 4];
+
+// unshift 是对象中的一个方法
+// 作用： 在数组中第一个位置添加元素
+a.unshift(100);
+
+document.write(a);
+//*/
+
+
+/*
+// 【建议】 定义变量时，都初始化
+var a = [];
+
+a.push(5);
+
+a.pop();
+
+// 数组中没有元素了，空的
+// 因为数组定义了，所有不是 undefined;
+document.write(a);
+//*/
+
+
+/*
+var a = [];
+
+
+// 在数组的末尾添加元素
+a.push(5);
+
+
+// 在数组首部删除元素
+a.shift();
+
+
+document.write(a);
+//*/
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 1000-2000年中所有的闰年 </title>
+
+<script>
+//打印出1000-2000年中所有的闰年，并以每行四个数的形式输出
+	var count=0;
+	for (var a=1000; a<=2000; a++)
+	{
+		if(a%400==0 || (a%4==0 && a%100!=0))
+		{
+			document.write(a+"年闰年;")
+			count++;
+			if(count%4==0)
+			{
+				document.write("<br>")
+			}
+		}
+	}
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

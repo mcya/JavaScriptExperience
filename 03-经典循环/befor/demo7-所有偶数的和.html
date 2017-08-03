@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+var i = 1;
+
+// 内存开辟了空间，
+var sum = 0;
+
+while (i <= 100) {
+
+	if (i % 2 == 0) {
+		sum += i;
+	}
+
+	i++;
+}
+
+// i     sum
+// 1      0
+// 2      2 （0+2=>2）
+// 3      2
+// 4      6 （2+4=>6）
+// 5
+// 6      12 （6+6=>12）
+
+// 所有的偶数和
+document.write(sum);
+
+	</script>
+
+  </head>
+  <body>
+	
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<style>
+
+.mycls {
+	float: left;
+	width: 27px;
+	height: 27px;
+	background: url(images/star.gif) 0px -28px;
+}
+
+</style>
+
+<script>
+
+
+/*
+for (var a = 1; a <= 1000; a++)
+{
+	// 双引号内部如果还有双引号，那么可以用单引号替换
+	document.write("<img src='images/bird.jpg' width='50' />");
+}
+*/
+
+
+/*
+for (var i = 1; i <= 100; i++)
+{
+
+	document.write("<div class='mycls'> </div>");
+
+}
+*/
+
+
+/*
+for (var i = 1; i <= 1000; i++)
+{
+	document.write("<h1 style='color: red'> I love you!</h1>");
+}
+*/
+
+
+
+
+/*
+for (var i = 1; i <= 5; i++)
+{
+	document.write("<img src='images/small_1.jpg' width='50' />");
+}
+*/
+
+/*
+document.write("<img src='images/small_1.jpg' width='50' />");
+
+document.write("<img src='images/small_2.jpg' width='50' />");
+
+document.write("<img src='images/small_3.jpg' width='50' />");
+*/
+
+
+
+// 双引号里面不能再写双引号，因为会将完整字符串打断
+// document.write("<img src='images/bird.jpg' />");
+
+
+
+// 将字符串的内容替换成变量的 流程：
+// 1. 删除这个字符
+// 2. 加上【一对】 双引号
+// 3. 在双引号之间 加上 【一对】 +
+// 4. 在 + 中间写上变量
+//*
+
+// 用来记数
+var count = 0;
+
+for (var i = 1; i <= 5; i++)
+{
+	// 只要循环一次，count值就加1
+	count++;
+
+	document.write("<img src='images/small_"  + i + ".jpg' width='50' />");
+}
+
+
+// <h1> 11 </h1>
+document.write("<h1> " + count+ " </h1>");
+// document.write(count);
+
+
+// 12
+// undefined // JS 中执行了定义了变量的代码，后面都可以使用
+// document.write("i: " + i);
+//*/
+
+/*
+var a = 10;
+
+if (a > 0)
+{
+	// 先执行这里，所以定义了b
+	var b = 100;
+}
+
+
+// JS 是一个解释型程序，一行一行执行的
+document.write(b);
+//*/
+
+
+
+
+
+
+
+
+
+
+
+
+// 定义变量的问题
+</script>
+
+ </head>
+
+ <body>
+
+
+
+ 
+ 
+  
+ </body>
+</html>

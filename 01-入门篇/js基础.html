@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> JS第一天 </TITLE>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+  //document.write括号里面的引号的内容会被浏览器解析
+  document.write("这个是什么鬼啊，真是的！！")
+  document.write("这个是什么鬼啊，真是的！！")
+  document.write("<br>")
+  document.write("没错，换行了<br>")
+  document.write("没错，<span style='color:#f00;'>换行了</span>")//执行span标签
+  document.write("<br>")
+  document.write("<br>")
+  //
+  //
+  var x=10;
+  y=x*x+100;
+  document.write("x=10，y=x*x+100="+y);
+  document.write("<br>")
+  document.write("<br>")
+  //
+  //
+  
+  document.write("求数值的个位数和十位数")
+  document.write("<br>")
+  var a=178;
+  a=a%10;
+  document.write("188的个位数是："+a+"<br>")
+  var b=297;
+  b=b/10;
+  b=parseInt(b);
+  b=b%10;
+  document.write("198的十位数是："+b+"<br>")
+  document.write("<br>")
+  
+  //
+  //
+  var a=9;
+  var b=a++;
+  var c=--b;
+  document.write("【a=9;b=a++;c=--b;】a的值，预判：10，实际："+a+"<br>");
+  document.write("【a=9;b=a++;c=--b;】b的值，预判：8，实际："+b+"<br>");
+  document.write("错误原因：a++的值，在整体上得值是不会改变，原来是多少就是多少，而，++a的值是在整体上，a的值是会发生了改变，即是a在原来的基础上加1了，造成了永久性的改变！")
+  document.write("【a=9;b=a++;c=--b;】c的值，预判：8，实际："+c+"<br>");
+  document.write("<br>")
+  //
+  //
+  </script>
+ </HEAD>
+
+ <BODY>
+	<input type="text" value="">+
+	<input type="text" value="">
+	<input type="button" value="计算">
+  
+ </BODY>
+</HTML>

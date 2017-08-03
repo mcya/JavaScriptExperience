@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+/*
+function func(a)
+{
+	a++;
+}
+
+
+ // 因为函数都没有调用，所以找不到 a
+document.write(a);
+
+//*/
+
+
+/*
+var a = 5;
+
+function func(a)
+{
+	// 函数中开辟了一个空间 a == 5
+	//  a==6
+	a++;
+}
+
+func(5);
+
+
+// 结果，函数没有改变到 外部 a 的值，所以，结果是 5
+document.write(a);
+
+//*/
+
+
+
+/*
+// 在外部开辟 a 的空间
+var a = 5;
+
+function func()
+{
+	// 开辟函数 的空间
+	//  函数中没有 a 的空间
+	// 所以，系统会自动向外面搜索
+	// 这里是对外部的变量进行修改
+	a++;
+}
+
+func(5);
+
+// 因为函数中修改了外部的变量 a，所以，值发生改变了，是 6
+document.write(a);
+//*/
+
+
+
+
+
+
+/*
+var a = 5;
+
+function func(a)
+{
+	a++;
+}
+
+// 函数调用中，传递是一个数值，我们称为 “值传递”
+// 特点： 有多个不同的空间，空间都是在栈中的
+//       所以 修改函数中的空间，对外部空间是没有影响的
+func(a);
+
+// 5
+document.write(a);
+//*/
+
+
+
+/*
+var a = [5];
+
+function func(a)
+{
+	a[0] ++;
+}
+
+// 函数调用中，传递是对象，一般称为 “引用传递”
+// 特点： 实在存数据的空间只有一份
+func(a);
+
+// 5
+// 6	
+document.write(a[0]);
+//*/
+
+
+
+// 想要函数返回多个值? 5, 10, 15
+
+/*
+function func() 
+{
+	var a = [5, 10, 15];
+
+	return a;
+}
+
+
+// 函数的返回值 a，所以 r 的值就为 a
+//  r 与 a 都是指向同一个数组空间
+var r = func();
+
+document.write(typeof r);
+//*/
+
+
+
+// 1..100 之间，所以带7的数字
+
+
+
+// 【练习】
+// 实现这个函数，有一个参数：
+// function find( arr )
+
+function find(arr)
+{
+	for (var i = 1; i <= 100; i++)
+	{
+		// 个位
+		var d1 = i % 10;
+		// 十位
+		var d2 = parseInt(i / 10);
+
+		if (d1 == 7 || d2 == 7)
+		{
+			arr.push(i);
+		}
+	}
+}
+
+var arr = [];
+
+// 因为参数是 对象，所以，这里采用的是引用传递
+find(arr);
+
+// 我希望这里打印出来的结果是
+//    1..100 之间所有带7的数字
+document.write(arr);
+
+// 所以可以利用数组，传递给我多个数据
+
+
+
+
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

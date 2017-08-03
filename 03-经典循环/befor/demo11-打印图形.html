@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+for (var j = 100; j <= 200; j++) {
+
+    var n = j;
+
+    // 判断 n 是不是质数
+    var count = 0;
+    for (var i = 2; i <= n-1; i++) {
+	    if (n % i == 0) {
+		    count++;
+    		break;
+    	}
+    }
+
+    if (count == 0) {
+        document.write(n + ", ");
+    }
+}
+
+/*
+var n = 4;
+
+// 定义一个计数的变量，
+// 只要发现 2~n-1 有数字能被n整除，那么 count++
+// 等循环全部结束之后，
+// 判断 count 如果大于0，说明至少有1个能被n整除
+// 如果 等于0，说明没有1个能被n整除
+var count = 0;
+
+for (var i = 2; i <= n-1; i++) {
+
+	if (n % i == 0) {
+		// 说明 n 能整除 i
+		// alert("不是质数!");
+		count++;
+
+		// 已经找到一个能整除的
+		// 所以可以肯定不是质数，
+		// 那么，可以终止循环了
+		break;
+	}
+}
+
+if (count > 0) {
+    alert("不是质数!");
+} else {
+    alert("是质数!");
+}
+*/
+
+
+
+/*
+for (var i = 1; i <= 10; i++) {
+
+	var spaceNum = 10 - i;
+	// 这里输出了 spaceNum 个空格
+	for (var j = 1; j <= spaceNum; j++) {
+		document.write("&nbsp;");
+	}
+
+	var starNum = i;
+	for (var k = 1; k <= starNum; k++) {
+		document.write("*");
+	}
+
+	document.write("<br>");
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+for (var i = 1; i <= 5; i++) {
+
+	var spaceNum = 5 - i;
+	for (var j = 1; j <= spaceNum; j++) {
+		// 打印空格
+		document.write("&nbsp;");
+	}
+
+	var starNum = i;
+	for (var k = 1; k <= starNum; k++) {
+		document.write("*");
+	}
+	
+	document.write("<br>");
+}
+*/
+
+
+
+/*
+// 循环10次，因为要输出10行
+for (var i = 1; i <= 10; i++) {
+
+	// 因为：行号 i  === 星星数目
+	// 要输出这么多星星，
+    // 相当于循环 i 次，每次输出一颗星星
+	for (var j = 1; j <= i; j++) { 
+		document.write("*");
+	}
+
+	// 【注意】没输出一行后换行
+	// 可以通过在线调试的方式来定位bug的位置
+    document.write("<br>");
+}
+*/
+
+
+
+
+
+
+
+/*
+for (var i = 1; i <= 5; i++) {
+	// 行号： i的值
+
+	var num = i;
+
+	// 这里循环了num次
+	for (var j = 1; j <= num; j++) {
+		document.write("*");
+	}
+	
+    document.write("<br>");
+}
+*/
+
+
+/*
+
+for (var i = 1; i <= 4; i++) {
+
+	// 【注意】 每次进入循环时，
+	// j=1这条语句都会执行
+    for (var j = 1; j <= 10; j++) {
+    	document.write("*");
+	}
+	document.write("<br>");
+
+	// document.write("**********<br>");
+}
+*/
+	</script>
+
+  </head>
+  <body>
+	
+  </body>
+</html>

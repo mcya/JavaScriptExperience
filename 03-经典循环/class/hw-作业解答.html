@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+// 判断一个整数，属于哪个范围：大于0；小于0；等于0
+// 思路： 
+//   (1) 从页面输入整数
+//   (2) 判断  >0
+//               <0
+//			   其他
+
+/*
+var a=0;
+
+if(a>0){
+	document.write("大于零");
+}else if(a<0){
+	document.write("小于零");
+}else if (a==0){
+	document.write("等于零");  
+}
+
+
+//*/
+
+
+// 判断一个整数是偶数还是奇数，并输出判断结果
+// 思路： 如果整数 % 2 == 0 说明偶数
+//        否则： 说明是奇数
+
+/*
+var x=2;
+if (x%2 == 0) {
+	document.write("这个数是偶数");
+} else {
+	document.write("这个数是奇数");
+}
+
+//*/
+
+/*
+开发一款软件，根据公式（身高-108）*2=体重
+，可以有10斤左右的浮动。
+
+*/
+// 思路： （1） 计算预期的体重
+//           (2) 预期体重与自己的体重做个比较，看结果是否在范围内
+
+/*
+function calc(){
+	// 身高
+	var height=numb1.value;
+	
+	// 预期的体重
+	var weight=(height-108)*2;
+
+	// 自己的体重
+	var selfWeight=numb2.value;
+
+	// 差值
+	var deta = weight-selfWeight;
+
+	if (deta < 0)
+	{
+		// 如果是负数，那么转变整数
+		deta = -deta;
+	}
+
+	if (deta <= 10) {
+		document.write("合适");
+	} else {
+		document.write("不合适");
+	}
+
+	
+	// [-10, 10] 之间，  &&
+	if(deta <= 10 && deta >= -10) {
+		document.write("合适");
+	} else {
+		document.write("不合适");
+	}
+}
+//*/
+
+
+
+
+/*
+//计算某一年是否是闰年(与或非的运用)
+// 闰年： 能被400整除 或者 能被4整除不能被100整除
+
+var year = 2001;
+
+
+// 表达式中 () 是将表达式作为一个整体，不可分割开来
+// 代码中 {} 是将多条语句作为一个整体，不可分割
+if (year % 400 == 0 || (year % 4== 0 && year % 100 != 0)  )
+{
+	document.write("是闰年");
+}
+else 
+{
+	document.write("不是闰年");
+}
+
+*/
+
+
+/*
+var a = 3;
+
+// 如果 a == 1  输出 星期一
+// 如果 a == 2  输出 星期二
+// 如果 a == 3  输出 星期三
+// 如果 a == 4  输出 星期四 
+
+if (a == 1)
+{
+	document.write("星期一");
+}
+else if (a == 2)
+{
+	document.write("星期二");
+}
+else if (a == 3)
+{
+	document.write("星期三");
+}
+else if (a == 4)
+{
+	document.write("星期四");
+}
+
+//*/
+
+var a = 100;
+
+
+// switch 中文是： 开关
+// 语法
+// switch (表达式) 
+// {
+//      case  值1：  语句1    break;
+//      case  值2：  语句2    break;
+//      case  值3：  语句3    break;
+
+//      default:  语句  break;  (default 是所有case都匹配不到的时候执行)
+// }
+
+switch (a)
+{
+case 1:
+	// 当 a 的值等于 1，那么执行这里的代码：
+	
+	document.write("星期一<br>");
+	
+case 2:
+	// 如果上面没有break语句，就不会再判断 a的值是否等于2，
+	// 继续往下执行，直到遇到 break 或者 switch 结束的位置
+
+	document.write("星期二<br>");
+	
+case 3:
+	document.write("星期三<br>");
+	break;
+
+case 4:
+	document.write("星期四");
+	break;
+
+
+default:
+	document.write("default是上面所有 case 条件都没有匹配得到的时候执行");
+
+	break;
+
+}
+
+
+
+</script>
+
+ </head>
+
+ <body>
+ 
+
+ <!--
+ 身高(cm): <input type="text" value=""  id="numb1">
+ 体重(斤): <input type="text" value="" id="numb2">
+ <input type="button" value="计算" onclick="calc()">
+ -->
+ 
+ </body>
+</html>
