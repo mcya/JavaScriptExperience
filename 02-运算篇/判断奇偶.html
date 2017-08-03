@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 判断奇偶 </title>
+
+<script>
+//判断一个整数是偶数还是奇数，并输出判断结果
+	function judge(){
+		var a=num.value;
+		var b=a%2;
+		if(a===0){
+			document.write(a+"是偶数")
+		}
+		else{
+			document.write(a+"是奇数")
+		}
+	}
+
+</script>
+
+ </head>
+
+ <body>
+  <p>判断一个整数是偶数还是奇数，并输出判断结果</p>
+  <p>请输入数据：<input type="text" value="" id="num" /></p>
+  <input type="button" value="判断" onclick="judge()" />
+ </body>
+</html>

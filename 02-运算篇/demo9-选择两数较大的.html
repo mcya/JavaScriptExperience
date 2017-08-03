@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+// 名字与 onclick 中的名字一模一样
+function func() {
+	// 取出第一个文本框中的值存入 a
+	var a = num1.value;
+	var b = num2.value;
+
+	// a,b 的值的类型是 string 类型
+	a = parseInt(a);
+	b = parseInt(b);
+
+	var iMax = a;
+
+	if (a > b) {
+		iMax = a;
+		
+		// result.value = a;
+		// document.write(a);
+	}
+
+	if (a < b) {
+		iMax = b;
+		// result.value = b;
+		// document.write(b);
+	}
+
+	if (a == b) {
+		iMax = a;
+		// result.value = a;
+		// document.write(b);
+	}
+
+	result.value = iMax;
+}
+
+	</script>
+
+  </head>
+  <body>
+
+	请输入第一个数：<input type="text" id="num1" />
+	<br/>
+	<br/>
+	请输入第二个数：<input type="text" id="num2" />
+	<br/>
+	<br/>
+
+	<input style="width: 100px; background: gray; color: white;" type="button" value="比较" onclick="func()"/>
+
+    <br />
+    <br />
+	较大值： <input type="text" id="result" />
+  </body>
+</html>

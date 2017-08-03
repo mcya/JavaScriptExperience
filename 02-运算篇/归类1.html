@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+  //与运算：&
+  //var a=4&1;//=0
+  //var a=7&5;//=5
+  /*
+  7=111(2)
+  5=101(2)
+  7&5=101  ===>5
+  */
+
+  //或运算：|
+  //var a=7|5;//=7
+  /*
+  7=111(2)
+  5=101(2)
+  7|5=111  ===>7
+  */
+  //var a=5|4;//=5
+  /*
+  5=101
+  4=100
+  5|4=101 ===>5
+  */
+
+  //异或运算：^
+  //功能：相异即为真，否则为0；
+  //var a=5^4;//=1
+  /*
+  5=101
+  4=100
+  5^4=001 ===>1
+  */
+  //var a=10^2;//=8
+  /*
+  10=1010;
+  2 =0010;
+  ^ =1000;===>10^2=1000 ==>8
+  */
+
+  //进制数：
+  //十六进制的表示方法：在数值前面加上0x,0==>数字0；
+  //var a = 0xff;//=255
+  //八进制的表示方法：在数值前面加上0,0==>数字0；
+  //var a = 017;//=15
+
+  //数值以十六进制形式显示方法:a.toString(16)
+  //数值以八进制形式显示方法:a.toString(8)
+  //数值以二进制形式显示方法:a.toString(2)
+  /*
+  var a=29;
+  a=a.toString(16);
+  document.write(a);
+  */
+
+
+// 【了解】 以下内容为了解内容
+// object 对象类型
+var name = "zhangsan";
+var age = 18;
+
+// 定义了对象 stu，里面有两个属性： name, age
+var stu = {
+	name: "zhangsan",
+	age: 18,
+	toString: function() {
+		return "123";
+	}
+}
+
+// stu 的 name
+ document.write(stu.name);
+
+// Number 尝试将 stu 转换成数字 
+// Number 本质上，是调用对象中的String，将其中的内容转换成数字
+//document.write( Number(stu) );
+
+
+
+  </script>
+ </HEAD>
+
+ <BODY>
+  
+ </BODY>
+</HTML>

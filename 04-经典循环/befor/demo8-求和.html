@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+var i = 1;
+
+var sum = 0;
+
+while (i <= 100) {
+
+	// 栈
+	// 在内存中的栈区域分配这个空间
+	// 【注意】只会分配一次
+
+	sum = sum + i;
+	
+	// document.write(i + ", ");
+
+	i++;
+}
+
+//  i   sum
+// 100  100
+
+
+
+//   i   i<=100    sum
+//   1     true     1
+//   2     true     3 (1+2 =>3)
+//   3     true     6 (1+2 + 3)
+//   4     true     10 (1+2 + 3 + 4)
+//   5     true     15 (1+2 + 3 + 4 + 5)
+// ...
+//   100   true     5050 (1+2+3..+100)
+
+//  累加法
+
+document.write("总和:" + sum);
+
+
+	</script>
+
+  </head>
+  <body>
+	
+  </body>
+</html>

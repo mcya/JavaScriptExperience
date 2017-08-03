@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+// 因为生活中存在关系比较，计算机是解决生活中的问题的
+// 计算机也必须存在关系的比较
+/*
+
+// > 大于运算符
+// 功能： 进行比较
+// 值： 如果是真的，那么结果为true，否则 为false
+
+document.write( 5 > 3 );
+document.write( "<br>" );
+
+document.write( 5 < 3 );
+document.write( "<br>" );
+
+// >= 大于等于
+document.write( 5 >= 3 );
+document.write( "<br>" );
+
+document.write( 5 <= 3 );
+document.write( "<br>" );
+
+// != 不等于
+document.write( 5 != 3 );
+document.write( "<br>" );
+
+// 【注意】 等于是 ==
+document.write( 5 == 3 );
+document.write( "<br>" );
+*/
+
+
+/*
+var a = "11";
+var b = 11;
+
+// 判断两个数是否相等 ==
+// 【注意】 == 两个是不考虑类型的，只看值是否相等
+// document.write(a == b);
+
+// 那如果要考虑类型的话，怎么办？
+// === 必须类型 与 值 都一样的时候，才相等
+// document.write(a === b);
+
+// 找不到 abc 的定义
+// document.write("abc" === abc);
+
+// document.write("123" === 123);
+
+
+
+
+// != 与 == 是不考虑类型的
+// document.write("123" != 123);
+
+// !== 是考虑类型的
+document.write("123" !== 123);
+*/
+// 学习了这几个关系运算符
+// >, <, >=, <=, !=, ==, ===, !==
+
+
+/*
+// 判断变量 a 的值，是否在 [1, 10] 之间
+
+var a = 11;
+
+//(1) 1 <= a <= 10  优先级别一样的情况下，从左往右执行
+//(2) true <= 10   true 与 10比较的时候， true 会转换成 1
+//(3) 1 <= 10 结果为 true
+
+document.write(1 <= a <= 10);
+
+*/
+
+// 逻辑问题
+//  并且
+
+//  &&  表示并且的意思
+// 功能: 进行并且运算，
+// 值： 两者之间 只要存在假的，那么结果就为假
+//    true  && true  ==> true
+//    true  && false ==> false
+//    false && true  ==> false
+//    false && false ==> false
+
+//document.write( 5 > 3 && 5 < 1 );
+
+// document.write( true && true );
+
+/*
+// 判断变量 a 的值，是否在 [1, 10] 之间
+var a = -5;
+
+// 判断范围，一定要记得用 && 
+document.write(a >= 1 && a <= 10);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+// 表达式的值， 非0 即为真
+// document.write(5 && 5 > 2);
+
+// 0
+// document.write(5 && 0);
+
+
+
+/*
+var a = 0;
+
+// 当并且 第一个表达式为 假的时候，第二个表达式没必要看了，所以不执行了
+document.write( a && a++ );
+
+
+document.write( "<br>");
+document.write( a );
+*/
+
+
+
+
+
+
+
+
+// 或者
+// ||  代表或者
+// 功能： 逻辑操作
+// 结果： 只要存在一个true，那么结果就为true，否则就为false
+
+/*
+ true  || true  ==> true
+ true  || false ==> true
+ false || true  ==> true
+ false || false ==> false
+ */
+
+
+// document.write(5 > 3 || 1 != 1);
+
+// document.write(5 < 3 || 1 != 1);
+
+
+
+//  表达式1 || 表达式2
+// 
+// 如果 表达式1的值 为真，那么整体表达式的值就是 表达式1
+// 如果 表达式1的值 为假，那么还需要看表达式2的值，如果表达式2的值为真，整体表达式的值就是 表达式2
+
+// document.write( 1 != 1 || 5 );
+
+// 以后写兼容会用到 || 的操作
+// IE中存在东西 || Firefox中存在的东西
+
+
+
+// 颠倒黑白
+// ！ 逻辑运算中的非运算符
+// 功能： 逻辑运算
+// 结果： 如下：
+
+// !true ==> false
+// !false ==> true
+
+// 【注意】 ！ 的优先级别比较高
+// document.write( !(5>3) );
+
+
+
+
+
+
+// 逻辑运算： &&, ||, !
+// 关系运算： >, <, >=, <=, !=, ==, ===, !==
+// 位运算： &, |, ^
+// 赋值运算： =, +=, -=, *=, /=, %=
+// 算数运算： +, -, *, /, %, ++, --
+
+// 优先级别参考方法：
+// 1. 单目运算符 优先级别 高于 双目运算符
+//     !true, a++          >    3 + 5, 5 > 3
+// 2.  *, / % 大于 +, -
+// 3. 算数运算符 大于 关系运算符
+
+//　如果你不知道优先级别，加个 () 即可。
+n
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

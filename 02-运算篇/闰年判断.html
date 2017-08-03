@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 闰年判断 </title>
+
+<script>
+//计算某一年是否是闰年(与或非的运用);
+//闰年： 能被400整除 或者 能被4整除不能被100整除
+	/*
+	function judge(){
+		var year=num.value;
+		var a=year%400;
+		var b=year%4;
+		var c=year%100;
+		if (a==0)
+		{
+			document.write(year+"年是闰年")
+		}
+		else if (b==0&c!=0)
+		{
+			document.write(year+"年是闰年")
+		}
+		else{
+			document.write(year+"年不是闰年")
+		}
+	}
+	*/
+	//进化版：
+	function judge(){
+		var year=num.value;
+		if (year%400==0 || (year%4==0 && year%100!=0))
+		{
+			document.write(year+"年是闰年")
+		}
+		else{
+			document.write(year+"年不是闰年")
+		}
+	}
+
+</script>
+
+ </head>
+
+ <body>
+	  <p>计算某一年是否是闰年</p>
+	  <p>请输入年份：<input type="text" value="" id="num" /></p>
+	  <input type="button" value="判断" onclick="judge()" />
+ </body>
+</html>

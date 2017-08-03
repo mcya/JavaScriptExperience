@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+// var a = 1;
+
+// && 优先级别 小于 关系运算符(> < >=)
+
+// document.write(a > 3 && a < 10);
+
+
+// && 如果左边的结果为假了，
+//    右边的表达式就不执行了，相当于忽略不计
+// document.write(a > 3 && a++);
+// document.write("<br>");
+
+
+// var a = 0;
+
+// // && 运算符如果两边为数值，0代表假，否则代表真
+// a++ && a++;
+
+/*
+     a  整体表达式
+a++  1    0
+
+
+
+     a  整体表达式
+a++  2    1
+a++  3    2
+
+1 && 2
+*/
+
+// document.write(a);
+
+
+
+// 或 演示 ============
+
+// document.write(5 > 3 || 3 > 5);
+
+
+/*
+var a = 5;
+var a = "123";
+var a = {};
+*/
+// 如果左边值存在， 整体表达式就是左边的值
+
+/*
+var a = 0;
+var a = undefined;
+// null 代表对象不存在
+var a = null;
+*/
+// 如果左边值不存在， 然后算右边表达式
+//     如果右边表达式存在， 那么整体表达式就是右边的值
+//     如果右边表达式不存在， 那么整体表达式就为假
+// document.write(5 || 3 > 5);
+
+/*
+var a = 4;
+
+// 因为 a>1 的值为 真
+// || 就不需要看右边的值，所以 a++ 不执行
+a > 1 || a++;
+
+// 所以 a 还是原来的 4
+document.write(a);
+*/
+
+
+
+// document.write( !(5 > 3) );
+// document.write( !(5 < 3) );
+document.write( !5 < 3 );
+
+
+	</script>
+
+  </head>
+  <body>
+	
+  </body>
+</html>

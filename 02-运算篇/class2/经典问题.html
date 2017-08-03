@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+/*
+var a = 9; // (赋值运算符, 自增, 自减运算符)
+
+// a: 9, b: 9
+var b = a++;
+
+// a: 10
+var c = --b;
+
+// a: 10, b: 8, c: 8
+
+// editplus 快速选中一行： 光标移动到行首， shift+下键
+
+document.write(a + "<br>");
+
+document.write(b + "<br>");
+
+document.write(c + "<br>");
+*/
+/*
+document.write(a);
+document.write("<br>");
+
+document.write(b);
+document.write("<br>");
+
+document.write(c);
+document.write("<br>");
+*/
+
+
+
+
+
+
+
+
+// 如果需要取消注释  /* 前加上一个 / 即可
+/*
+// 为抵抗洪水，战士连续作战89小时，编程计算共多少天零多少小时？
+
+// 小时
+var hour = 89;
+
+// 天数
+var day = parseInt(hour / 24);
+
+// 小时数
+var h = hour % 24;
+
+
+document.write(day + "天" + h + "小时");
+//*/
+
+
+
+
+
+
+
+/*
+小明要到美国旅游，可是那里的温度是以华氏度为单位记录的。它需要一个程序将华氏温度（80度）转换为摄氏度，并以华氏度和摄氏度为单位分别显示该温度。
+：摄氏度与华氏度的转换公式为：摄氏度 = 5/9.0*(华氏度-32)
+保留3位小数
+
+
+
+var h = 80;
+var s = 5 / 9.0 * (h - 32);
+
+s = s.toFixed(3);
+
+document.write("华氏度:"+  h   +" 等于摄氏度 " + s + "");
+
+
+
+// document.write("华氏度:" + h + "等于摄氏度：" + s.toFixed(3));
+//*/
+
+
+
+/*
+var k = -1;
+
+// k++ 整体表达式的值，是加1之前 的那个值
+// ++k 整体表达式的值，是加1之后 的那个值
+
+// 0
+document.write(++k);
+
+document.write("<br>");
+
+// 0
+document.write(k);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+var k = -2;
+
+//     ++k + k++ + ++k + k
+
+//		k的值   整体的表达式
+// (1)   -1        -1 + k++ + ++k + k  (先算 ++k)
+// (2)   0         -1 + -1 + ++k + k  (再算 k++)
+// (3)   1          -1 + -1 + 1 + k  (再算 ++k)
+// (4)   1          -1 + -1 + 1 + 1  (再算 k)
+// 结果为： 0
+
+// 实际工作中不建议这样写
+document.write(++k + k++ + ++k + k);
+//*/
+
+
+
+
+
+
+
+/*
+// 入职薪水10K，每年涨幅5%，2年后工资多少？(预习for)
+
+// 工资
+var salary = 10000;
+
+salary = salary * 1.05;
+document.write("一年后工资: " + salary + "<br>");
+
+
+salary = salary * 1.05;
+document.write("两年后工资: " + salary + "<br>");
+
+*/
+
+
+
+
+// 十进制数
+//var a = 10;
+//document.write(a);
+
+/*
+// 定义十六进制数，在数值前加上 0x
+var a = 0xF;
+
+// 15 ，默认10进制显示
+//document.write(a);
+
+// 如果想以十六进制的形式查看数据，怎么办？
+// 调用 toString( 进制数 )
+// 例如 a.toString(16) 以16进制的形式显示数值a
+
+document.write( a.toString(16) );
+*/
+// 8进制数
+// 1111 ==> 001 111 ==> 17
+
+
+
+
+
+/*
+
+// 在数值前加上0，代表这个数值是 8进制的数值
+var a = 017;
+
+document.write(a.toString(8));
+
+*/
+
+
+
+
+var a = 10;
+
+// parseInt 有两种写法： 
+// (1)   parseInt(a), 默认以10进制强制转换a为整数
+// (2)   parseInt(a, 进制数)， 那么以对应进制数来转换数值 a
+var b = parseInt(a, 2);
+
+// 10(2) ==> 2(10)
+
+document.write(b);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

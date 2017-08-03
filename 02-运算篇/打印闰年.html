@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 打印闰年 </title>
+
+<script>
+//列举出不大于10的自然数
+	//while循环：
+	/*
+	var i=1;
+	var sum=i;
+	while (i<10)
+	{
+		sum=sum+i;
+		document.write(i+"<br>");
+		i++;
+	}
+	*/
+
+	//for循环
+	/*
+	var sum=i;
+	for(var i=1; i<10; i++){
+		document.write(i+"<br>");
+	}
+	*/
+
+
+//打印出1000-2000年中所有的闰年，并以每行四个数的形式输出
+	
+	var sum=i; 
+	//var i=1000;
+	for (var i=1000; i<=2000; i++)
+	{
+		if(i%400==0){
+			document.write(i+"<br>");
+		}
+		else if(i%4==0&&i%100!=0){
+			document.write(i+"<br>");
+		}
+	}
+	
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

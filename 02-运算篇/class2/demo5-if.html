@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+
+// 选择
+// 程序中的选择
+
+// 语法
+// if (表达式) {
+//     语句块
+// }
+
+// 执行流程：
+// 如果表达式的值 为真，那么执行 语句块 的内容
+// 如果表达式的值 为false， 那么不会执行 语句块 的内容
+
+
+/*
+var a = 0;
+if (a > 1) {
+	document.write("a > 1");
+}
+*/
+
+
+
+/*
+
+function test() {
+	// 点击按钮就会执行这段代码
+
+	var s = score.value;
+
+	if (s >= 90) {
+		document.write("优秀");
+	}
+
+	if (s < 40) {
+		document.write("你故意的吗？");
+	}
+}
+
+*/
+
+/*
+蒋哥买20个鸡蛋
+
+if (看到卖西瓜的) {
+	就买1个
+}
+
+蒋哥看到卖西瓜，所以执行if语句内的，所以买了一个鸡蛋回来了
+
+*/
+
+
+
+
+
+// editplus 小技巧
+// 选中代码 TAB 整体往右移动
+//          Shitf+ TAB  整体往左移动
+/*
+var s = 95;
+
+if (s >= 90) {
+	// if 里面的语句最好有缩进， Tab 键就可以
+	document.write("优秀");
+}
+*/
+
+/*
+【练习】
+
+      x * x     (x <0)
+y =   2x + 1 (1 <= x < 5)
+      4x -1     (x >= 5)
+
+
+
+定义x，在页面上输出 y
+*/
+/*
+// JavaScript 是一门 解释型语言，只要遇到错误，整个程序都终止了
+
+var x = 10;
+var y = 0;
+
+if (x < 0) {
+	
+	document.write(x * x);
+}
+
+if (1 <= x && x	< 5) {
+	document.write(2*x + 1);
+}
+
+if (x >= 5) {
+	document.write(4*x - 1);
+}
+
+// 总结：
+// 如果遇到了bug，也不要着急，一行一行的找，定位到出错那一行，再分享
+// 1. ; 注意是 英文状态下分号
+// 2. 2x  注意写错了，应该是 2*x
+// 3. 判断范围应该这样写 1 <= x && x < 5;
+
+
+
+*/
+
+
+
+/*
+
+var score = 70;
+
+if (score >= 60) {
+	document.write("及格");
+
+} else {
+	// else 中间的部分，是不满足if内部的条件的时候，就执行这里的代码
+	// 【注意】 else 前面必须有一个 if
+	document.write("不及格");
+}
+*/
+
+/*
+【练习】 输出 a,b 之间的最大值
+【要求】 用 if-else 结构来做
+*/
+
+/*
+var a = 123123;
+var b = 4123123;
+
+if (a > b) {
+	// 最大值是 a
+	document.write(a);
+} else {
+	// 否则最大值就是 b
+	document.write(b);
+}
+
+*/
+
+
+
+
+
+
+/*
+if (score < 60) {
+	// score < 60 是 score >= 60 的反条件
+	document.write("不及格");
+}
+*/
+
+
+
+
+
+
+
+/*
+
+var score = 60;
+
+
+if (score >= 90) {
+	// 第一条路
+	document.write("优秀！");
+
+} else if (score >= 80) {
+	// 第二条路，只有在第一条路走不通的时候，才会走这里
+	document.write("良好！");
+
+} else if (score >= 70) {
+	// 第三条
+	document.write("中等！");
+	// 可以写很多条路
+
+} else {
+	// 在上面所有路都走不通的情况下，就一定走这条路
+	document.write("再努力努力喽~");
+}
+*/
+
+/*
+【练习】
+
+      x * x     (x <0)
+y =   2x + 1 (1 <= x < 5)
+      4x -1     (x >= 5)
+
+
+【要求】 用 if -else if - else 的结构来写
+*/
+
+var x = 2;
+
+var y = 0;
+
+if (x < 0) {
+	y = x * x;
+	document.write(y);
+
+} else if (x >= 1 && x < 5) {
+	y = 2*x + 1;
+	document.write(y);
+
+} else if (x >= 5) {
+	y = 4*x - 1;
+
+	document.write(y);
+
+}
+
+// 【注意】 if 没有 {} 那么，判断成功的话，只会执行最近的那一条语句
+// 【建议】 不管是不是只有一行语句，都写上 {} 
+
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+<!--
+分数： <input type="text" value="" id="score" />
+<input type="button" value="测试" onclick="test()"/>
+-->
+ </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 身高体重 </title>
+
+<script>
+/*
+开发一款软件，根据公式（身高-108）*2=体重，可以有10斤左右的浮。来观察测试者体重是否合适要求输入 身高 和 体重
+杰哥： 168, 116
+预期的身高： (168 - 108)*2 == 120
+*/
+	function calc(){
+		var height=num1.value;
+		var weight=num2.value;
+		var a=(height-108)*2;
+		var b=weight-a;
+		if(b===0){
+			document.write("标准体重是："+a+"斤"+"<br>"+"恭喜您，您的身材非常标准！")
+		}
+		else if(b<0&&b>=-10){
+			document.write("标准体重是："+a+"斤"+"<br>"+"您有点瘦了，得吃点的好了！")
+		}
+		else if(b<-10){
+			document.write("标准体重是："+a+"斤"+"<br>"+"您太瘦了，要多吃点哦！")
+		}
+		else if(b>0&&b<=10){
+			document.write("标准体重是："+a+"斤"+"<br>"+"您有点胖咯，平时多注意点哦！")
+		}
+		else if(b>10){
+			document.write("标准体重是："+a+"斤"+"<br>"+"胖了哦，您该减减肥了！")
+		}
+	}
+
+</script>
+
+ </head>
+
+ <body>
+	<h1>身高体重标准测量</h1>
+	<p>请输入您的身高：<input type="text" value="" id="num1" /> / cm</p>
+	<p>请输入您的体重：<input type="text" value="" id="num2" /> / 斤</p>
+	<input type="button" value="确认" onclick="calc()" />
+ </body>
+</html>

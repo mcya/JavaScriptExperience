@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<style>
+div {
+/*为什么设置成 16进制数 #FF0000 就是红色呢？*/
+	background: #FF0000;
+	color: white;
+	width: 500px;
+	height: 500px;
+	font-size: 50px;
+	line-height: 500px;
+	text-align: center;
+}
+</style>
+
+<script>
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+  <div> 为什么背景是红色？ </div>
+
+<div>
+因为在 css 中设置了 background: #FF0000
+
+那么 #FF0000 十六进制在计算机 内部使用了 3个字节来存储这个数字
+
+11111111 00000000  00000000
+
+计算机内部电路的特性，根据这个字节中的数值，进行相应的处理，从而使得屏幕变成了红色。
+
+</div>
+
+
+ </body>
+</html>
