@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+/*
+function m1()
+{
+	document.write("m1");
+}
+
+//m1();
+
+
+function m2()
+{
+	// 自己调用自己，称为递归调用
+	m2();
+
+	document.write("m2");
+}
+
+m2();
+//*/
+
+
+
+
+
+
+
+// 求 5!
+// 5！ = 5*4*3*2*1 称为 5 的阶乘
+// 5!  = 5 * 4!  ==> 5 * 4 * 3!
+
+// 1! => 1
+
+// 写一个函数，用于 求 n 的阶乘
+/*
+function jiecheng(n)
+{
+	if (n == 1)
+	{
+		return 1;
+	}
+	
+	return n * jiecheng(n-1);
+}
+
+document.write( jiecheng(5) );
+//*/
+
+// 【练习】
+// 用递归 来求 5 的阶乘
+
+// n! = n * (n-1)!
+
+
+// 定义一个函数，用于求 n 的阶乘
+/*
+function func(n)
+{
+	if (n == 1)
+	{
+		// 就像电影院中的第一排一样，没有必要再计算，直接返回结果
+		return 1;
+	}
+
+	// func(n-1) 因为传递的参数是 n-1,那么就是求 (n-1) 的阶乘
+	return n * func(n-1);
+}
+
+document.write(     func(5)   );
+*/
+
+
+/*
+function func(n)
+{
+	var s = 1;
+
+	for (var i = 1; i <= n; i++)
+	{
+		s *= i;
+	}
+
+	return s;
+}
+
+
+document.write(  func(5)  );
+//*/
+
+
+
+/*
+*
+**
+***
+****
+*/
+
+// 打印 n 行的 三角形
+//   你输出 n-1 行的三角形
+//   ********* 我自己再输出 n 颗星星
+
+// 打印 n 行的 三角形
+/*
+function print( n )
+{
+	if (n == 1)
+	{
+		document.write("*");
+		return "";
+	}
+
+	print(n-1);
+
+	document.write("<br>");
+	for (var i = 1; i <= n; i++)
+	{
+		document.write("*");
+	}
+}
+
+print(10);
+//*/
+
+
+
+/*
+// 求 1+2+3+..+ n 之和
+
+// 1+2+3+..+ n ==> n + sum(n-1) ==> n + n-1 + sum(n-2)
+
+function sum(n)
+{
+	if (n == 1)
+	{
+		return 1;
+	}
+
+	return n + sum(n-1);
+}
+
+document.write( sum(100) );
+//*/
+
+
+
+
+
+// 1， 1， 2， 3， 5， 8， 13， 21 。。。
+// 第n个月的兔子总数  =  第n-1个月的兔子总数 + 第n-2个月的兔子总数
+
+// 问题： 求任意月兔子的总数
+
+
+
+/*
+
+
+
+
+
+
+
+function func(n)
+{
+	if (n == 1 || n == 0)
+	{
+		return 1;
+	}
+
+	return func(n-1) + func(n-2);
+}
+
+
+
+// 1年：  233对
+// 2年：  75025对
+// 3年：  24157817 对
+// document.write(      func(36)  );
+*/
+
+
+
+
+
+
+// 1， 1， 2， 3， 5， 8， 13， 21 。。。
+// 第n个月的兔子总数  =  第n-1个月的兔子总数 + 第n-2个月的兔子总数
+
+// 问题： 求任意月兔子的总数
+
+/*
+function func( n )
+{
+	if (n == 0 || n == 1)
+	{
+		return 1;
+	}
+
+	return func(n-1) + func(n-2);
+}
+
+
+var a = func(48);
+
+document.write(a);
+*/
+
+
+
+
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

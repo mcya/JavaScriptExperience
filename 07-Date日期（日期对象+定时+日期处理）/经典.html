@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> js </title>
+	<!---<script src="07-work-common.js"></script>--->
+<script>
+//封装日期处理的函数库(重要！)
+
+
+//判断某年份是否为闰年, 传入年份，返回值：为闰年返回 true, 否则返回 false
+	
+	/*
+	//判断闰年的函数：
+	//也可以放到另一个js文件中！
+
+	function leapYear(a)
+	{
+		if(a%400==0 || (a%4==0 && a%100!=0))
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+	
+	//方法1：
+	//var str = leapYear(2017);
+	//document.write(str);
+	
+	//方法2：
+	function jugde()
+	{
+		var str = leapYear( num.value );
+		document.write(str);
+	}
+	//*/
+
+
+
+
+//将日期对象格式化输出 “2015-08-24”
+
+	//类型一：从外部直接输入日期返回日期样式	
+	//===>function myDate也可以写在另一文件中
+	/*
+	var a="";
+	function myDate(a)
+	{
+		var b = a.slice(0,4);
+		var c = a.slice(4,6);
+		var d = a.slice(6,8);
+		a = b+"-"+c+"-"+d;
+		return a;
+	}
+	function jugde()
+	{
+		var str =myDate( num.value );
+		document.write(str);
+	}
+	//*/
+
+
+
+	//类型二：获取当前时间输出提给要求
+	/*
+	function myDay
+	{}
+
+
+
+
+	//*/
+
+
+
+//获得某个月份的天数，传入月份，返回对应月份的天数
+	/*
+	function myMonth(month)
+	{
+		if ( month>=1 && month<=12 )
+		{
+			if ( month==2 )
+			{
+				return "28 或 29";
+			}
+			else if ( month==4 || month==6 || month==9 || month==11 )
+			{
+				return "30";
+			}
+			else
+				return "31";
+		}
+		else
+			return "输入的月份无效"
+	}
+	function jugde()
+	{
+		var str = myMonth( num.value );
+		document.write(str);
+	}
+	//*/
+
+
+
+//判断两个日期相差的天数，传入两个日期对象，返回两者之间相差的天数
+	/*
+	var a="";
+	function myDate(a,b)
+	{
+		var y = Math.abs(Number(a.slice(0,4)) - Number(b.slice(0,4)));
+		var m = Math.abs(Number(a.slice(4,6)) - Number(b.slice(4,6)));
+		var d = Math.abs(Number(a.slice(6,8)) - Number(b.slice(6,8)));
+		var sum = y*365 + m*30 + d+"天";
+		return sum;
+	}
+	function jugde()
+	{
+		var str =myDate( num.value,num2.value );
+		document.write(str);
+	}
+	//*/
+
+
+//获得N天以后的日期，返回 N 天后的 日期对象
+
+	function myDay()
+	{
+		var oData = new Date(n);
+		var y = oData.getFullYear();
+		var m = oData.getMonths + 1;
+		var d = oData.getDate();
+		var str = "当前日期是:"+y+"年"+m+"月"+d+"日";
+		var count = d + n;
+		var y1 = y + parseInt( count/365 );
+		if ( y1>0 )
+		{
+			var m1 = parseInt( ( count-365*y1 )/30 );
+			if ( m1>0 )
+			{
+				d1 = (count - 365*y1 - m1*30);
+			}
+			else if ( m1=0 )
+			{
+				d1 = count-365*y1;
+			}
+			var str1 = "N天后的日期是:"+y1+"年"+m1+"月"+d1+"日";
+		}
+		var m1 = m + parseInt( count/30 ); count%30
+		}
+	}
+
+
+
+
+
+
+//将字符串转换为日期（选做）
+
+
+</script>
+
+ </head>
+
+ <body>
+	<input type="text" value="" id="num" />
+	<input type="text" value="" id="num2" />
+	<input type="button" value="判断" onclick="jugde()" />
+ </body>
+</html>

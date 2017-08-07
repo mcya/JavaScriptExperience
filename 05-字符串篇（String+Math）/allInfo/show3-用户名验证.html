@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+function register() {
+
+	var str = username.value;
+
+	if (str.length >= 6 && str.length <= 14) {
+		// alert("对的!");
+	} else {
+		alert("用户名长度错误!");
+
+		return "";
+	}
+
+
+	for (var i = 0; i < str.length; i++) {
+		if (str.charCodeAt(i) == 32) {
+			alert('不能有空格');
+			return "";
+		}
+	}
+
+
+
+
+
+    // 标记是否满足条件
+	var flag = true;
+
+	for (var i = 0; i < str.length; i++) {
+		var code = str.charCodeAt(i);
+		
+		if ( !(code >= 48 && code <= 57) ) {
+			flag = false;
+			break;
+		}
+	}
+
+	if (flag) {
+		alert('满足条件');
+	} else {
+		alert('不满足条件');
+	}
+	
+
+
+}
+
+	</script>
+
+  </head>
+  <body>
+
+	用户名: <input type="text" id="username" />
+
+	<input type="button" value="注册" onclick="register()" />
+	
+  </body>
+</html>
+

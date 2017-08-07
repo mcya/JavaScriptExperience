@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+
+<!-- 引入外部的 js 文件 -->
+<!-- 相当于 common.js 中的js代码，写在这里 -->
+<script src="common.js"></script>
+
+
+ </head>
+
+ <body>
+
+ <div id="div1"> </div>
+  
+
+
+<script>
+
+
+/*
+function func() {
+
+	// 调用函数 myDateString, 将返回值赋值给 str 变量
+	var str = myDateString();
+
+	document.getElementById("div1").innerHTML = str;
+}
+
+
+setInterval(func, 100);
+
+//*/
+
+// alert(str);
+
+
+
+
+
+// 第一个参数是一个匿名函数，
+// 每隔100毫秒执行，这个函数
+setInterval(function() {
+	// 将时间字符串显示到网页上
+	document.getElementById("div1").innerHTML = myDateString();
+}, 100);
+
+
+</script>
+
+ </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+
+  <script src="common.js"> </script>
+
+<script>
+
+/*
+var str = myDateString();
+
+
+document.write(str);
+//*/
+
+
+
+
+
+//alert(str);
+
+// alert(         );
+
+
+/*
+// 代码执行时刻的 时间对象
+var d1 = new Date();
+
+// 循环 1亿次，才 491ms 
+for (var i = 1; i < 100000000; i++)
+{
+	i = i;
+}
+
+// 代码执行时刻的 时间对象
+var d2 = new Date();
+
+// d1 时间，距离 1970.1.1 0:0:0 的毫秒数
+// 非常大的一个数字
+var t1 = d1.getTime();
+
+
+var t2 = d2.getTime();
+
+// d1 与 d2 毫秒差值
+var deta = t2 - t1;
+
+alert(deta);
+
+//*/
+
+
+
+// 代码执行时刻的 时间对象
+var d1 = new Date();
+
+// 设置日期对象的 是哪一天
+d1.setDate(10);
+
+// 年
+d1.setFullYear(1970);
+
+// 月 8月，月份是从0开始计数的
+d1.setMonth(7);
+
+// 10小时
+d1.setHours(10);
+
+// 10分钟  
+d1.setMinutes(10);
+
+// 10秒
+d1.setSeconds(10);
+
+// alert(d1);
+
+
+// 得到 d1 日期对象所对应的日期字符串
+var str = getDateString(d1);
+
+//var str = getDateString(null);
+
+document.write(str);
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

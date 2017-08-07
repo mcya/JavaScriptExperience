@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 倒计时 </title>
+
+<script src="common.js"></script>
+
+
+ </head>
+
+ <body>
+ 
+  <div id="div1"></div>
+ 
+ <img src="btn_buy0.jpg" id="img1"/>
+
+
+
+
+<script>
+	
+	//开始：
+	var end = new Date();
+	end.setDate( end.getSeconds() + 10 );//十秒钟后
+	//一小时后: end.setDate( end.getHours() + 1 );
+	//一分钟后: end.setDate( end.getMinutes() + 1 );
+	var str = "";
+	str += "距离："
+	str += getDateString( end );
+
+	//结束：
+	var start = new Date();
+	var deta = ( (end.getTime()-start.getTime()) / 1000);
+	deta = Math.round( deta );//四舍五入取整
+
+	str += "仅剩";
+	str += deta;
+	str += "秒";
+
+	document.getElementById("div1").innerHTML = str;
+
+	
+	var t = 0;
+	t = setInterval( function(){
+		deta--;
+		if ( deta <= 0 )
+		{
+			document.getElementById("img1").src="btn_buy.jpg";
+			clearInterval(t);
+		}
+		var str = "";
+		str += "距离：";
+		str += getDateString(end);//少了这个！！
+
+		str += deta;
+		str += "秒";
+		document.getElementById("div1").innerHTML = str;
+	},1000 )
+	//*/
+
+
+
+</script>
+
+ </body>
+</html>

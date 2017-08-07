@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 函数 </title>
+
+<script>
+
+/*
+//函数的声明和使用
+	//声明
+	function kungfu()
+	{
+		for (i=1; i<=10; i++)
+		{
+			document.write("我不会武功，一样暴打你！<br>")
+		}
+	}
+	//调用函数：
+	kungfu();
+//*/
+
+
+//利用函数求：~~~~1+2+3+...+n 的和~~~~~~
+	/*
+	//var s=0;
+	function sum(n)
+	{
+		var s=0;//写在外面也可以。
+		for (i=1; i<=n; i++)
+		{
+			s=s+i;
+		}
+		document.write(s)
+	}
+	sum(100);
+	//*/
+
+
+	//输入一个数字，返回一个数字
+
+	//方法1：
+	/*
+	function print()
+	{
+		var a=100;
+		return a;
+		//return 只能写在函数中，作为函数返回值。
+		//return 也代表了函数执行完毕，即是一遇到return函数即刻停止；
+	}
+	//var b=print();
+	document.write( print() );
+	//*/
+
+	//方法2：
+	/*
+	function print(a)
+	{
+		return a;
+		//return 只能写在函数中，作为函数返回值。
+		//return 也代表了函数执行完毕，即是一遇到return函数即刻停止；
+	}
+	var b=print(100);
+	document.write(b);
+	//*/
+
+	
+	//a+b
+	/*
+	function add(a,b)
+	{
+		sum=a+b;
+		return sum;
+	}
+	//var b=add(15,18);
+	document.write( add(150,18) );
+	//*/
+
+
+	//【练习】 带饭： 传入钱 和 饭的类别（面条 或 盖饭）面条： 80一碗，炸酱面盖饭： 120一碗，鱼香肉丝
+
+	//判断买什么，再判断 钱够不够！
+	//如果钱够，买回相应的饭菜
+	//如果钱不够，返回不够钱的信息
+	
+
+	//方法1：
+	/*
+	function eat(kind,money)
+	{
+		if (kind==0 && money>=80)
+		{
+			document.write("您选择炸酱面，需要消费80元。")
+		}
+		else if (kind==1 && money>=120)
+		{
+			document.write("您选择鱼香肉丝，需要消费120元。")
+		}
+		else if(kind!=1 && kind!=0)
+		{
+			document.write("无此类别！")
+		}
+		else if((money<=80 && kind==0) || (kind==1 && kind==1))
+		{
+			document.write("您的余额不足，请充值！")
+		}
+		return s;
+	}
+	eat(1,100);
+	//document.write( eat(0,100) )
+	//*/
+
+	//方法2：
+	function eat(kind,money)
+	{
+		if (kind==0 && money>=80)
+		{
+			return "您选择炸酱面，需要消费80元。"
+		}
+		else if (kind==1 && money>=120)
+		{
+			return "您选择鱼香肉丝，需要消费120元。"
+		}
+		else if(kind!=1 && kind!=0)
+		{
+			return "无此类别！"
+		}
+		else if((money<=80 && kind==0) || (kind==1 && kind==1))
+		{
+			return "您的余额不足，请充值！"
+		}
+		return s;
+	}
+	document.write( eat(1,100) );
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script src="common.js"> </script>
+
+
+ </head>
+
+ <body>
+ 
+  <div id="div1"></div>
+ 
+ <img src="btn_buy0.jpg" id="img1"/>
+
+
+
+
+<script>
+
+// 通过这个代码，可以设置图片为可以点击的状态
+// document.getElementById("img1").src = "btn_buy.jpg";
+
+
+
+
+
+
+
+
+
+var end = new Date();
+
+// 100天以后
+// 系统会自动转换，不需要考虑一个月有多少天
+// end.setDate(   end.getDate()  + 100  );
+
+
+
+// 1小时以后
+ //end.setHours(   end.getHours() + 1  );
+
+// 1分钟以后
+// end.setMinutes( end.getMinutes() + 1 );
+
+
+// 10秒钟以后
+end.setSeconds( end.getSeconds() + 10);
+
+
+
+var str = "";
+
+str += "距离："
+str += getDateString( end );
+
+
+// 当前时间
+var start = new Date();
+
+// 计算 end 与 start 相差多少秒
+var deta = (end.getTime() - start.getTime()) / 1000;
+
+// 四舍五入取整
+deta = Math.round(deta);
+
+
+str += " 仅剩";
+str += deta;
+str += "秒"
+
+document.getElementById("div1").innerHTML = str;
+
+
+var t = 0;
+
+// 倒计时开始
+t = setInterval(function() {
+	
+	// 定时中，每一次减少一秒，实现倒计时
+	deta--;
+
+	
+	// 当倒计时 减少到0的时候，说明到时间了
+	if (deta <= 0)
+	{
+		// 将图片设置成可以点击的状态
+		document.getElementById("img1").src = "btn_buy.jpg";
+
+		// 清除定时器
+		clearInterval(t);
+	}
+
+	var str = "";
+
+	str += "距离:"
+	str += getDateString(end);
+
+	str += "仅剩:"
+	str += deta;
+	str += "秒"
+
+
+	document.getElementById("div1").innerHTML = str;
+
+
+}, 1000);
+
+</script>
+
+ </body>
+</html>

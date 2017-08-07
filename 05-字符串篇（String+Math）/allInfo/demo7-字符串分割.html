@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+
+// var price = "￥100.2元";
+
+// 假如我买了5条，要算出总价
+
+// 思路：
+//  （1）将数字提取出来
+//   (2) 单价*数量
+
+
+// substr: 截取字符串  
+//  1个参数： 从哪个字符开始 下标
+//  2个参数： 截取长度
+// price = price.substr(1, 5);
+
+
+//document.write(price);
+
+
+/*
+var price = "￥100.2元";
+// substring: 截取字符串， 自动选择两个参数中最大值作为终止下标
+//  1个参数： 从开始下标，包括这个下标的字符
+//  2个参数： 终止字符的下标， 但不包括这个字符
+price = price.substring(6, 1);
+
+document.write(price);
+//*/
+
+
+
+/*
+var price = "￥100.2元";
+
+// slice: 截取字符串
+//  1个参数： 从开始下标，包括这个下标的字符
+//  2个参数： 终止字符的下标， 但不包括这个字符
+
+// 参数可以接受负数，代表倒着数， -1 代表代表倒数第一个
+
+// var end = -1;
+
+price = price.slice(1, -1);
+
+// 将字符串转换成数字
+price = Number(price);
+
+// 算出总价 price * 5
+document.write(price * 5);
+
+*/
+
+
+
+
+
+var price = "￥100.2元";
+
+// 从下标为1开始，到最后一个字符
+// price = price.slice(1);
+
+// 从倒数第一个开始截取，到整个字符串结束
+// "元"
+price = price.slice(-1);
+
+
+document.write(price);
+
+
+
+
+
+// var t = 5 * price;
+
+//document.write(t);
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

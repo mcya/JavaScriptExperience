@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 经典问题 </title>
+
+<script>
+
+// 1*******************
+//---注册页面的简单数据校验，（14K）
+// (1) 名字只能包含数字、字母和下划线，数字不可以开头
+// (2) 长度不低于6，不高于20
+// (3) 昵称一栏要将敏感词(tmd, fuck 等)过滤，在提交表单时自动替换非法字符!
+// (4) 密码必须一致
+// (5) 弹出警告信息-所有输入框不能为空，并数据合法
+// (6) 点击提交才可以正确提交表单数据
+	
+	//*
+	function btn()
+	{
+		var na=userName.value;
+		var arr=["tmd","fuck","cao","王八羔子","尼玛"];
+		var n=na.length;
+		for (i=0; i<arr.length; i++)
+		{
+			var code = new RegExp(arr[i],"gi" );
+			na = na.replace( code,"*" )
+		}
+		userName.value = na;
+		if ( ! ( isNaN(na[0]) ) )
+		{
+			alert("不能以数字开头");
+		}
+		else if (n<6 || n>20)//【注意】是 || 不是 &&
+		//if( !(n>= 6 && n<= 20) )//==>写法2
+		{
+			alert("昵称长度必须在6~20之间");
+		}
+		else if (userPassword2.value != userPassword1.value)
+		{
+			alert("输入密码不一致！")
+		}
+		else if (userName.value=="" || userPassword1.value=="" || userPassword2.value=="" || userWrite.value=="")
+		{
+			alert("所有输入框都不能为空")
+		}
+		else if( (n >= 48 && n <= 57) || (n >= 65 && n <= 90) || (n >= 97 && n <= 122) || n == 95 ) 
+		//48=0，57=9,65=A,90=Z,97=a,122=z,95=_
+		{
+			alert("昵称只能由数字、英文字母和下划线组成");
+		}
+		else 
+		  alert("可提交")
+		
+	}
+	//*/
+
+
+//2~~~~~~~~~~~~~~
+//已知字符串“a,a,b,c,c,d,f,g,j,j”编程实现以下功能.
+//统计每个字符出现的次数，结果显示 a 2、b 1、c 2、d1
+//去掉重复的字符，使结果显示 abcd
+
+
+
+	/*
+	function ch()
+	{
+		var arr=["a","a","b","c","c","d","f","g","j","j"];
+		//var s = new String("aabccdfgjj");
+		var r="";
+		for (i=0; i<arr.length; i++)
+		{
+			var code = arr.charCodeAt(i);
+			r=r+i;
+		}
+		document.write(r);
+	}
+	ch();
+	//*/
+
+	//不是最优的方法
+	/*
+	const arr="aabccdfgjj";
+	let counter = {};
+	for (let i = 0, len = arr.length; i < len; i++ ) {
+		counter[arr[i]] ? counter[arr[i]]++ : counter[arr[i]] = 1;
+	}
+	console.log(counter);
+	//*/
+	/*
+	var arr="abcdaabc"
+	var count = {};
+	var i,k
+	for(i=0;i<arr.length;i++){
+		var chr = arr.charAt(i);
+		if( typeof count[chr] === "undefined"){
+			count[chr] = 1;
+		}else{
+			count[chr]++;
+		}
+	}
+	console.log(count)
+	for(k in count){
+		if(count.hasOwnProperty(k)){
+			console.log("%s:%d",k,count[k]);
+		}
+	}
+	//*/
+	
+	//二叉树
+	/*
+	var str='sadzewrwewasdfaxzvzxfasdaswe';
+
+	function count(s, e)
+	{
+		if(s>e)
+		{
+			return {};
+		}
+		else if(s==e)    
+		{
+			var x=str.charAt(s);
+			
+			var json={};
+			
+			json[x]=1;
+			
+			return json;
+		}
+		
+		var c=Math.floor((s+e)/2);
+		
+		
+		var l=count(s, c);        
+		var r=count(c+1, e);    
+		
+		
+		var result=l;
+		
+		for(var i in r)
+		{
+			
+			
+			if(result[i])    
+			{
+				result[i]+=r[i];
+			}
+			else            
+			{
+				result[i]=r[i];
+			}
+		}
+		
+		return result;
+	}
+
+	console.log(count(0, str.length-1));
+	//*/
+
+	/*
+	var arr = 'aabccdfgjj';
+	var info = arr;
+    .split('');
+    .reduce((p, k) => (p[k]++ || (p[k] = 1), p), {});
+	console.log(info);
+
+	//*/
+//使用方法只要把要处理的字符串传入函数中就行
+/*
+ function numInstring(str)
+        {
+            var text="";
+            //循环的套出每个字符出现的次数 str会慢慢的变短直到为空
+            while(str!="")
+            {
+                //先将字符打散
+                var newstr=str.split("");
+                var count=0;
+                //求得第一个字符出现的次数
+                for(var i=0;i < newstr.length;i++)
+                {
+                    if(newstr[0]==newstr[i])
+                    {
+                        count++;
+                    }
+                }
+                //在字符串中删掉跟第一个字符一样的所有字符
+                var re=new RegExp(newstr[0],"g");
+                str=str.replace(re,"");
+                text+=newstr[0]+":"+count+"次;";
+            }
+            return text;//我这里返回的是一段文本 可以自己改写成自己想要的形式
+        }
+		//*/
+
+
+
+
+//产生一个 5~100 之间的随机 整数
+//用户输入一个数字，提示 “大了” 或 “小了” 直到用户猜对为止！
+//     随机数，0-100;
+//     if--大于5
+//     value值对比
+	/*
+	function guess()
+	{
+		var num = userData
+		var a;
+		if (a>=parseInt( Math.random()*5) && a<=parseInt( Math.random()*100) )
+		{
+			if ()
+			{
+			}
+		}
+	}
+	//*/
+
+
+
+</script>
+
+ </head>
+
+ <body>
+	
+	<h1>注册</h1>
+	<p>昵称：<input type="text" value="" id="userName" /></p>
+	<p>密码：<input type="password" value="" id="userPassword1" /></p>
+	<p>确认密码：<input type="password" value="" id="userPassword2" /></p>
+	<p>个性签名：<input type="text" value="" id="userWrite" /></p>
+	<input type="button" value="确定" onclick="btn()" />
+	
+	<!-------------
+	<h1>猜一猜</h1>
+	<p>输入数据：<input type="text" value="" id="userData" /></p>
+	<input type="button" value="确定" onclick="guess()" />
+	---------------->
+ </body>
+</html>

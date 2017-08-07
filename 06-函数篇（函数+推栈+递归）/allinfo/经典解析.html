@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+/*
+// 1. 打印出1-100里所有的偶数
+for (var i = 1; i <= 100; i++) {
+	// if (i % 2 == 0) {
+    //     document.write( i + "," );
+	// }
+
+
+	if (i % 2 != 0) {
+
+		break;
+
+		//continue;
+	}
+
+    document.write( i + "," );
+}
+
+document.write("123" );
+
+
+//*/
+
+
+/*
+//2. 打印出1-100里所有的奇数
+for (var i = 1; i <= 100; i++) {
+	if (i % 2 != 0) {
+        document.write( i + "," );
+	}
+}
+//*/
+
+
+
+
+/*
+//3.求出1-1/2+1/3-1/4…..1/100的和
+
+// 1 + (-1/2) + 1/3 + (-1/4)…..1/100
+var s = 0;
+for (var i = 1; i <= 100; i++) {
+ 	if (i % 2 == 0) {
+		s = s + (-1/i);
+ 		// s -= 1/i;
+ 	} else {
+ 		s += 1/i;
+ 	}
+}
+document.write(s);//0.688172179310195 
+
+//*/
+
+/*
+
+var str = "";
+for (var i = 1; i <= 100; i++) {
+	if (i % 2 == 0) {
+		// 如果是 字符串 + Number 进行运算
+		// + 不再是 相加，而是拼接
+		str = str + "-1/" + i;
+	} else {
+		str = str + "+1/" + i;
+	}
+}
+var r = eval(str);
+
+document.write(r);
+
+*/
+
+// var a = 3;
+// var b = 5;
+
+// //alert("a*b");
+
+// // 将字符串按照 js 的语法重新执行
+// var c = eval("3*5");
+
+// alert(c);
+
+
+
+
+
+
+
+
+
+//document.write( eval("1+2*3") );//eval可以把参数尝试转换为js可以理解的表达式
+/*
+var str="";
+for (var i = 1; i <= 100; i++) {
+	if (i % 2 == 0) {
+		str += "-1/"+i;
+	} else {
+		str += "-1/"+i;
+	}
+}
+document.write(str+"=");
+document.write(eval(str));
+//*/
+
+//三目运算符（三元运算符）
+//  (条件) ? "条件满足时的值" : "条件不满足时的值" 
+
+
+
+
+// js 中写文档注释，一般用 /** 开始写
+/**
+ * 
+ */
+
+//输出20-80之间能被3整除的整数，每5个一行
+/*
+var count = 0;
+
+for (var i = 20; i <= 80; i++) {
+
+	if (i % 3 == 0) {
+		document.write(i + ", ");
+
+		count++;
+	}
+
+	if (count == 5) {
+		document.write("<br>");
+		count = 0;
+	}
+}
+//*/
+
+
+
+
+
+
+/*
+
+
+
+var k = 0;
+for (var i = 20; i <= 80; i++){
+	if (i % 3 == 0){
+		k++;
+		document.write(i+" ");
+		if (k==5) {
+			document.write("<br>");
+			k=0;
+		}
+	}
+}
+//*/
+
+
+//打印出1000-2000年中所有的闰年，并以每行四个数的形式输出
+//能被4整除且不能被100整除，或 能被400整除
+//*
+var b = 0, k = 0;
+
+for (var i = 1000; i <= 2000; i++) {
+
+	b = ((i%4==0 && i%100!=0) || (i%400==0));
+
+	if ( b ) {
+		k++;
+		document.write(i+" ");
+
+		if(k%4==0){
+			document.write("<br>");
+		}
+	}
+}
+//*/
+
+
+// 6. 输出九九乘法表
+/*
+for(var i = 1; i <= 9; i++) {
+
+	for(var j = 1; j <= i; j++) {
+		document.write(j+"×"+i+"="+i*j+"&emsp;");
+		break;
+	}
+	document.write("<br>");
+}
+//*/
+
+
+
+
+
+//var s = "1+2+3";
+
+// eval 将字符串重新执行了
+// document.write( eval(s) );
+
+/*
+var count = 0;
+
+for (var i = 20; i <= 80; i++)
+{
+	if (i % 3 == 0)
+	{
+		document.write(i + ",");
+		count++;
+		
+		if (count % 5 == 0)
+		{
+			document.write("<br>");
+		}
+	}
+
+	
+}
+
+//*/
+
+
+	</script>
+
+  </head>
+  <body>
+	
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+/*
+var s = "赢了, fuck!  tmd tmd tmd tmd tmd!";
+
+// 返回： 第一个匹配到字符串的 第一个字符的 下标
+//       如果一个都匹配不到，那么返回 -1. 也就是返回负数说明没有找到
+var r = s.indexOf("tmd");
+
+document.write(r);
+
+// 【注意】 replace 是将 替换的结果 返回，并不会改变原本 s 的值
+//         只替换第一个！！！！！！
+// s = s.replace("tmd", "***");
+
+// document.write(s);
+//*/
+
+/*
+//【下课练习】
+var s = "tmd, 赢了,tmd, tmd fuck!  tmd tmd tmd tmd tmd!";
+
+// 要替换多少次？ 或者说： 替换到再也找不到 tmd 为止
+while ( s.indexOf("tmd") > -1 )
+{
+	// 只要找得到 tmd，那么一直替换
+	s = s.replace("tmd", "*");
+}
+document.write(s);
+//*/
+/*
+
+var s = "tmd, TMD, Tmd, tMD! 赢了! I love you!";
+
+// 将所有字符都转换成小写字母，重新赋值给 s
+//s = s.toLowerCase();
+
+
+// 正则表达式
+// 第二个参数中： g 是代表 整个都替换，全局  [g]lobal
+// 第二个参数中： i 是代表 忽略大小写，忽略  [i]gnore
+var reg = new RegExp("tmd", "gi");
+
+s = s.replace(reg, "*");
+
+
+// 将所有字符都转换成大写字符
+//s = s.toUpperCase();
+
+document.write(s);
+//*/
+
+
+var s = "tmd, abc, abc";
+
+// 返回【第一次】找到 abc 的下标
+var r = s.indexOf("abc");
+
+// 以弹窗的形式输出变量(表达式)的值
+alert(r);
+
+
+
+//document.write(r);
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

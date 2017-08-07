@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<!-- 导入封装好的 函数库 -->
+  <script src="my.js"> </script>
+
+<script>
+
+// write("呵呵");
+
+
+// 系统默认引入了 parseInt 函数
+// var a = parseInt(5.3);
+
+
+/*
+var obj = {
+	name: "zhangsan",
+	age: 18,
+	// 没有名字的函数称为 匿名函数
+	toString: function() {
+		return "567";
+	}
+}
+
+var a = Number(obj);
+
+write(a);
+*/
+/*
+function m1() 
+{
+	write("m1");
+}
+
+// 变量的类型： number, string, boolean, function, object, undefined
+// 函数名其实是一个变量，他的类型是 function
+// write(typeof m1);
+
+// 将函数 m1 赋值给 m2
+var m2 = m1;
+
+// 因为 m2 等于 m1， 那么调用 m2 就相当于 调用 m1 了
+m2();
+//*/
+
+/*
+
+// 将一个匿名函数 赋值 给 m1
+var m1 = function () {
+	write("我是匿名函数！<br>");
+}
+
+m1();
+
+//*/
+
+
+function m1() 
+{
+	write("自动输入到网页上");
+}
+
+// 将 函数 m1 的返回值赋值给 m2
+// 因为 m1() 没有返回值，那么
+// 相当于将 undefined  赋值给 m2
+var m2 = m1();
+
+// 所以 undefined() 调用出错
+m2();
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

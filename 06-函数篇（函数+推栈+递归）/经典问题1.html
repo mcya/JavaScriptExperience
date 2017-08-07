@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 作业 </title>
+
+<script>
+
+//1~~~编写函数，求一个正数的n次方
+	/*
+	function power(count,n)
+	{
+		if (count>0)
+		{
+			var s=Math.pow(count,n)
+			return s;
+		}
+		return "请输入正数"
+	}
+	document.write( power(-5,2) );
+	//*/
+
+
+//2~~~编写函数，求4个数的平均值
+	/*
+	function avg(a,b,c,d)
+	{
+		var s=(a+b+c+d)/4
+		return s;
+	}
+	document.write( avg(520,510,500,550) );
+	//*/
+
+
+//3~~~判断日期是否正确, 需考虑闰年的情况
+	/*
+	function judge(year,month,day)
+	{
+		//总体年月日：
+		if (year>0 && (month>=1 && month<=12) && (day>=1 && day<=31))
+		{
+			
+			//30和31：
+			if ( (month==4 || month==6 || month==9 || month==11) && day>30)
+			{
+				return "亲，这个月只有30天哦！"
+			}
+			
+			//闰年：
+			else if (year%400==0 || (year%4==0 && year%100!=0))
+			{
+				if (month==2 && day>29)
+				{
+					return "亲，闰年的2月只有到29号哦！"
+				}
+				return "您输入的年月日正确，而且还是闰年呢!"
+			}
+			//平年2月：
+			else if (month==2 && day>28)
+			{
+				return "亲，平年的2月只有到28号呢！"
+			}
+			return "您输入的年月日正确的！"
+		}
+		return "你是来自外星的吧？我们地球无此年月日！"
+	}
+	document.write( judge(2017,2,29) )
+	//*/
+
+
+//4~~~~输出斐波那契数列的前20项(递归或非递归)
+
+	//递归:
+	/*
+	function fibonaci(n)
+	{
+		if (n==0 || n==1)
+		{
+			return 1;
+		}
+		var sum=fibonaci(n-1)+fibonaci(n-2);
+		return sum;
+	}
+	document.write( fibonaci(20) );
+	//*/
+
+	//非递归：
+	/*
+	function fibonacci(n)
+	{
+		if (n==0 || n==1)
+		{
+			return 1;
+		}
+		var sum1;
+		var sum_1=1;
+		var sum_2=0;
+		for (var i=1; i<=n; i++)
+		{
+			sum=sum_2+sum_1;
+			sum_2=sum_1;
+			sum_1=sum;
+		}
+		return sum;
+	}
+	document.write( fibonacci(24) )
+	//*/
+
+//5~~~~~【选做】函数调用时，传递任意多的数字，计算这任意多数字之和
+	/*
+	function func(n)
+	{
+		var sum=0;
+		for (var i=0; i<=n; i++)
+		{
+			sum=func(n)+
+		}
+	}
+	//*/
+
+	//利用arguments存储函数中的参数
+	//*
+	function sum()
+	{
+		var sum=0;
+		for (var i=0; i<=arguments.length-1; i++)
+		{
+			sum=sum+arguments[i];
+		}
+		return sum;
+	}
+	var a=sum(5,2,10);
+	document.write( a );
+	//*/
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

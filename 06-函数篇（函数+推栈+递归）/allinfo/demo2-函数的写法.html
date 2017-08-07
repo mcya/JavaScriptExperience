@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+/*
+// function 代表声明一个函数
+// print 代表函数的名字，满足标识符的条件
+// () 格式
+// {} 函数中的代码
+function print() 
+{
+	document.write("呵呵");
+}
+
+
+// 调用函数，也就是执行函数
+// 格式：函数名();
+print();
+//*/
+
+// 【练习】 
+// 请将  打印10次 “我不会武功” 这段代码  封装成一个函数，并且调用
+
+/*
+// 定义了函数 kongfu，用于输出  10次 我不会武功
+function kongfu()
+{
+	for (var i = 1; i <= 10; i++)
+	{
+		document.write("我不会武功<br>");
+	}
+}
+
+
+// 调用函数 kongfu
+kongfu();
+
+//*/
+
+
+
+/*
+// 声明了函数 kongfu, 满足标识符的条件，代表函数的名字
+// (count) count 代表工具的输入内容，称为函数的参数
+// count 代表要打印多少次 "我不会武功"
+function kongfu(count)
+{
+	for (var i = 1; i <= count; i++)
+	{
+		document.write("我不会武功<br>");
+	}
+}
+
+// 函数的调用格式：
+// 函数名(参数)
+// 调用时，会将 5 传递给 count
+kongfu(5);
+
+//*/
+
+/*
+【练习】
+请 将 1+2+3+...+n 的和输出到页面上 这段代码
+封装成一个函数 sum，并调用
+*/
+/*
+function sum(n)
+{
+	var s = 0;
+	for (var i = 1; i <= n; i++)
+	{
+		s += i;
+	}
+
+	document.write(s);
+}
+
+
+// 函数调用时，确保调用的名字 和声明的名字 一模一样
+// 如果函数有参数，那么调用时，也需要传递参数，
+// 相当于 将 3 赋值 n
+sum(3);
+//*/
+
+
+
+
+/*
+function sum(n)
+{
+	var s = 0;
+	for (var i = 1; i <= n; i++)
+	{
+		s += i;
+	}
+
+	// 函数的输出，就是 return 后面的 表达式的值
+	// 也称为函数的返回值
+	return s;
+}
+
+// 函数调用 sum(10) 整体的值，就是 函数中 return 后面的表达式的值
+//      
+// document.write( sum(10) );
+
+// 整体的值，可以赋值给一个变量
+// 给a赋的值，就是函数的返回值
+var a = sum(10);
+document.write(a);
+
+*/
+
+
+
+//
+//【练习】
+// 将 
+// 输入一个数字，返回一个数字 
+// 这段代码封装成一个函数，
+// 并调用
+
+// 例如
+// 5 返回 5
+// 10 返回 10
+/*
+// echo 回响
+function echo(a)
+{
+	// return 只能写在函数中，作为函数的返回值
+	// 也代表函数执行完毕
+	return a;
+
+	// 函数中 return 后面的语句都会跳过
+	// 所以这里不执行
+	document.write("abc");
+}
+
+
+var b = echo(100);
+
+document.write(b);
+
+//*/
+
+// 求两个数字之和
+// 如果函数有多个参数，可以用 逗号分隔，参数个数没有限制
+// 函数声明的参数，称为 形参
+function add(a, b)
+{
+	return (a + b);
+}
+
+// 调用时，如果有多个参数，用逗号分隔
+// 并且参数是【一一】对应的
+// 例子中， 3==>a,  5==>b
+// 函数中调用的参数，称为 实参
+var s = add(3, 5);
+document.write(s);
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

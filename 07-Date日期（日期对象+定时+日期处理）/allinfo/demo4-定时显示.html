@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+// 显示当前时间： 例如：  9:10:10
+// 思路
+//  1. 显示当前时间
+//  2. 创建一个定时器，定时显示
+
+function display()
+{
+	// 创建一个当前时间的对象
+	var oDate = new Date();
+
+	// 获取日期对象的 时、分、秒
+	var h = oDate.getHours();
+	var m = oDate.getMinutes();
+	var s = oDate.getSeconds();
+
+	var str = h + ":" + m + ":" + s;
+
+	document.getElementById("div1").innerHTML = str;
+}
+
+function func()
+{
+	setInterval( display , 1000);
+
+}
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+  <div id="div1"> <p></p>  </div>
+
+
+  <input id="btn1" type="button" value="按钮" onclick="func()"/>
+
+ </body>
+
+<script>
+
+// alert(  document.getElementById("div1").innerHTML  );
+
+// 代码执行到这里，div1肯定创建好了
+// document.getElementById("div1").innerHTML = "XXXX";
+
+// 得到的是一个 对象
+// var oBtn = document.getElementById("btn1");
+
+// 因为 按钮 <input /> 没有 innerHTML
+// <div> ...innerHTML  </div>
+
+// alert(  oBtn.value   ); 
+
+
+
+// oBtn.value = "XXXXXXXX";
+
+// oBtn.innerHTML = "哈哈";
+
+
+
+
+
+
+// <input id="btn1" type="button" value="按钮" onclick="func()"/>
+var oBtn = document.getElementById("btn1");
+
+
+// oBtn.onclick 是 oBtn 对象中的 onclick 属性值
+// alert( oBtn.onclick  );
+
+// 可以配置 按钮点击执行的函数 为 display 函数
+// oBtn.onclick = display;
+
+
+// oBtn.onclick 为 display 函数执行后的返回值 undefined
+
+// 配置 onclick 为 undefined
+// oBtn.onclick = display();
+
+
+// 创建一个匿名函数，将它赋值给 按钮的 onclick 属性
+oBtn.onclick = function() {
+	alert('abc');
+}
+
+
+
+
+
+
+
+
+
+// 没有这个属性，所以是 undefined
+//alert( oBtn.xxx  );
+
+
+
+// 对象中的type 属性值
+// alert( oBtn.type  );
+
+
+
+
+
+
+</script>
+
+</html>

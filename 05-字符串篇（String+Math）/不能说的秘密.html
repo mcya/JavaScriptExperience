@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+//加密文件练习
+	//解析版：
+	/*
+	function encrypt()
+	{
+		var s=secret.value;//==>接收input的值
+		var str=new String(s);
+		//==>转换成对象，用于【调用对象特有的方法(函数)】 charCodeAt ，实现加密（这也转换成对象的目的）
+		//上面两句话可以简写成：		
+		//var str=secret.value;
+		//因为：string 类型的可以当做字符串对象来用
+		var r="";//定义一个空的对象，用于接收加密后的数字
+		         //这里的加密是指：把字符转换成ASCII码
+		for (var i=0; i<str.length; i++)
+		{
+			var code=str.charCodeAt(i);
+			//把每一个字符转换成ASCII码
+			//str.charCodeAt(i)：对应str对象中第i个数据的值，类似数组a[i]
+			r+=code; // 用r存储加密后数字即ASCII码
+			r+=",";  // 用","隔开
+			//r+=code、r+="," 提现了对象的特性
+			//对象不会像数字那样对code的数值进行累加
+			//对象只是会吧code的值进行一个拼接
+			//r+=","也是拼接的，只是让我们在结果中看到用逗号分开，明显一些
+		}
+		//document.write(r);//在另一个页面输出
+		secret.value=r;
+		//直接在输入框显示
+		//也利用js是解释性语言，一句一句的解析，最后达到一个覆盖的作用。
+
+	}
+	//encrypt();//可以不写！！
+	//*/
+
+	
+	//清晰版：
+	/*
+	function encrypt()
+	{
+		var s=secret.value;
+		//String str = new String(s);===>错误！
+		//把s赋给一个对象【注意写法】
+		var str=new String(s);
+		r="";
+		for (i=0; i<str.length; i++)
+		{
+			var code = str.charCodeAt(i);
+			r=r+code;
+			r=r+",";
+		}
+		secret.value=r;
+	}
+	//*/
+	//=========>熟能生巧！！
+
+</script>
+
+ </head>
+
+ <body>
+	<h1>不能说的秘密</h1>
+	<input type="text" value="" id="secret" />
+	<input type="button" value="加密" onclick="encrypt()" />
+	<input type="button" value="解密" onclick="lessen()" />
+ </body>
+</html>

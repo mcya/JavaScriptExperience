@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+function filter() 
+{
+	var s = txt1.value;
+
+	var arr = ["tmd", "fuck", "靠"];
+
+	for (var i = 0; i < arr.length; i++)
+	{
+		var r = new RegExp(arr[i], "ig");
+
+		s = s.replace(r, "*");
+	}
+
+	txt2.value = s;
+}
+
+</script>
+
+ </head>
+
+ <body>
+  
+  <textarea id="txt1"> </textarea>
+
+	<input type="button" value="过滤" onclick="filter()"/>
+
+  <textarea id="txt2"> </textarea>
+
+
+ </body>
+</html>

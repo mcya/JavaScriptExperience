@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<style>
+#div1 {
+	width: 100px;
+	height: 100px;
+	background: red;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+}	
+</style>
+
+<script>
+
+// 练习：
+// 点击按钮： 让这个方块，从 左上点 往 右下点 移动
+
+var x = 100;
+var y = 100;
+
+function func() 
+{
+	// 获取到 div 对象
+	// oDiv 其实只是一个变量名而已，只要你满足标识符的条件都行
+	//               a, b, c, d ..
+	// 建议：  o 代表 object 类型
+	var oDiv = document.getElementById("div1");
+
+	oDiv.style.left = x + "px";
+	oDiv.style.top = y + "px";
+
+	x += 10;
+	y += 10;
+
+	// 启动一个定时器，每隔 500ms 执行 func 函数
+	// setInterval(func, 500);
+
+	// 点击按钮： 启动1个定时器
+	// 定时时间到： 启动1个定时器
+	// 定时时间到： 启动1个定时器
+	// 定时时间到： 启动1个定时器
+	// 定时时间到： 启动1个定时器
+	// 定时时间到： 启动1个定时器
+	// 定时时间到： 启动1个定时器
+	// 定时时间到： 启动1个定时器
+	// 定时时间到： 启动1个定时器
+	// ....
+}
+
+
+// 一开始进入页面，就创建了这个定时器
+//setInterval(func, 500);
+
+// 点击按钮，越点越快！
+/*
+function clickBtn()
+{
+//	setInterval(func, 100);
+
+
+	// 清除标志为 t 的定时器
+	// t 为创建定时器 setInterval 函数的返回值
+	clearInterval(t);
+}
+
+function timer() {
+	console.log("XXX");
+}
+
+// 保存这个定时器的标志
+var t = setInterval(timer, 1000);
+//*/
+
+
+
+
+
+
+
+var t = 0;
+
+// 点击按钮： 移动
+// 再点击按钮： 停止
+// 再点击按钮： 移动
+
+
+// 思路：
+// (1) 点击按钮创建定时器，并保存
+// (2) 判断 定时器 值是否为0，如果不为 0，那么终止定时器，并且终止函数
+// (3) 在终止定时器之后，清空定时器的标志 
+
+
+function clickBtn()
+{
+	if (t != 0)
+	{
+		// 说明之前创建了定时器
+		// 现在把它关掉
+
+		clearInterval(t);
+
+		// 清空定时器标识，为了下一次，能够创建定时器
+		t = 0;
+
+		return ;
+	}
+
+	// 保存创建的定时器
+	t = setInterval(func, 100);
+}
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+	<input type="button" value="按钮" onclick="clickBtn()" />
+
+	<div id="div1"> </div>
+  
+ </body>
+</html>

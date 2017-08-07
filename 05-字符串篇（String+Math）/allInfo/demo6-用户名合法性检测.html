@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+
+
+// alert( 5 == 5 );
+
+// NaN： 不是一个数字
+// 判断是否为 NaN 不能使用 ==
+// alert(NaN == NaN)
+
+// isNaN 是一个系统的函数，
+// 用于判断一个变量是否为 NaN
+// alert(  isNaN(NaN)  );
+
+// isNaN： 非数字即为真，否则，为假 false
+// alert(  isNaN('a')  );
+
+/*
+var s = "abc123";
+
+//s[0]  等价于  s.charAt(0)
+// 作用都是取出下标为0的字符
+// alert(    s[0]  );
+
+if ( !isNaN( s[0] ) )
+{
+	alert("不能以数字开头！")
+}
+//*/
+
+
+// 判断字符是否为小写字母
+// 函数返回值： true 代表是小写字母，否则为 false
+function isSmallWord(c)
+{
+	var code c.charCodeAt(0);//charCodeAt()把下标为0 的字符装换成编码
+	
+	return code >= 97 && code <= 122;
+}
+
+
+
+
+
+
+
+
+
+// 检测用户名是否合法
+// 思路
+// (1). 点击按钮执行函数
+// (2). 获取用户名这个字符串
+// (3). 判断用户名是否合法
+//       <1> 长度 >= 6 && 长度 <= 20
+//       <2> 不能以数字开头。 判断第一个字符的 编码 不能在 '0'~'9'
+//       <3> 必须由 小写字母 和 数字组成
+//            思路： 取出每个字符的 ASCII码，判断是否在范围内
+//                    只要有一个就终止
+
+function check() 
+{
+	var s = username.value;
+
+	if (  !(s.length >= 6 && s.length <= 20) )
+	{
+		alert('用户名长度错误，必须是 6~20 之间');
+		// 程序遇到 return，立马终止函数，后面的代码都不执行了
+		return ;
+	}
+
+	var code = s.charCodeAt(0);
+
+	if ( code >= 48  && code <= 57 )
+	{
+		alert("不能以数字开头");
+		return ;
+	}
+
+
+
+
+
+
+
+
+
+
+//       <3> 必须由 小写字母 和 数字组成
+//            思路： 取出每个字符的 ASCII码，判断是否在范围内
+//                    只要有一个就终止
+
+	for (var i = 0; i < s.length; i++)
+	{
+		var code = s.charCodeAt(i);
+
+
+		//           数字                     小写字母
+		// if ( (code >= 48 && code <= 57) || (code >= 97 && code <= 122 ))
+		if (isSmallWord(s[i]) || !isNaN( s[i] ) )
+		{
+			// 当前字符为数字 或者 小写字母 的情况
+		}
+		else 
+		{
+			alert("不满足条件!")
+
+			// 终止函数，return 后面的语句都不会执行
+			return ;
+
+
+			// break 终止循环，循环外部的代码，依然执行
+			// break ;
+		}
+		
+	}
+		
+
+
+
+
+
+
+
+	alert('验证正确！');
+}
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+	用户名 <input type="text" id="username" /> 
+
+	<input type='button' value="检测" onclick="check()"/>
+
+ </body>
+</html>

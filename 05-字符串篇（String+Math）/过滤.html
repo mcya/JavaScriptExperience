@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 过滤敏感词汇 </title>
+
+<script>
+//过滤敏感词汇
+	//解析版：
+	/*
+	var arr=["fuck","tmd","尼玛"]
+	//定义敏感词数组
+	function filter()
+	{
+		var s = txt1.value;
+		//接收文本内容
+		for (var i=0; i<arr.length; i++)
+		{
+			var reg = new RegExp(arr[i],"gi");
+			//存储敏感词汇用于检索
+			//RegExp是正则表达式
+			//RegExp 对象用于存储检索模式
+			//通过 new 关键词来定义 RegExp 对象
+			s = s.replace(reg,"*");
+			//replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串
+		}
+		txt2.value=s;
+	}
+	//*/
+	
+
+	//a^2+b^2=c^2, a=3, b=4; 求c
+	//document.write( Math.sqrt( Math.pow(3,2) + Math.pow(4,2) ) )
+
+
+
+</script>
+
+ </head>
+
+ <body>
+	<!--------------
+	<textarea id="txt1"> </textarea>
+	<input type="button" value="过滤" onclick="filter()"/>
+	<textarea id="txt2"> </textarea>
+	----------------->
+ </body>
+</html>

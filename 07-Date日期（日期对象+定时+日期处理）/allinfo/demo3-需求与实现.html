@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+<style>
+
+#div1 {
+	width: 100px;
+	height: 100px;
+	background: red;
+
+	/* 因为改变 div 是通过 style.left 只有在 绝对定位才有效果*/
+	position: absolute;
+	left: 100px;
+	top: 100px;
+}
+
+</style>
+
+
+<script>
+
+
+//  (1)需求分析
+// 老板：
+//  点击按钮，对角线移动
+//  再点击： 停止
+//      需要判断是否为第二次点击，需要知道上一个定时器是什么
+///      可以定时器的标志 来判断
+
+//  再点击： 移动
+
+// (+1) 返回去
+
+
+// (2) 总体设计
+//   点击按钮执行代码
+//   定时器
+//   移动
+
+// ======================
+// (3) 详细设计
+//     如何判断是第一次点还是第二次点？
+
+//  编写代码，边调整，边测试，遇到问题，解决问题
+// ======================
+
+
+// (4) 测试
+// (5) 交付老板
+
+
+
+
+
+
+
+// 我的思路：
+
+// 1. 添加按钮，绑定函数
+// 2. 创建一个定时器，来定时改变方块的位置
+// 3. 实现移动方块的函数
+//       (1) 获取到方块
+//       (2) 设置 方块 left 和 top
+//       (3)  left 与 top 自增
+
+
+
+
+// 因为下一次调用 move，还是要知道之前的值，
+// 所以，x，y定义到函数的外部
+var x = 100;
+var y = 100;
+
+function move()
+{
+	var oDiv = document.getElementById("div1");
+
+	oDiv.style.left = x + "px";
+	oDiv.style.top = y + "px";
+
+	x += 10;
+	y += 10;
+}
+
+
+var t = null;
+
+
+function func()
+{
+
+	// null, 0, undefined 代表 假
+	// 为了能够获取上一次的 t 的值，所以，需要将t定义到函数外部！
+	if (t != null)
+	{
+		clearInterval(t);
+
+		t = null;
+
+		return ;
+	}
+
+	// 保存这个定时器的标志，为了下一步能够清除这个定时器
+	// 标志是一个不为0的值
+	t = setInterval(move, 100);
+}
+
+
+</script>
+
+ </head>
+
+ <body>
+  <input type="button" value="按钮" onclick="func()"/>
+
+  <div id="div1"> </div>
+ 
+ </body>
+</html>

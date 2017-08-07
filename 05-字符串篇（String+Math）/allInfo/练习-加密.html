@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+// 程序是从这里开始执行的
+// 当执行这一行的时候， input 还没有创建
+// 所以 获取不到 id 为 secret 的值， undefined
+// var s = secret.value;
+
+
+function encode() 
+{
+	// 点击 加密 按钮，执行这里的代码
+	
+	// 因为点击按钮时，input已经创建完毕了，所以，可以获取到 input 的值
+	var s = secret.value;
+
+	// 创建一个字符串对象
+	var str = new String(s);
+
+	var r = "";
+
+	for (var i = 0; i < str.length; i++)
+	{
+		// charCodeAt 返回对应下标的编码
+		// 将每个字符的编码都追加到 r 变量中去
+		r += str.charCodeAt(i);
+
+		// 分割两个字符的编码
+		r += ","
+	}
+
+	// 将 r 赋值给 secret.value
+	// 相当于将 r 的内容 设置到 id为 secret的input中啦
+	secret.value = r;
+	// document.write(r);
+}
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ <h1> 告诉你一个小秘密 </h1>
+
+ <input type="text" id="secret" /> 
+ 
+ <input type="button" value="加密" onclick="encode()">
+ <input type="button" value="解密">
+  
+ </body>
+</html>

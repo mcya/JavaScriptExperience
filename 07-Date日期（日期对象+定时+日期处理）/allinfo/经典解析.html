@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+
+	// // 用户名只能包含数字、字母和下划线
+
+	// function isNumber(code) {
+	// 	return (code >= 48 && code <= 57)
+	// }
+
+	// function isBigWord(code) {
+	// 	var str = "AZ"
+
+	// 	return (code >= str.charCodeAt(0) && code <= str.charCodeAt(1));
+	// }
+
+	// function isSmallWord(code) {
+	// 	var str = "az"
+
+	// 	return (code >= str.charCodeAt(0) && code <= str.charCodeAt(1));
+	// }
+
+
+
+//*
+function check() {
+	// 用户名
+	// 长度不低于6，不高于20
+	var _username = username.value;
+	// if (!(_username.length >= 6 && _username.length <= 20)) {
+	if(_username.length<6 || _username.length > 20){
+		alert('用户名长度不能低于6，不高于20');
+		// 如果不符合要求，停止表单提交
+		return false;
+	}
+
+	// 首字母不能以数字开头
+	else if(_username.charCodeAt(0) >= 48 && _username.charCodeAt(0) <= 57){
+		alert('首字母不能以数字开头');
+		return false;
+	}else if(_username == ''){
+		alert('用户名不能为空');
+		return false;
+	}
+
+	for(var i=0;i<_username.length;i++){
+		var code = _username.charCodeAt(i);
+
+		// if (!(isNumber(code) || isBigWord(code) || isSmallWord(code))) {
+		// 	// 不满足
+		// }
+
+
+		// if (!(isNumber(code) || (code >= 97 && code <= 122) || ))
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// are-you
+	// str.indexOf('a') == -1
+	var str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789';
+
+	// abc#123;
+	// i        str.indexOf(a)
+	// 0: a  ==> 0
+	// 1: b  ==> 1
+	// 2: c  ==> 2
+	// 3: #  ==> -1
+	for(var i=0;i<_username.length;i++){
+		// 只要有一个字符不合法，则跳出循环并退出
+		if(str.indexOf(_username[i]) == -1){
+			alert('用户名只能包含数字、字母和下划线');
+			return false;
+		}
+	}
+
+	// 密码必须一致
+	if(psw.value == ''){
+		alert('密码不能为空');
+		return false;
+	}else if(psw.value != psw2.value){
+		alert('两次密码必须一致');
+		return false;
+	}
+
+	// 昵称一栏要将敏感词或特殊符号自动过滤，删除不文明用语
+	_nickname = nickname.value;
+	if(_nickname == ''){
+		alert('昵称不能为空');
+		return false;
+	}
+
+	var mingan = ['shit','fuck','你妹','你大爷,妈的'];
+	for(var i=0;i<mingan.length;i++){
+		// 新建一个以敏感字符相匹配的正则表达式
+		var reg = new RegExp(mingan[i],'gi');
+		_nickname = _nickname.replace(reg,'**');
+	}
+	nickname.value = _nickname;
+}
+
+//*/
+	  
+/*
+	作业2、已知字符串 “a,a,b,c,c,d”  编程实现以下功能。
+		统计每个字符出现的次数，结果显示 a：2、b：1、c：2、d：1
+		去掉重复的字符，使结果显示 abcd
+
+		var obj = {}
+		obj['a'] == undefined
+		{a:2,b:1,c:2,d:1}
+ */
+
+
+// 思路：
+// 1. 从第一个字符开始，往后面找相同字符，统计出现的次数
+
+
+/*
+var flag = {};
+
+var c = "a";
+
+// 在对象 flag 中新增一个 c 的属性
+flag.a = 100
+
+
+// 想用变量，又想在对象中新增属性
+flag[c] = 1;
+
+alert(flag["b"]);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+var str = "a,a,b,c,c,d";
+
+var r = "";
+
+var flag = {};
+
+for (var i = 0; i < str.length; i++) {
+
+	if (flag[ str[i] ] == 1) {
+		continue;
+	}
+
+	if (str[i] == ',') {
+		continue;
+	}
+
+	// 当期找的是 str[i] 这个字符出现的次数，为 count
+	var count = getACharCount(str[i], str);
+
+	r += (str[i] + ": " + count + ", ");
+
+	// 在当前 flag 对象中，新增了一个  字符为 str[i] 的属性，并且设置它的值为 1
+	flag[ str[i] ] = 1;
+}
+
+alert(r);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 找一个字符的出现次数
+function getACharCount(c, str) {
+	var count = 0;
+	for (var i = 0; i < str.length; i++) {
+		if (c.charCodeAt(0) == str.charCodeAt(i)) {
+			count++;
+		}
+	}
+
+	return count;
+}
+
+
+
+
+//*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+// 
+var str = 'a,a,b,c,c,d,d,d,d,a,c,e,h,h,z';
+str = str.split(',');
+//定义一个空对象,用来存放每个字符
+//如果当前字符不存在对象里，则把当前字符添加为对象的属性（属性值为1）
+//如果当前字符已经存在对象里，则当前属性值+1
+var obj = {};
+for(var i=0;i<str.length;i++){
+	if(obj[str[i]] == undefined){
+		obj[str[i]] = 1;
+	}else{
+		obj[str[i]] += 1;
+	}
+}
+
+// 遍历对象，输出相应信息
+var res = '';
+for(var attr in obj){
+	res += attr + ': ' + obj[attr] + ', ';
+}
+
+alert(res);
+
+//*/
+
+	</script>
+
+  </head>
+  <body>
+	<form>
+        <p>
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username">
+        </p>
+        <p>
+            <label for="psw">密码</label>
+            <input type="password" id="psw" name="psw">
+        </p>
+        <p>
+            <label for="psw2">确认密码</label>
+            <input type="password" id="psw2" name="psw2">
+        </p>
+        <p>
+            <label for="nickname">昵称</label>
+            <input type="text" id="nickname" name="nickname">
+        </p>
+        <button type="button" id="btnSubmit" onclick="check()">提交</button>
+    </form>
+    <div id="info"></div>
+	
+  </body>
+</html>
+
+

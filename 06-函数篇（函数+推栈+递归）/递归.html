@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+	//推栈1:
+	/*
+	var x=1;
+	function m1(x)
+	{
+		
+		x++;
+	}
+	//m1();//==>2
+	m1(x);
+	   //m1(x)---function m1( )  ==>2
+	   //m1(x)---function m1(a)  ==>2
+	   //m1(x)---function m1(j)  ==>2
+	   //m1( )---function m1(j)  ==>2
+	   //m1( )---function m1( )  ==>2
+	   //m1(x)---function m1(x)  ==>1
+	   //====>只有三者的参数都是一样的时候才是正确的。
+	   //====>function m1(x)~~x++;~~m1(x);都是x.
+	document.write( x );
+	//*/
+
+	//推栈2:
+	/*
+	var data=1;
+	function echo(data)
+	{
+		data++;
+		return data;
+	}
+	data=echo(data);//===>2
+	//echo(data);//===>1
+	document.write(data);
+	//*/
+	//====>推栈1 和 推栈1 相结合;	
+
+
+	//对象调用
+	/*
+		var stu={
+			name:"张三",
+			age:18,
+			toString:function(){
+				return "123abc";
+			}
+		}
+	//document.write( parseInt(stu) )//===>NaN
+	//document.write(stu.name)//===>张三
+	//document.write(stu.toString)//===>function (){ return "abc" }
+	//document.write( Number(stu) )//===>NaN
+	document.write( parseInt(stu) )//===>123
+	
+	//*/
+
+	
+
+	//递归
+
+	//递归1:
+	//求5的阶乘
+	//*
+	function factorial(n)
+	{
+		
+		if (n==0)
+		{
+			return n=1;
+		}
+		return n*factorial(n-1)
+		
+		
+		//for (i=1; i<=n; i++)
+		//{
+			//var sum=1;
+			//sum=sum*i
+		//}
+		//return sum;
+		//
+	}
+	//var a=factorial(5);
+	document.write( factorial(5) );
+	//*/
+
+
+	//递归2:
+	//兔子的总数
+	/*
+	function func(n)
+	{
+		var sum=0;
+		if (n==1 || n==0)
+		{
+			return 1;
+		}
+		return func(n-1)+func(n-2)
+		//具有原基础的，即是前面的数值加目前数值的，具有基础性的累加
+	}
+	document.write(func(36))
+	//*/
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+// 1. 冒泡排序(13K)
+/*
+var arr = [3, 66, 1, 55, 4];
+
+// 1. 1个泡泡冒到顶部
+// 2. n个泡泡排序
+// 3. 优化
+
+
+// 冒泡排序， 完整版
+for (var i = 0; i < arr.length - 1; i++) {
+    for (var j = 0; j < arr.length - i  - 1; j++) {
+	    if (arr[j] > arr[j+1]) {
+		    var t = arr[j];
+    		arr[j] = arr[j+1];
+    		arr[j+1] = t;
+    	}
+    }
+}
+
+
+//document.write(arr);
+
+
+for (var i = 0; i < arr.length; i++) {
+	document.write(arr[i] + "| ");
+}
+//*/
+
+
+
+
+
+// 【补充】 选择排序法
+
+//*/
+/*
+var arr = [3, 66, 1, 55, 4];
+
+// 1. 先选择最小的，放到下标为 当前元素 的位置
+// 2. 循环 arr.length - 1
+// 3. 注意交换的元素
+
+
+
+// 1. 循环 n-1
+// 2. 找出 i 以后的所有元素
+// 3. 比较 arr[i]  arr[j] 
+for (var i = 0; i < arr.length - 1; i++) {
+	for (var j = i+1; j < arr.length; j++) {
+
+		if (arr[i] > arr[j]) {
+			var t = arr[i];
+			arr[i] = arr[j];
+			arr[j] = t;
+		}
+	}
+}
+
+
+*/
+
+
+
+
+/*
+
+
+for (var j = 0; j < arr.length-1; j++) {
+
+// 从当前元素 与 当前元素后面的所有元素比较
+// j
+// j+1, j+2, ... arr.length-1
+for (var i = j+1; i < arr.length; i++) {
+	
+    // 当前元素是 arr[j]
+	// 当前元素后面的元素， arr[i]
+	if (arr[j] > arr[i]) {
+		var t = arr[j];
+		arr[j] = arr[i];
+		arr[i] = t;
+	}
+}
+
+}
+*/
+
+// (2) 因为下标为0的已经确定是最小的啦，那么从剩余(下标 2~n-1) 的选择最小的，放到下标为1的位置
+// for (var i = 2; i < arr.length; i++) {
+// 	if (arr[1] > arr[i]) {
+// 		var t = arr[1];
+// 		arr[1] = arr[i];
+// 		arr[i] = t;
+// 	}
+// }
+
+
+
+// document.write(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+var arr = [3, 66, 1, 55, 4];
+
+// 选择排序法
+
+for (var i = 0; i < arr.length - 1; i++) {
+
+	for (var j = i+1; j < arr.length; j++) {
+
+		if ( arr[i] > arr[j]) {
+			var t = arr[i];
+			arr[i] = arr[j];
+			arr[j] = t;
+		}
+	}
+}
+
+//alert(arr);
+
+//*/
+
+/*
+
+
+
+// 【补充】 sort 中的参数
+
+//*/
+
+/*
+var arr = [3, 2, 1, 5, 4];
+
+arr.sort();
+
+document.write(arr);
+
+*/
+
+/*
+function m1(a) {
+    // 因为调用没有传递参数，所以 a == undefined
+	if (a != undefined) {
+
+        // 说明传递了参数
+		alert(a);
+
+
+
+
+	}  else {
+        // 说明没有传递参数
+	}
+}
+
+m1();
+
+*/
+
+/*
+var arr = [13, 12, 1, 25, 4];
+
+
+arr.sort(
+
+// 函数的作用，规定两个数之间大小关系
+function (a, b) {
+
+	// a = parseInt(a);
+	// b = parseInt(b);
+
+	if (a > b) {
+		return true;
+	}
+
+	return false;
+}
+
+);
+
+document.write(arr);
+//*/
+
+// 2. 随机生成一个五位以内的数，然后输出该数共有多少位，每位分别是什么
+
+
+// 1.567890 == >　1
+
+// 0.0000012345 ==> 1.23456
+// 0.00000012345 ==> 0.123456 == > 0
+// 要产生的 [min, max] 的数字，可以参照之前的比较
+
+
+// 产生 5位以内 的数字
+var num = parseInt(Math.random() * 100000);
+
+var t = num;
+
+
+
+// var arr = [];
+// 定义一个数组
+var arr = new Array();
+
+// var obj = {};
+// var obj = new Object();
+
+// var n = 10;
+// var n = new Number(10);
+
+/*
+while (num != 0) {
+    arr.push(num % 10);
+    num = parseInt(num / 10);
+}
+
+document.write('数组多少位: ' + arr.length + "<br>");
+
+var arr2 = ['个位', '十位', '百位', '千位', '万位'];
+
+// 
+for (var i = arr.length - 1; i >= 0; i--) {
+	document.write(arr2[i] + ": " + arr[i] + "<br>");
+}
+
+// document.write('个位: ' + arr[0] + "<br>");
+// document.write('十位: ' + arr[1] + "<br>");
+
+/*
+var a2 = num % 10;
+num = parseInt(num / 10);
+
+var a3 = num % 10;
+num = parseInt(num / 10);
+
+var a4 = num % 10;
+num = parseInt(num / 10);
+
+var a5 = num % 10;
+
+document.write("num: " + t);
+// document.write("<br>");
+
+// document.write("" + a1 + ", "  + a2 + ", "  + a3 + ", "  + a4 + ", "  + a5 + ", " );
+
+
+//*/
+
+
+
+
+
+
+
+// [补充] new Array() 的方式
+
+
+
+/*
+
+var num = parseInt(Math.random()*100000);	//取随机数
+
+document.write(num + "<br> ");
+
+var arrResult = [];
+
+var count = 0;
+while (num != 0) {
+
+	arrResult.push(num % 10);
+
+	num = parseInt(num / 10);
+
+	count++;
+}
+
+document.write("<br> ");
+document.write("总共有：" + count + "位<br><br> ");
+
+
+// 输出每位的数字：
+var arrLevel = ['个位', '十位', '百位', '千位', '万位', ]; 
+
+for (var i = arrResult.length-1; i >= 0; i--) {
+	document.write(arrLevel[i] + ": " + arrResult[i] + "<br>");
+}
+
+//*/
+
+
+
+// 3. 山上有一口缸可以装50升水，现在有15升水。老和尚叫小和尚下山挑水，每次可以挑5升。
+//     问：小和尚要挑几次水才可以把水缸挑满？通过编程解决这个问题。
+
+/*
+var n = 0;
+
+// 代表当前水缸中的水量
+var i = 15;
+
+while(i < 50){
+    // 水缸没满，就一直挑水
+
+	i += 5;
+	n++;
+}
+
+alert(n);
+//*/
+
+
+
+// 4. 有一个从小到大排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。(11K)
+
+//*
+// var data = 35;
+// var arr = [32, 45, 67, 106];
+
+// arr.push(data);
+
+// arr.sort(function(a, b) {
+// 	return a > b;
+// });
+
+// alert(arr);
+
+
+
+
+
+
+/*
+var data = 35;
+var arr = [32, 45, 67, 106];
+
+var arrResult = [];
+
+
+// 标记数据是否已经插到数组中了
+var flag = false;
+
+
+for (var i = 0; i < arr.length; i++) {
+
+    // 如果 当前没有插入新的数据，并且 新的数据 < 要插入的那个值
+	if (!flag && data < arr[i]) {
+		arrResult.push(data);
+
+		flag = true;
+	}
+
+	arrResult.push(arr[i]);
+}
+
+if (!flag) {
+	arrResult.push(data);
+}
+
+alert(arrResult);
+//*/
+
+
+// 补充，数组中元素的排序
+// arr.push(data);
+// arr.sort(function(x,y){
+// 	return x>y;
+// });
+// alert(arr);
+
+//*/
+
+// 5. 开发一个标题为“FlipFlop”的游戏应用程序。它从1计数到100，遇到3的倍数就替换为单词“Flip”，5的倍数就替换为单词“Flop”，既为3的倍数又为5的倍数则替换为单词“FlipFlop”。(8K)
+
+
+/*
+for (var i = 1; i <= 100; i++) {
+
+	if (i%3 == 0 && i%5 == 0) {
+		document.write("<font color=blue>"+i+":FlipFlop</font><br>");
+
+	} else if (i%3 == 0) {
+		document.write("<font color=red>"+i+":Flip</font><br>");
+
+	} else if (i%5 == 0) {
+		document.write("<font color=green>"+i+":Flop</font><br>");
+
+	} else {
+		document.write(i+"<br>");
+	}
+}
+
+//*/
+
+
+// 6. 生成13位条形码(6K)
+// Ean-13码规则：第十三位数字是前十二位数字经过计算得到的校验码。
+// 例如：690123456789
+// 第三位计算其校验码的过程为：
+// @前十二位的奇数位和6+0+2+4+6+8=26
+// @前十二位的偶数位和9+1+3+5+7+9=34
+// @将奇数和与偶数和的三倍相加26+34*3=128
+// @取结果的个位数：128的个位数为8
+// @用10减去这个个位数10-8=2
+// 所以校验码为2（注：如果取结果的个位数为0，那么校验码不是（10-0=10），而是0）实现方法ean13（）计算验证码，输入12位条码，返回带验证码的条码。
+// 例如：输入：692223361219输出：6922233612192
+/*
+
+var str = "690123456789";
+
+var arr = str.split("");
+
+// alert(arr);
+
+var odd = 0;
+var even = 0;
+
+for (var i = 0; i < arr.length; i++) {
+	if( i%2==0 ) {
+		//奇数位
+		odd += Number( arr[i] );
+	} else {
+		even += Number( str[i] );
+	}
+}
+
+
+var s = odd + even * 3;
+
+var a1 = s % 10;
+
+var r = 0;
+if (a1 == 0) {
+	r = 0;
+} else {
+	r = 10 - a1;
+}
+
+var s2 = str + r;
+// 校验码就是： r;
+
+alert(s2);
+
+*/
+
+/*
+var str = "000000200011";
+var l = str.length;
+var odd = 0;//奇数
+var even = 0;//偶数
+
+for (var i = 0; i < l; i++) {
+	if( i%2==0 ) {
+		//奇数位
+		odd += Number( str[i] );
+	} else {
+		even += Number( str[i] );
+	}
+}
+
+var num = odd+even*3;
+var gw = num%10;
+
+var result = 0;
+if( gw == 0 ) {
+	result = 0;
+}else{
+	result = 10 - gw;
+}
+alert( str+result );
+//*/
+
+
+// 7. 自定义一个对象，该对象存储一个学生的信息，该对象包含学号、身份证、年龄、性别、所学专业等属性信息，同时该对象包含一个自我介绍的方法，用来输出该对象的所有信息。(8K)
+//*
+var obj = {
+	sid:1,
+	id:"010394766383984",
+	age:18,
+	sex:'男',
+	major:"h5",
+	say: function(){
+
+		for (var i in obj) {
+			if (typeof obj[i] != "function") {
+				document.write(i + ": " + obj[i]);
+				document.write("<br>");
+			}
+		}
+
+       // 对象中有一个隐藏的属性 this
+		// 可以通过 this.age 访问本对象中的属性
+		// alert(this.age);
+
+
+		// document.write('sid : ' + obj.sid + '<br>');
+		// document.write('id : ' + obj.id + '<br>');
+		// document.write('age : ' + obj.age + '<br>');
+		// document.write('sex : ' + obj.sex + '<br>');
+		// document.write('major : ' + obj.major + '<br>');
+	}
+}
+
+obj.say();
+
+// alert(obj.age);
+// 访问对象中的方法
+// (1) obj.name
+// (2) obj["name"] 访问 obj 的name属性
+// alert(obj["age"]);
+
+// for (var i in obj) {
+// 	if (typeof obj[i] != "function") {
+// 		// document.write("属性： " + i);
+// 		// document.write(", 值:" + obj[i]);
+// 		// document.write(", 值类型:" + (typeof obj[i]));
+
+// 		document.write(i + ": " + obj[i]);
+// 		document.write("<br>");
+// 	}
+// }
+
+// 【扩展】 通过 字符串参数 来访问对象的属性
+// var arr = [];
+
+// for (var i in arr) {
+// }
+
+
+// 【扩展】 遍历对象属性
+
+// for(var i in obj){
+// 	if( typeof obj[i] != "function" ){
+// 		console.log("document.write('" + i + " : ' + obj." + i + " + " + "'<br>');");
+// 	}
+// }
+
+
+// 【扩展】 this 
+
+//*/
+
+
+	</script>
+
+  </head>
+
+  <body>
+	
+  </body>
+</html>

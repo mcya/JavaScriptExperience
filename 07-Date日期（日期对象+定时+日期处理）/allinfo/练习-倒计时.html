@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script src="common.js"> </script>
+
+
+ </head>
+
+ <body>
+ 
+  <div id="div1"></div>
+ 
+ <img src="btn_buy0.jpg" id="img1"/>
+
+
+
+
+<script>
+
+
+/*
+练习：
+
+1. 设置截止日期为 1分钟后，显示到页面上
+
+2. 计算 当前日期 与 截止日期的差值
+		创建一个当前日期，用两者毫秒值相减
+
+3. 定时倒数
+*/
+
+// 1. 设置截止日期为 1分钟后，显示到页面上
+// 思路： 创建一个当前时刻的日期，然后，修改日期的分钟数为 1分钟以后
+
+var end = new Date();
+
+// 修改 end 对象它的时间为 1分钟以后
+// end.setMinutes( end.setMinutes() + 1  );
+
+end.setMinutes(end.getMinutes() + 1);
+
+// getDateString 是一个函数，从common.js定义的
+// 这里是调用
+var str = getDateString(end)
+
+
+
+
+// 计算 当前日期 与 截止日期的差值
+
+var start = new Date();
+
+
+var deta = (end.getTime() - start.getTime() ) / 1000;
+
+
+
+str += " 仅剩： ";
+str += deta;
+
+str += "秒";
+
+
+document.getElementById("div1").innerHTML = str;
+
+
+</script>
+
+ </body>
+</html>

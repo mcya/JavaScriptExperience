@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+/*
+
+// 类型： string
+var s = "abc";
+
+// 97
+// s 明明是 字符串类型，为什么可以当做对象来用呢？
+// 
+document.write(    s.charCodeAt(0)  );
+
+// JS 程序看到 字符串.字符串方法 的时候
+// 他会这么做：
+
+// 1. 自己创建一个字符串对象，new String(字符串)
+// 2. 调用自己创建的这个对象中的方法
+// 3. 释放这个对象
+
+// 对于我们，只需要 将 字符串 看成 字符串对象就可以啦！
+//*/
+
+
+// 加密
+function encode()
+{	
+	// var s = secret.value;
+
+	// s 是一个字符串， 类型： String
+
+	// 根据 s 来创建一个字符串对象
+	// str 的类型是: Object
+	// var str = new String(s);
+
+	
+	// length 是获取字符串对象的长度，也就是说有多少个字符
+	// str.length
+
+	var str = secret.value;
+
+	var r = "";
+
+	// string 类型的可以当做字符串对象来用
+	for (var i = 0; i < str.length; i++)
+	{
+		// 取出下标为 i 字符的编码
+		var code = str.charCodeAt(i);
+
+		// 将字符对应的编码，拼接到一个空字符串上
+
+		r += code;
+		// 每个符号后，添加 , 分割
+		r += ",";
+	}
+
+
+	// secret.value 
+	// 设置输入框的内容为 r
+	secret.value = r;
+
+}
+
+
+
+
+
+// (1)如何将一个 数字 转换成对应的 字符
+
+
+// String.fromCharCode 
+// 函数功能： 将 数字 转换成对应的 字符
+
+// String 其实是系统的一个对象
+// document.write(    String.fromCharCode(97)  );
+
+
+
+
+
+/*
+var s = "97,98,99,";
+
+
+// 字符串对象中  split 方法
+// 作用： 按照参数 分割 字符串
+// 返回值： 分割之后的  数组
+var arr = s.split(",");
+
+
+// 数组中多了一个空白的元素，如何处理？
+// 删除数组中最后一个元素
+arr.pop();
+
+
+document.write(arr);
+//*/
+
+
+
+
+
+// 解密
+function decode()
+{
+	// 获取文本框中的字符串
+	// 例如： 96,97,98
+	var str = secret.value;
+
+	// 思路：
+	// 1. 按照 , 分割字符串
+	// 2. 将每个 分割的子字符串 转换成 数字，再转换成 字符
+	//		96  97 98
+	// 3. 将还原的字符，拼接在一起，再设置到 input 中去
+
+
+	var arr = str.split(",");
+
+	// 用于拼接结果的
+	var r = "";
+
+	for (var i = 0; i < arr.length; i++)
+	{
+		// 获取加密后的 字符串的编码，是一个数字
+		var code = parseInt(arr[i]);
+
+		r += String.fromCharCode(code);
+	}
+
+	// 将拼接后的结果，设置到 input 中
+	secret.value = r;
+}
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+
+ <h1> 告诉你一个小秘密 </h1>
+
+ <input type="text" id="secret" /> 
+ 
+ <input type="button" value="加密" onclick="encode()">
+ <input type="button" value="解密" onclick="decode();">
+  
+ </body>
+</html>

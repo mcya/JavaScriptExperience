@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+var arr =  ['王八蛋', "爽", "黑帮老大", "起来，不愿意做奴隶的人民", "tmd", "fuck"];
+
+
+function filter() 
+{
+	var s1 = txt1.value;
+
+	for (var i = 0; i < arr.length; i++)
+	{
+		var reg = new RegExp( arr[i], "gi");
+		s1 = s1.replace(reg, "*");
+	}
+
+	// 将s1设置到 txt2 的value中
+	txt2.value = s1;
+}
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+  <textarea id="txt1"> </textarea>
+
+	<input type="button" value="过滤" onclick="filter()"/>
+
+  <textarea id="txt2"> </textarea>
+
+
+ </body>
+</html>

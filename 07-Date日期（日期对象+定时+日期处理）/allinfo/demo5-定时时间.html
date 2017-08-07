@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+
+
+
+// 创建一个当前时间的对象
+// var oDate = new Date();
+
+
+
+// 获取完整的年份
+// alert(  oDate.getFullYear());
+
+// 月份
+// alert(  oDate.getMonth() + 1 );
+
+// getDate 日
+// alert(  oDate.getDate()  );
+
+// getDay 星期
+// alert(  oDate.getDay()  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function display()
+{
+	// 创建一个当前时间的对象
+	var oDate = new Date();
+
+	var year = oDate.getFullYear();
+	var month = oDate.getMonth() + 1;
+	var day = oDate.getDate();
+
+
+	// 获取日期对象的 时、分、秒
+	var h = oDate.getHours();
+	var m = oDate.getMinutes();
+	var s = oDate.getSeconds();
+
+
+	// 星期
+	var week = oDate.getDay();
+
+
+	var str = "";
+	
+	str += year + "年" + month + "月" + day + "日 ";
+
+	var arr = ["日", "一",  "二",  "三",  "四",  "五",  "六"];
+
+	str += "星期" + arr[week] + " ";
+	
+
+
+	
+	/*
+
+	// 星期二
+	switch (week)
+	{
+	case 1:
+		str += "星期一 ";
+		break;
+	case 2:
+		str += "星期二 ";
+		break;
+	case 3:
+		str += "星期三 ";
+		break;
+	case 4:
+		str += "星期四 ";
+		break;
+	case 5:
+		str += "星期五 ";
+		break;
+	case 6:
+		str += "星期六 ";
+		break;
+	case 0:
+		str += "星期日 ";
+		break;
+	
+	}
+	//*/
+
+
+
+
+
+	if (h < 10)
+	{
+		str += "0";
+	}
+	str += h;
+	str += ":";
+
+
+	if (m < 10)
+	{
+		str += "0";
+	}
+	str += m;
+	str += ":";
+
+
+	if (s < 10)
+	{
+		str += "0";
+	}
+	str += s;
+	str += "";
+
+
+
+
+	// 获取日期对象的毫秒数
+	var ms = oDate.getMilliseconds();
+	str += ".";
+	str += ms;
+
+
+
+
+	document.getElementById("div1").innerHTML = str;
+}
+
+function func()
+{
+	setInterval( display , 10);
+
+}
+
+</script>
+
+ </head>
+
+ <body>
+  
+	<div id="div1"></div>
+
+	<input type="button" value="按钮" onclick="func()" />
+ </body>
+</html>

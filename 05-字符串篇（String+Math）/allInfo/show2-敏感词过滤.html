@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+/*
+var str1 = "123abc, ABC, 123, abc, abc";
+
+// RegExp 第二个参数 g 代表全局替换
+// RegExp 第二个参数 i 代表忽略大小写
+var reg = new RegExp("abc", "ig");
+
+var str2 = str1.replace(reg, "*");
+
+alert(str2);
+//*/
+
+
+function filter() {
+
+	var str1 = txt1.value;
+
+	// 多个敏感词
+	var arrMg = ["fuck", "tmd", "他妈的"];
+
+	var str2 = str1;
+
+	// 正则表达式
+	// \d 匹配数字 
+
+	for (var i = 0; i < arrMg.length; i++) {
+
+		// 创建一个正则表达式
+		var r = new RegExp(arrMg[i], "ig");
+
+		str2 = str2.replace(r, "*");
+	}
+
+	txt2.value = str2;
+//*/
+
+
+
+/*
+	var str1 = txt1.value;
+
+
+	// 多个敏感词
+	var arrMg = ["fuck", "tmd", "他妈的"];
+
+	var str2 = str1;
+
+	for (var i = 0; i < arrMg.length; i++) {
+
+		// replace 只会替换第一个，后面如果还有相同的内容，就不会替换了
+		str2 = str2.replace(arrMg[i], "*");
+	}
+
+	txt2.value = str2;
+
+//*/
+
+
+
+
+
+
+
+
+
+/*
+	// 敏感词
+	var mg = "fuck";
+
+	var str2 = str1.replace(mg, "*");
+
+	txt2.value = str2;
+//*/
+	// alert(str1);
+}
+
+
+	</script>
+
+  </head>
+  <body>
+
+	<textarea id="txt1" > </textarea>
+
+	<input type="button" value="转换" onclick="filter()"/>
+
+	<textarea id="txt2"></textarea>
+	
+  </body>
+</html>
+

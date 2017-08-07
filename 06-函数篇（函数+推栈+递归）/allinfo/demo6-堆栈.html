@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+/*
+var x = 1;
+
+function m1(x) 
+{
+	x++;
+}
+
+m1(x);
+
+// 结果是1
+document.write(x);
+//*/
+
+
+// 函数中的代码没有执行，那么 x 的值还是原来的值
+// 1
+// document.write(x);
+
+
+
+/*
+var x = 1;
+
+function m1() 
+{
+	x++;
+}
+
+m1();
+
+// 结果是2
+document.write(x);
+*/
+
+
+
+
+
+
+
+
+/*
+var x = 1;
+
+function m1(a) 
+{	
+	a++;
+}
+
+m1(x);
+
+// 出错了，因为找不到 a
+document.write(a);
+//*/
+
+
+
+
+/*
+var a = 1;
+
+function m1(a)
+{
+	a++;
+}
+
+m1(a);
+
+// 2 ?
+// 1 ?
+document.write(a);
+
+
+//*/
+
+/*
+// 注意对象的空间是 在 堆中的
+var obj = {
+	age: 18
+};
+
+// x: number
+// boj object
+
+function func(obj)
+{
+	obj.age ++;
+}
+
+func(obj);
+
+// 结果是19
+document.write(obj.age);
+//*/
+
+
+
+/*
+// null 代表一个空的对象
+var obj = null;
+
+function func()
+{
+	obj = {
+		age: 18;
+	}
+}
+
+
+// 出错 因为函数没有调用，所以 obj.age 是错误的
+document.write(obj.age);
+
+//*/
+
+
+
+
+
+// null 代表一个空的对象
+var obj = null;
+/*
+function func()
+{
+	obj = {
+		age: 18
+	}
+}
+
+func();
+
+// 输出结果是： 18
+document.write(obj.age);
+
+//*/
+
+
+var data = 1;
+
+function echo(data)
+{
+	// 函数内部的 data = 1
+	// 让函数内部的 data++
+	data++;
+
+	// 函数内部：data: 2
+
+	// 返回函数内部的 data
+	// 2
+	return data;
+}
+
+// 将函数的返回值 2 赋值给 外部的 data 变量
+data = echo(data);
+
+
+document.write(data);
+
+
+
+
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+
+// 1 + 1 === 2
+
+/*
+// 
+var a = ['王八蛋', "爽", "黑帮老大", "起来，不愿意做奴隶的人民"];
+
+// 将数组逆序，将所有元素都颠倒过来
+a.reverse();
+
+document.write(a);
+//*/
+
+
+/*
+
+// 将内容 |a|b|1|f|2| 字符串转换成  |2|f|1|b|a|
+
+// 思路：
+//  (1) 字符串转换成数组
+//  (2) 数组逆序 reverse
+//  (3) 数组再转换成字符串
+
+var s = "|a|b|1|f|2|";
+
+// 按照 | 分割字符串
+var arr = s.split("|");
+
+// 删除数组中第一个元素 (空白的)
+//arr.shift();
+
+// 删除最后一个元素(空白的)
+//arr.pop();
+
+// 逆序
+arr.reverse();
+
+// 将数组中的元素 以 | 重新拼接成字符串
+// join 不会修改数组，只是将拼接好的字符串返回值
+var r = arr.join("|");
+
+document.write(r);
+
+//*/
+
+/*
+// 思路可能很多种，检测你思路是否正确的唯一标准，就是结果能否通过3次测试
+var r = "|";
+for (var i = 0; i < arr.length; i++)
+{
+	r += arr[i];
+	r += "|"
+}
+
+document.write(r);
+//*/
+
+/*
+var a = [1, 2, 3];
+
+
+// 遍历 数组a 中所有元素， 称为 【快速枚举】
+for (var i in a)
+{	
+	// i 是数组 a 的下标
+	document.write( a[i] );
+	document.write("<br>");
+}
+
+//*/
+
+var stu = {
+	name: "zhangsan",
+	age: 18
+}
+
+//document.write( stu.age );
+//document.write( stu["age"] );
+
+// 因为没有定义 age, 所以出错了
+// document.write( stu[age] );
+
+var age = "name";
+
+// zhangsan
+document.write( stu[age] );
+
+// 如何查看变量有没有定义，就往上找
+
+
+
+
+
+
+
+
+
+//document.write( stu.name );
+// 与上面的输出，完全等价，是第二种写法
+// 输出 学生对象中 name 属性的值
+// document.write( stu["name"] );
+
+/*
+// 快速枚举对象中的所有属性名
+for (var key in stu)
+{
+	// key 是属性的名字
+
+	document.write("属性名：");
+	document.write( key );
+
+	document.write("属性值：");
+	document.write( stu[key] );
+	
+	document.write("<br>");
+}
+//*/
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

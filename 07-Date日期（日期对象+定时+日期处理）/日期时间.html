@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 日期时间 </title>
+
+<script>
+	//创建时间
+	/*
+	//错误的写法：
+	var d=new Date();
+	var h=new d.getHours();
+	//==>不能用new获取时间，new只是新建数据
+	//==>获取时间d.getHours即可！！
+	var m=new d.getMinutes();
+	var s=new d.getSeconds();
+	var str=h+":"+m+":"+s;
+	document.write(str);
+	//*/
+	/*
+	//---------------获取时间在input中显示
+	function calc()
+	{
+		var d = new Date();
+		var h = d.getHours();
+		var m = d.getMinutes();
+		var s = d.getSeconds();
+		var str = h + ":" + m + ":" + s;
+		num.value = str;
+		//在input输入框中显示
+	}
+	//*/
+
+	/*
+	//时间在div中显示
+	function calc()
+	{
+		var d = new Date();
+		var h = d.getHours();
+		var m = d.getMinutes();
+		var s = d.getSeconds();
+		var str = h + ":" + m + ":" + s;
+		document.getElementById("div1").innerHTML = str;
+	}
+	//*/
+
+	//方块行走---自动
+	/*
+	var y=100;
+	function calc()
+	{
+		var myDiv = document.getElementById("div1");
+		//获取id为div1的对象
+		myDiv.style.top=y+"px";
+		//.style表示应用css样式
+		//.style.top
+		y=y+10
+	}
+	//setInterval(calc,1000);
+	setInterval(calc,10);
+	//第一个参数是函数名，只是//函数名，不能是calc()!!!!!
+	//第二个参数是时间，单位是毫秒！！
+	//setInterval定时执行，表示每隔多少时间执行一次函数
+	//所以第二个参数的值越小速度越快！
+
+	//*/
+
+	//方块行走到一定程度了自动停止
+	/*
+	var y=100;
+	function calc()
+	{
+		var myDiv = document.getElementById("div1");
+		myDiv.style.top=y+"px";
+		y=y+10
+		if (y >= 400)// y 到400的时候停止
+		{
+			y = 400;// y 到400的时候，不再变化，停止
+		}
+		
+		//if (y >= 600)
+		//{
+		//	y = 400;
+		//}
+		//=======> 走到600，然后在400-600之间循环
+		
+		
+		//if (y >= 300)
+		//{
+		//	y = 400;
+		//}
+		//=======> 走到400，然后在300-600之间循环
+	}
+	setInterval(calc,100);
+	//*/
+
+	
+	//方块行走---点击即行走，再点停下，再点行走……
+	/*			
+	var y=100;
+	//因为下次调用move，还要知道之前的数值。
+	function cc()//function cc是定时器函数
+	{
+		var oDiv = document.getElementById("div1");
+		oDiv.style.top = y+"px";
+		y = y+10;
+	}
+	var a=0;//a的值必须写在外面
+	function calc()//function calc()是按钮函数
+	{
+		if ( a!=0 )//不等于0，说明还没有走动
+		{
+			clearInterval(a);
+			a = 0;
+			return ;//return是一个空值
+		}
+		a=setInterval( cc,100 );//执行走动
+	}
+	//*/
+
+	//-----利用定时器在div中显示时间的
+
+	// 显示当前时间： 例如：  9:10:10
+	// 思路
+	//  1. 显示当前时间,获取时分秒---一个函数
+	//  2. 创建一个定时器，定时显示(定时(1000毫秒即是1秒)刷新显示)---另一个数
+
+	/*
+	function display()
+	{
+		var oDate = new Date();
+		var h = oDate.getHours();
+		var m = oDate.getMinutes();
+		var s = oDate.getSeconds();
+		var str = h + ":" + m + ":" + s;
+		document.getElementById("div1").innerHTML = str;
+	}
+	function calc()
+	{
+		setInterval(display,1000)
+	}
+	//*/
+
+	//=====>强化版---利用定时器在div中显示时间的
+	
+	/*
+	function display()//==>日期时间函数
+	{
+		var oData = new Date();
+		var y = oData.getFullYear();
+		var m = oData.getMonths + 1;
+		var d = oData.getDate();
+		var x = oData.getDay();
+
+		var h = oData.getHours();
+		var m = oData.getMinutes();
+		var s = oData.getSeconds();
+		var ms = oData.getMilliseconds();
+		
+		var arr = ["日","一","二","三","四","五","六"];
+		for (i=0; i<=arr.length-1; i++)
+		{
+			x = arr[x];
+			break;
+		}
+		var str = y + "年" + m + "月" + d + "日" + " 星期" + x + " " + h + "时" + m + "分" + s + "秒" + ms + "毫秒";
+		document.getElementById("div1").innerHTML = str;
+	}
+	function calc()
+	{
+		setInterval( display,100);
+	}
+	//
+	// ===> 可以对日期时间的函数封装成一个函数，然后再调用即可。
+	// ===> 也只是封装第一个函数，即时间函数，而不是封装第二个函数。
+	// ===> 第二个函数只是调用！
+	// ===> 对于调用一般写在定义的div下面
+	//*/
+
+</script>
+
+ </head>
+
+ <body>
+	<!------获取时间在input中显示
+	<input type="text" value="" id="num" />
+	<input type="button" value="计算" onclick="calc()" />
+	------->
+
+
+	<!-------时间在div中显示
+	<div id="div1" style="width:100px; height:30px;background-color:#ff0;"></div>
+	<input type="button" value="计算" onclick="calc()" />
+	------>
+
+	<!-----方块行走----------->
+	<!----
+	<div id="div1" style="width:100px; height:100px;background-color:#f00; position:absolute; top:100px; left:100px;"></div>
+	<input type="button" value="计算" onclick="calc()" />
+
+	<!----position:absolute必须写---->
+	<!----因为div的移动是通过top、left的数值进行移动---->
+
+	<!-----------利用定时器在div中显示时间的---style="width:500px; height:30px;background-color:#ff0;"----->
+	<div id="div1" ></div>
+	<input type="button" value="计算" onclick="calc()" />
+ </body>
+</html>
