@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 数组和对象 </title>
+
+<script>
+//------------array-------------------
+
+//-----数组定义的样式
+	
+	/*
+	// (1)【注意】双引号
+	var a = ["牙哥","逗逼","天才"]
+	document.write( a[2] +"<br>" )
+	
+	// (2) true false 可用可不用双引号，其他的英文单词必须用双引号！
+	var b = [true,false,true];
+	//var b=[name,age,place]===>错误
+	var c = ["name","age","place"]
+	var d = ["true","false","true"];
+	document.write( b[0] +"<br>" );
+	document.write( c[0] +"<br>" );
+	document.write( d[0] +"<br>" );
+
+	// (3) 数字不用双引号
+	var e=[55,99,88,66,96,69]
+	document.write( e[2]+"<br>" )
+
+	// (4) 数组是一种特殊对象，数组也可以定义对象
+	//     【注意】是中括号套一个大括号,之间用逗号隔开
+	var f = [ {name:"good", age:22} ,{ stuid:19 } ]
+	document.write( f[0].age +"<br>" )
+	document.write( f[1].stuid +"<br>" )
+	//====>调用方式是：数组下标.属性名 ==> f[0].age
+
+
+	//*/
+
+// a.length 可以修改数组长度,可 删除/新增(只是新增空位) 元素
+// ====>a.length = 8;
+//a.push();可以压缩数值进入数组的【末尾】
+//====>a.push(5);
+	/*
+	var a=[1,2,3,8,6,9]
+	a.push(5);
+	a.length = 8;
+	document.write( a )
+	//*/
+
+
+//随机数 Math.random()==>包含0，但是不包含1
+	//===>var a = Math.random(); 产生[0,1]的随机数(是带有小数位的)
+	//===>var a = Math.random()*10; [0,10)的随机数（包含0，不包含10）
+	//===>var a = Math.random()*88; [0,88)的随机数
+	//===>产生5-100的随机数：【Math.random()*95 + 5】
+	//                   ====>5 ~ 100 ==>5-5 ~ 100-5 ==> 0+5 ~ 95+5
+	/*
+	var a = parseInt( Math.random()*95 + 5 );
+	document.write(a);
+	//*/
+
+	// 产生【4】个[0, 10) 之间的随机整数呢？
+	/*
+	for (var i = 0; i < 4; i++)
+	{
+		var d = parseInt( Math.random() * 10 );
+		document.write(d+",");
+	}
+	//*/
+
+
+// push 是对象 a 中的一个函数
+	// 作用：将 数值、字符串、对象 等 数据 压入数组中
+	// 压入： 在数组的【末尾】添加这个 元素
+	/*
+	var a = [];
+	a.push( 5 );
+	a.push( "天才牙" );
+	document.write( a[1] );
+	//*/
+
+	// 将 1..100 之间 所有能被 7 整除的数字，压入数组，并输出结果
+	/*
+	var a=[];
+	for (var i = 1; i <= 100; i++)
+	{
+		if (i % 7 == 0)
+		{
+			a.push(i);
+		}
+	}
+	document.write(a);
+	//【注】用数组的形式输出会默认以逗号隔开
+	//*/
+
+
+// pop 是对象 a 中的一个方法(函数)
+// 作用： 删除数组中的【最后一个元素】
+	/*
+	var a=[5,2,0,6]
+	a.pop(a);
+	document.write(a);
+	//*/
+
+
+// shift 是对象 a 中的一个方法(函数)
+// 作用： 删除数组中【第一个元素】
+//        并且可以将这个元素返回
+	
+	/*
+	var a=[5,2,0,6]
+	a.shift(a);
+	document.write(a);
+	//*/
+
+// unshift 是对象中的一个方法
+// 作用： 在数组中【第一个位置【添加】元素
+	/*
+	var a=[5,2,0,6]
+	a.unshift(6);
+	document.write(a);
+	//*/
+
+//数组的常用方法：压缩push   pop删除最后一个元素
+//                shift删除第一个元素  unshift在第一位添加元素
+
+//数组方法使用的格式  a.push();
+
+
+//------------数组的应用---
+
+// 可以利用数组使得函数可以回多个值
+	function func() 
+	{
+		var a = [5, 10, 15];
+		return a;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------string---------------------
+	
+
+
+//~~~~~~~~对象属性的调用(属性(两种方法)、函数)
+	/*
+	var stu={
+		name:"zhangsan",
+		grade:99.5,
+		like:"basketball",
+		age:18,//===>对象中的所有属性之间是用逗号隔开【千万注意】
+		stuid:2013111110,
+		place: function(){
+			//alert("广西河池牛逼城市！");
+			document.write("真的！")
+		}
+	}
+	stu.place();//==>调用对象中的属性的函数
+	document.write(stu.name+"<br>");//==>调用对象中的属性，方法1
+	document.write(stu["age"]+"<br>");//==>调用对象中的属性，方法2
+	                                  //==>【注意】利用中括号必须加双引号
+	
+	
+	//*/
+
+
+
+//~~~~~~~~~~~快速枚举【属性值】！(两种方式(有一种方式的弊端如何处理))
+	/*
+	var stu={
+		name:"zhangsan",
+		grade:99.5,
+		like:"basketball",
+		age:18,//===>对象中的所有属性之间是用逗号隔开【千万注意】
+		stuid:2013111110,
+		place: function(){
+			//alert("广西河池牛逼城市！");
+			document.write("真的！")
+		}
+	}
+
+	//快速枚举对象中的所有【属性值】,方法1:
+	for (var k in stu)
+	{
+		document.write( k +"," )//===>【注意】是 k  不是stu
+	}
+	//===>该方法只会调用出属性函数的【属性值】，不会调出属性所具备的函数的【属性值】
+	document.write("<br>")
+
+
+	//快速枚举对象中的所有【属性值】,方法2:
+	for (var k in stu)
+	{
+		document.write( stu[k] +"," )//===>【注意】stu[k] ！
+	}
+	//===>该方法调用出属性函数的【属性值】也会调出属性所具备的函数的【属性值】
+	document.write("<br>")
+
+
+	//针对方法2的处理方法：
+	for (var k in stu)
+	{
+		//if (typeof stu[k] != function)
+		if(typeof stu[k] != "function")
+		{
+			document.write( stu[k] +"," )
+		}
+		//处理方法：不是函数的时候才输出;
+	}
+
+	//*/
+
+
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

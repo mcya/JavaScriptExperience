@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+/*
+var stu = {};
+
+stu.age = 18;
+stu.introduce = function()
+{
+	alert("嘻嘻哈哈");
+}
+
+// 删除对象中的属性
+//delete stu.age;
+
+//alert(stu.age);
+
+delete stu.introduce;
+stu.introduce();
+
+//*/
+
+
+
+// 默认的对象 window，是 BOM 最核心的对象
+
+//window.alert("1");
+
+// JS 解释型程序，一行行执行的，所以定时器的时间不是特别准确。
+/*
+window.setInterval(function() {
+	console.log("XXX");
+}, 1000);
+//*/
+
+
+
+// window 对象默认可以省略写，也可以自己写上
+// window.document.write("123");
+
+/*
+// 定义变量，本质上是在 window 对象中，增加了个属性而已
+var a = 5;
+
+// alert( window.a );
+
+// 省略不写
+alert( a );
+//*/
+
+
+
+/*
+if (5 > 3)
+{
+	// window 对象中增加了一个属性 a
+	// window.a = 100;
+	var a = 100;
+}
+
+// 100
+// window.a
+alert(a);
+//*/
+
+/*
+// window.a = 5;
+a = 5;
+
+// 删除了这个a
+delete window.a;
+
+// 这里找不到了
+alert(a);
+//*/
+
+/*
+var a = 5;
+
+// 用 var 定义的变量，是不允许 删除的
+delete window.a;
+
+alert(a);
+//*/
+
+/*
+var a = 1;
+function add(x)
+{
+
+	// 因为函数调用，会将 a 传递给 x， x 的值1
+	x++;
+}
+
+add(a);
+
+// 1
+document.write(a);
+//*/
+
+
+/*
+var a = 1;
+
+function add(x)
+{
+	// 找不到的时候，往外面找
+	a = 2;
+
+	// 因为函数调用，会将 a 传递给 x， x 的值1
+	x++;
+}
+
+add(a);
+
+// 2
+document.write(a);
+//*/
+
+/*
+function add(x)
+{
+	// 找不到的时候，往外面找
+	// 如果再找不到，就出错了
+	a = 2;
+
+	// 因为函数调用，会将 a 传递给 x， x 的值1
+	x++;
+}
+
+add(a);
+
+// 出错，找不到
+document.write(a);
+
+//*/
+
+
+
+/*
+
+function add(x)
+{
+	// 定义的a，是函数内部的，
+	// 函数中定义的变量，都是局部变量
+	var a = 2;
+
+	x++;
+}
+
+add(5);
+
+// undefined
+document.write(a);
+
+//*/
+
+
+/*
+function add()
+{
+	window.a = 2;
+}
+
+add();
+
+// 2
+document.write(window.a);
+
+//*/
+
+var stu = new Date();
+
+for (var k  in stu )
+{
+	document.write( k );
+}
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

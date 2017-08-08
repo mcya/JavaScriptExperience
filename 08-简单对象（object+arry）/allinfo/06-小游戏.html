@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+//产生一个 5~100 之间的随机 整数
+// 用户输入一个数字，提示 “大了” 或 “小了” 直到用户猜对为止！
+
+
+// 思路
+//  (1) 产生 0~95 之间的随机数
+//  (2) 随机数 + 5 变成 5~100 之间了
+
+
+var rnd = parseInt(Math.random() * 95 + 5);
+
+console.log(rnd);
+
+function func() 
+{
+	var n = document.getElementById("num").value;
+
+	if (n > rnd)
+	{
+		alert("大了！");
+	}
+	else if (n < rnd)
+	{
+		alert("小了！");
+	}
+	else
+	{
+		alert("猜对了！");
+	}
+}
+
+
+// 设置 window 对象的 onload 属性为一个函数
+window.onload = function() {
+
+// 这个函数是在整个页面都加载完成之后，才执行
+
+	var oBtn = document.getElementById("btn");
+
+	// 给按钮绑定一个点击的函数
+	oBtn.onclick = func;
+
+}
+
+</script>
+
+ </head>
+
+ <body>
+  
+
+	<h1> 你来猜猜！</h1>
+
+	<input type="text" id="num" />
+
+	<input type="button" value="确定" id="btn" />
+
+
+
+ </body>
+</html>

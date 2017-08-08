@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script src="mydate.js"> </script>
+
+<script>
+
+/*
+// 测试， 函数是否写得正确
+// 
+document.write( isLeap(2000)  );
+document.write( isLeap(2001)  );
+document.write( isLeap(1996)  );
+//*/
+
+
+
+/*
+
+
+
+var d1 = new Date();
+
+document.write( format( d1 )  );
+
+
+//*/
+
+
+
+
+
+// document.write(  monthDay(1, 2000)   );
+// document.write(  monthDay(2, 1996)   );
+// document.write(  monthDay(-1, "123")   );
+
+/*
+// 可以接收字符串创建日期对象
+// var d1 = new Date("2016-8-11");
+// 年、月、日的形式
+var d1 = new Date(2016, 7, 11);
+
+// var d1 = new Date();
+var d2 = new Date();
+
+// 设置 d1 对象为 1天以后
+// d1.setDate( d1.getDate() + 1 );
+//document.write(  deta(d1, d2)   );
+
+
+// 设置 d1 对象为 1年以后
+// d1.setFullYear( d1.getFullYear() + 1 );
+
+// 设置 d1 对象为 1小时以后
+// d1.setHours( d1.getHours() + 1 );
+
+document.write(  deta(d1, d2)   ); //*/
+
+
+
+
+
+
+
+//document.write(         afterNDay(1)  );
+
+//document.write(         afterNDay(30)  );
+//document.write(         afterNDay(-1)  );
+
+
+function func()
+{
+	var strStart = document.getElementById("start").value;
+
+	// 开始时间对象
+	var oStart = transform(strStart);
+
+
+	var strEnd = document.getElementById("end").value;
+
+	// 结束时间对象
+	var oEnd = transform(strEnd);
+
+
+	if (oStart.getTime() < oEnd.getTime())
+	{
+		alert("满足条件");
+	}
+	else 
+	{
+		alert("日期输入不合法");
+	}
+}
+
+</script>
+
+ </head>
+
+ <body>
+  
+  时间(格式：2016-7-8 10:10:10)
+  
+  <br>
+
+  开始时间： <input type="text" id="start" />
+  结束时间： <input type="text" id="end" />
+
+<br>
+
+  <input type="button" value="比较" id="btn" onclick="func()"/>
+
+
+ </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script src="mydate.js"></script>
+
+
+ </head>
+
+ <body>
+  系统当前时间： <span id="systemTime"> </span>
+  <br>
+  系统停留时间： <span id="stayTime"> </span>
+
+
+ </body>
+
+
+<script>
+
+
+var count = 0;
+
+function display() 
+{
+	var str = formatTime( new Date() );
+	document.getElementById("systemTime").innerHTML = str;
+
+	// 每隔1秒，停留时间加1
+	count++;
+
+	var strStay = "";
+	if (count >= 60)
+	{
+		// 拼接 分钟 数
+		strStay += parseInt(count / 60);
+		strStay += "min ";
+	}
+
+	// 拼接秒数
+	strStay += (count%60) + "s";
+	
+	document.getElementById("stayTime").innerHTML = strStay;
+
+}
+
+// 1秒后才执行这段代码，所以会有空的时间
+// 那么，在程序一开始，就立马显示时间，解决空白问题
+display();
+
+setInterval( display, 1000 );
+
+// 创建定时器的第2中写法，
+//  第一个参数是一个字符串，而且是函数调用的字符串形式
+//  因为效率比较低，不建议这样写
+// setInterval( "display()", 1000 );
+
+
+
+
+
+</script>
+
+</html>

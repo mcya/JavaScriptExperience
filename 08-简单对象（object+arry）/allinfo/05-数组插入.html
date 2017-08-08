@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+//有一个从小到大排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。(11K)
+
+// 思路：
+//   (1) 新建一个空的数组
+//   (2) 依次将数组中的元素 插入的新的数组，如果这个数字小于数组的元素的值，那么先插入这个数字，再插入原本数组的值
+//   (3) 输出新数组
+
+// 第二种思路：
+//    (1) 先压入到数组
+//    (2) 将数组排序
+
+var arr = [1, 2, 3, 4, 5];
+
+
+var data = 3.5;
+
+// Brand 崭新的
+var arrNew = [];
+
+// 标记是否已经插入
+var flag = false;
+
+for (var i = 0; i < arr.length; i++)
+{
+	// 第一次才插入
+	// 没有插入 当前 数据小于原本数组中的值
+	if (!flag && data < arr[i])
+	{
+		arrNew.push(data);
+		flag = true;
+	}
+
+	arrNew.push(  arr[i]  );
+}
+
+document.write(arrNew);
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

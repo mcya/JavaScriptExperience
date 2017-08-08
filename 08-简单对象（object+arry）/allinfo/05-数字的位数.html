@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+// 最大是4位
+//随机生成一个五位以内的数，然后输出该数共有多少位
+// 每位位分别是什么
+
+// 思路：
+//  (1) 个位数： rnd%10     (rnd/10) 取整==>rnd 
+//  (2) 十位数： 再对10求余 (rnd/10) 取整==>rnd 
+//  (3) 百位数： 再对10求余 (rnd/10) 取整==>rnd 
+//  (4) 千位数： 再对10求余 (rnd/10) 取整==>rnd 
+//   除到  rnd 为 0
+
+var rnd = parseInt(Math.random() * 100000);//获取随机数
+
+console.log(rnd);//调试用的
+
+var arr = [];
+
+while (rnd != 0)//当随机数不等于零的时候循环
+{
+	var a1 = rnd % 10;//取出每一次的个位数
+
+	arr.push(a1);//把个位数压入数组
+
+	rnd = parseInt(rnd / 10);//取出除了个位数以外的其他的数
+}
+
+document.write("位数：" + arr.length + "<br>");//数组的长度等于数字的位数
+
+var arrLevel = ["个", "十", "百", "千", "万", "十万"];
+
+for (var i = 0; i < arr.length; i++)
+{
+	document.write(""+ arrLevel[i] +"位：" + arr[i] + "<br>");//遍历数组
+}
+
+
+//document.write("个位：" + arr[0]);
+//document.write("十位：" + arr[1]);
+//document.write("百位：" + arr[2]);
+//document.write("千位：" + arr[3]);
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

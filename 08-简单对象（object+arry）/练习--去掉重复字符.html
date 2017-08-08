@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title> 标题 </title>
+
+		<script>
+			
+			// 思路：
+			//  (1) 按照逗号分隔，得到每个字符， arr
+			//  (2) 统计一个字符的出现次数，可以使用循环比较每一个
+			//  (3) 输出这个字符之前，先判断 对象中有没有这个字符的属性
+			//          如果有，那么说明打印过了，现在不要打印了
+			//          如果没有，那么就打印输出，并且将这个字符的属性值设为 1
+
+			// 如何去掉重复的字符？
+			// 思路：
+			//   (1) 删掉  (2) 用数组存起来 (3) 标记已经输出的字符
+
+			// 因为要找多个字符的出现次数，这一份代码多次用到了，所以考虑封装成一个函数
+
+			// 在一个数组中找出当前字符出现的次数
+			// 函数名：findCharCount
+			// 参数： 字符，数组
+			// 返回值： 次数
+
+			var str = "a,a,3,1,d,r,a,e,f,e,r,e,r,e,e,r,e,r,w,r,w,r,w,r";
+			//判断一个字符出现的次数
+			function findCharCount(c, arr) {
+				var count = 0;
+				for(var i = 0; i < arr.length; i++) {
+					if(c == arr[i]) {
+						count++;
+					}
+				}
+				return count;
+			}
+			
+			//split() 方法用于把一个字符串分割成字符串数组。
+			var arr = str.split(",");
+			var box = [];
+			for(var i = 0; i < arr.length; i++) {
+				var c = arr[i];
+				
+				// 检查盒子中有没有 c
+				var flag = true;
+				for(var j = 0; j < box.length; j++) {
+					if(box[j] == c) {
+						// 说明盒子中有这个字符了
+						flag = false;
+						break;
+					}
+				}
+				if(flag == false) {
+					//说明盒子中有这个字符,那么下面不要输出了
+					continue;
+				}
+
+
+				// 统计 c 字符的次数
+				var count = findCharCount(c, arr);
+				document.write("字符" + c + "出现：" + count + "<br>");
+
+				// 打印了字符 c，那么将这个字符扔到一个盒子中
+				box.push(c);
+				
+				document.write(c)
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+	</body>
+
+</html>

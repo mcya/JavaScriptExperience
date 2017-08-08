@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+// 求 1+1 之和
+
+// 顺序结构： 从上往下依次执行的， 【面向过程】编程
+/*
+var a = 1;
+var b = 1;
+
+var r = a+b;
+
+document.write(r);
+//*/
+
+// 生活中，处理生活中的问题
+// 物体，动物、人等
+
+
+//          属性                     行为
+// 人： 身高、体重等           唱歌、打游戏、跳舞
+// 手机： 品牌、宽度、高度     玩游戏、打电话、发短信、砸人
+// 虫子： 颜色、长度           爬、吃、睡、被你打
+// ....
+
+
+// 生活中一切事物，都是对象，包含属性 和 方法
+// 编程中借助 生活中的思想来 实现的程序中的问题
+
+
+// 窗口    宽度、高度、位置     移动、关闭、最大化等
+
+
+// 奈施 研究中心  乔布斯参观
+//   窗口 面向对象 的实现方法
+
+// 苹果 第一个窗口程序的电脑
+
+// 苹果     1984  第一个窗口程序的电脑
+// windows  1994  
+
+
+//  编程中的物体       属性                  方法
+// 窗口            宽度、高度、位置     移动、关闭、最大化等
+// 鼠标              形状、大小、位置    点击，双击，滚动
+// 点                 横坐标、纵坐标             移动
+// 图片滚动           多张图片               上一张、下一张
+// ...
+
+// 网页页面       浏览器信息、宽度、高度     打开、关闭
+
+
+// 浏览器打开页面的时候，会自动创建一个 window 对象
+
+
+
+/*
+var stu = {
+
+	name: "zhangsan",
+	age: 18
+
+	family: {
+		father:  "老王",
+		mother: "mama"
+	}
+	
+}
+
+stu.family  是一个对象
+
+
+window
+window.Math
+//*/
+
+
+/*
+var stu = {
+
+	name: "zhangsan",
+	age: 18,
+
+	family: {
+		father:  "老王",
+		mother: "mama"
+	},
+
+	sayHello: function() {
+		alert("hello");
+	}
+
+	
+}
+
+
+stu.sayHello();
+//*/
+
+
+
+
+// window 可以省略不写
+// alert("abc");
+
+// window.alert("123");
+
+
+
+
+/*
+var stu = {
+
+	name: "zhangsan",
+	age: 18,
+
+	sayHello: function() {
+		alert(stu.name);
+	}
+}
+
+stu.sayHello();
+//*/
+
+// 【练习】
+// 创建一个人的对象, 添加属性: 姓名 年龄 爱好 薪资期望, 并有一个打印自身信息的方法, 可以输出自身信息;
+
+//                 属性                     方法
+//  杰哥       名字，年龄，爱好..         吃、喝、睡
+/*
+var jiege = {
+	name: "小杰杰",
+	age: 18,
+	love: "LoL Dota",
+	salary: 10000000,
+
+
+	eat: function() {
+		document.write("哎呀呀，吃得好开心呀!");
+	},
+
+	drink: function() {
+		
+		document.write("喝了这杯，还有下杯");
+	},
+
+	introduce: function() {
+		document.write("姓名：" + jiege.name + "<br>");
+		document.write("年龄：" + jiege.age + "<br>");
+		document.write("爱好：" + jiege.love + "<br>");
+		document.write("工资：" + jiege.salary + "<br>");
+	}
+
+};
+
+//*/
+// 遍历对象中的所有属性
+/*
+for (var k in jiege)
+{
+	// 属性的名是 k
+	document.write(k +  "<br>");
+}
+//*/
+
+
+/*
+// 访问对象属性 的第1种方式
+//  不能使用变量
+//alert( jiege.name );
+
+// 访问对象属性 的第2种方式
+//alert( jiege[  "name"  ] );
+
+var a = "name";
+alert(  jiege[a]  );
+//*/
+
+// jiege.introduce();
+//*/
+
+
+
+/*
+for (var k in jiege)
+{
+	// 属性的名是 k
+	document.write(k + "值：" +  jiege[k] +  "<br>"   );
+}
+
+//*/
+
+/*
+for (var k in jiege)
+{
+	// 判断这个属性值是否为函数
+	if (typeof jiege[k] == "function")
+	{
+	}
+	else
+	{
+		// 属性的名是 k
+		document.write(k + "值：" +  jiege[k] +  "<br>"   );
+	}
+}
+//*/
+
+// jiege.eat 是一个函数，要调用函数， 函数名()
+// jiege.eat();
+
+// jiege.drink();
+
+// alert( jiege.name );
+
+
+/*
+var jiege = {
+	name: "小杰杰",
+	age: 18,
+	love: "LoL Dota",
+	salary: 10000000,
+
+
+	eat: function() {
+		document.write("哎呀呀，吃得好开心呀!");
+	},
+
+	drink: function() {
+		
+		document.write("喝了这杯，还有下杯");
+	},
+
+	introduce: function() {
+
+		for (var k in jiege)
+		{
+			if (typeof jiege[k]  != "function")
+			{
+				document.write(k);
+				document.write(":");
+				
+				document.write( jiege[k] );		
+				document.write("<br>");
+			
+			}
+		}
+	}
+
+};
+
+
+jiege.introduce();
+//*/
+
+
+
+//有一辆50km/h车,跑在一条1000km路上，问多少小时跑完？
+
+// 面向对象的设计思路
+// 找对象！
+
+//             属性                 方法
+// 车     速度,[颜色,牌子]           跑         
+// 路     长度，[宽度、路况]         被跑
+/*
+
+// 宝马
+var bmw = {
+	brand: "宝马",
+	speed: 50,
+	color: "黄色",
+
+	// 车必须要跑到一条路上，要求这个方法要接收一条路
+	run: function( road ) {
+		
+		document.write("bmw 跑在路上<br>");
+
+
+		// 算出需要跑多长时间
+		var t = road.length / bmw.speed;
+		document.write("需要 "+t+"小时 时间<br>");
+
+
+	}
+}
+
+var road = {
+	length: 1000,
+	// 宽度
+	width: 60000,
+	
+	// 被跑, 可能有多辆车在跑，所以用数组
+	beRunned: function( arr ) {
+
+		document.write("路上有车在跑:");
+
+		for (var i = 0; i < arr.length; i++)
+		{
+			// arr[i] 是一个车的对象
+			// arr[i].brand 获取 车 的商标
+			var car = arr[i];
+			
+			// 打印车的商标
+			// document.write( car.brand + ", ");
+			// document.write( car["brand"] + ", ");
+			document.write( arr[i]["brand"] + ", ");
+		}
+
+	}
+}
+
+// 宝马跑在了路上
+// bmw.run(road);
+
+var arr = [];
+
+arr.push(bmw);
+
+var benz = {
+	brand: "奔驰"
+}
+
+arr.push(benz);
+
+// 路上有多辆车在跑
+road.beRunned(arr);
+//*/
+
+
+
+
+
+
+
+
+
+// 一样的
+var stu = {};
+var stu = new Object();
+
+// 等价的
+stu.age = 18;
+stu["age"] = 18;
+
+
+
+
+/*
+var stu = {
+	age: 18
+}
+//*/
+
+// 创建对象的属性 可以用字符串
+/*
+var stu = {
+	"age": 18
+}
+//*/
+
+/*
+var stu = {
+	"年龄": 18
+}
+document.write(     stu["年龄"]  );
+//*/
+
+
+
+/*
+var stu = {
+	family: ["爸爸", "妈妈"]
+}
+
+document.write(   stu.family[0]  );
+//*/
+
+var arr = ["爸爸", "妈妈"];
+
+var stu = {
+	family: arr
+}
+
+
+document.write(   stu.family[0]  );
+
+/*
+var age = 18;
+
+var stu = {
+	// 属性的的值可以 是一个变量
+	"age": age
+}
+
+document.write(   stu.age  );
+
+*/
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>
