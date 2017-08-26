@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+
+// document
+// 是 window.document
+// 简称： DOM   document object model
+// 是浏览器提供了一系列的操作网页上元素的接口
+
+// JavaScript 主要3个组成部分
+// 1. ECMAScript   2009 ECMAScript5  ES5       
+// 2. BOM    window, 浏览器信息，前进、后退 等
+// 3. DOM  
+
+
+// 省略了window
+onload = function()
+{
+	/*
+	// 得到的是一个 object
+	var oUl = document.getElementById("list");
+
+	oUl.style.background = "yellow";
+	oUl.style.border = "5px solid red";
+
+
+	// 获取 oUl 节点中 style.background 的值
+	//  如果节点中没有配置 style 属性，那么就得不到值
+	// alert(  oUl.style.background  );
+
+	//alert(typeof oUl);
+	//*/
+
+
+	/*
+	// 根据标签名得到所有的 标签名为 tr 的节点
+	// 【注意】 返回值是多个值;  Element 后面有 s
+	// allTr 伪数组。只有数组的部分特性，例如：allTr.length, 下标
+	var allTr = document.getElementsByTagName("tr");
+
+	// 【注意】 这是错误的，因为 allTr 是一个伪数组，不是节点对象
+	// allTr.style.background = "red";
+
+
+	for (var i = 0; i < allTr.length; i++)
+	{
+		// allTr[i] 是一个节点，是一个对象
+
+		allTr[i].style.background = "yellow";
+	}
+	//*/
+
+	
+	// 获取所有 name 值为 username 的节点对象
+	var allUser = document.getElementsByName("username");
+	for (var i = 0; i < allUser.length; i++)
+	{
+		allUser[i].style.background = "red";
+	}
+}
+
+
+	</script>
+
+  </head>
+
+  <body>
+
+    <h1>DOM结构</h1>
+    <ul id="list">
+        <li><a href="http://www.baidu.com" class="baidu" id="baidu">百度</a></li>
+    </ul>
+    <table id="dataList">
+        <tbody>
+            <tr>
+                <td>Data11</td>
+                <td>Data12</td>
+            </tr>
+            <tr>
+                <td>Data21</td>
+                <td>Data22</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form>
+        <input type="text" name="username" id="username">
+        <input type="text" name="password" id="password">
+    </form>
+
+
+  </body>
+</html>
+

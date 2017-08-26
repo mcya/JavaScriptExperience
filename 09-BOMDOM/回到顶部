@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<style>
+	body {
+		height: 2000px;
+	}
+
+	#div1 {
+		display: none;
+		text-align:center;
+		color: white;
+		line-height: 100px;
+		font-weight: bold;
+		width: 100px;
+		height: 100px;
+		background: red;
+		position: fixed;
+		right: 0;
+		bottom: 0;
+	}
+</style>
+
+
+<script>
+
+// 当滚动到一定位置，出现 div 效果
+// 思路：
+//    判断当前滚动条的位置，
+//       如果达到一定的位置，显示 div
+//       如果没达到一定的位置，隐藏 div
+	
+	/*
+	onscroll = function()
+	//【注意】是onscroll，不是onload
+	// 当滚动的时候执行这段代码
+	// 【这个必须要区别于onload】onload是加上这个函数是为了先执行HTML 获得div然后再执行下面函数
+	// 这个函数跟鼠标点击的时候没有半毛钱的关系
+	// 这个函数的作用是能够使滚动条滑到一定程度的时候出现盒子
+	{
+		var oDiv = document.getElementById("div1");
+		//在HTML中找到id为div1的元素(节点)，拿来进行操作
+		//===>作用是，寻找节点，然后才能对节点进行操作
+		
+		var now = document.body.scrollTop;
+		//获取【当前状态】下的滚动条距离【顶部】的距离！
+		//在执行oDiv.body.scrollTop的同时把他的返回值赋给t
+		//即是scrollTop是一个【值】不是方法！！！
+		//document.body.scrollTop ===> scroll 滚动条
+		
+		if ( now >= 500) //如果滚动条大于500,执行下面代码！500不带单位！
+		{
+			oDiv.style.display = "block";
+			//oDiv是代表HTML中的节点
+			//利用oDiv.style.display对节点的CSS进行操作
+			//所以，这里不能这样写(document.style.display)!
+			//写法：节点赋值变量.style.CSS属性名
+		}
+		else
+		{
+			oDiv.style.display = "none";
+		}		
+	}
+	//onscroll 绑定了滚动条事件
+	//onscroll===>只要浏览器发生滚动即可调用函数，即产生函数所声明的效果
+	//onscroll===>可以设定滚动到某一个位置的时候发生某种效果，即执行函数
+	
+	onload = function()
+	//加上函数是为了使该函数在执行了HTML后再执行
+	//为了使函数能够执行，必须先获得div，所以得放到后面执行
+	
+	{
+		var oDiv = document.getElementById("div1");
+		oDiv.onclick = function()//鼠标点击按钮的时候！
+		{
+			document.body.scrollTop = 0;
+		}
+	}
+
+	//*/
+	//清晰版：
+	//思路：
+	//  (1) 分成两部分，一部分是方框出现的函数，一个是方框回到顶部。
+	//  (2) 上述两个函数都是执行HTML代码之后再执行
+	
+	//函数1：
+	//    (1) 找到节点,即，获得节点
+	//    (2) 给节点添加滚动条事件
+	//    (3) 利用节点值判断方框的出现时刻
+	
+	//函数2：
+	//    (1) 找到节点,即，获得节点
+	//    (2) 点击的时候返回到顶部
+	//    (3) 返回到顶部，那么oDiv.body.srocllTop的值就为0
+	
+
+	/*
+	onscroll = function()
+	{
+		var oDiv = document.getElementById("div1");
+		//var t = oDiv.body.scrollTop;==>错误的写法！
+		//滚动条不是节点的滚动条，是整个文档的滚动条
+		var t = document.body.scrollTop;//正确写法
+		//var t = oDiv.body.scrollTop();==>错误写法，即是scrollTop是一个【值】不是方法！！！
+		if ( t>=500 )//如果t>500就让它显示出来！
+		{
+			oDiv.style.display = "block";
+		}
+		else
+		{
+			oDiv.style.display = "none";
+		}
+	}
+	onload = function() ////二者是用等号连接的
+	{
+		var oDiv = document.getElementById("div1");
+		oDiv.onclick = function() {
+			document.body.scrollTop=0;
+		}
+	}
+	
+	//*/
+	//只有真正写了才发现你的错误！！
+
+	//第三次！！
+	onscroll=function()
+	//【千万记住】二者是用等号连接的
+	{
+		var oDiv = document.getElementById("div1")
+		var a = document.body.scrollTop;
+		if ( a>=500 )
+		{
+			oDiv.style.display = "block";
+		}
+		else
+		{
+			oDiv.style.display = "none";
+		}
+	}
+	onload = function() {
+		var oDiv = document.getElementById("div1")
+		oDiv.onclick = function()
+		{
+			document.body.scrollTop = 0;
+		}
+	}
+
+</script>
+
+ </head>
+
+ <body>
+  
+  <div id="div1"> 回到顶部 </div>
+ </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+
+window.onload = function() {
+
+/*
+	var oUl = document.getElementById("ul1");
+
+	// 每一个DOM 节点都有
+	// alert(oUl.nodeType);
+
+	// 得到 oUl 下面所有的子节点, 伪数组: [], length
+	var allChild = oUl.childNodes;
+
+	// 隔行变色
+	// 思路：
+	//  判断当前显示的这一行 是否 能被 2 整除
+
+	// 因为 allChild 包含了 文本节点，所以不能通过 i 来 判断
+	// 我用一个计数器，记录当前元素节点的个数 count
+	// if count % 2== 0  设置颜色
+
+	// i   allChild[i]
+	// 0     文本节点
+	// 1     元素节点
+	var count = 0;
+	for (var i = 0; i < allChild.length; i++) {
+		if (allChild[i].nodeType == 1) {
+
+			if (count % 2 == 0) {
+				allChild[i].style.background = "red";
+			}
+			count ++;
+		}
+	}
+*/
+
+	// 思路2: 隔行变色
+	// 1. 将所有的【元素】节点放到数组中
+	// 2. 遍历数组，将下标为 偶数 的设置背景颜色
+
+	var oUl = document.getElementById("ul1");
+
+	var arr = [];
+	for (var i = 0; i < oUl.childNodes.length; i++) {
+		if (oUl.childNodes[i].nodeType == 1) {
+			arr.push(oUl.childNodes[i]);
+		}
+	}
+
+	for (var i = 0; i < arr.length; i++) {
+		if (i % 2 == 1) {
+			arr[i].style.background = "red";
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+	/*
+
+	for (var i = 0; i < oUl.childNodes.length; i++) {
+
+		// 需要将文本节点去掉
+		if (oUl.childNodes[i].nodeType == 1) {
+			oUl.childNodes[i].style.background = "red";
+		}
+	}
+	alert(oUl.childNodes.length);
+
+	*/
+	// 节点类型： node.nodeType
+	// 1. 元素节点 <li></li>   值为 1
+	// 2. 属性节点             值为 2
+	// 3. 文本节点  sdfasdfas  值为 3
+
+
+		// if (oUl.childNodes[i].nodeType == 1) {
+		// 	// 节点类型为 1 说明，是元素节点
+		// 	oUl.childNodes[i].style.background = "red";
+		// }
+
+
+
+
+	// var oUl = document.getElementById("ul1");
+
+	// // 获取当前节点父节点
+	// oUl.parentNode.style.background = "yellow";
+
+	// alert(oUl.parentNode);
+
+}
+
+	</script>
+
+  </head>
+
+  <body>
+
+<ul id="ul1">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+
+
+  </body>
+</html>

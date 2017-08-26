@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+//window属性练习
+	//window.onload
+	/*
+	window.onload = function() {
+	var a = window.prompt("请输入您的银行卡密码");
+	if ( a!= null )
+	{
+		document.getElementById("div1").innerHTML = a;
+	}
+	}
+	//*/
+
+	
+//-----Window.open()产生一个新的窗口===>可以有返回值
+	/*
+
+	//基本写法：
+	//window.open("http://www.baidu.com","","width=200px,height=200px")
+	
+
+	//返回值：
+	//var myWindow = window.open("http://www.baidu.com","","width=200px,height=200px")
+	//=======>虽然说这里定义了一个返回值变量，但是结果跟还是跟上一句--window.open("http://www.baidu.com","","width=200px,height=200px")--的结果一样。
+
+	//可以利用返回主覆盖(http://www.baidu.com) 的值
+	var myWindow = window.open("http://www.baidu.com","","width=200px,height=200px")
+	myWindow.document.write("已经覆盖了http://www.baidu.com的链接");
+
+	//===>window.open(URL,name,features,replace)
+	//======>URL表示一个地址，也可以不写
+	//======>name表示名字，可以不写
+	//======>features表示窗口特性，比如可以设置宽度，高度
+	//===========>设置宽高：要用【等号 = 】  二者之间用【逗号 , 】隔开
+	//======>replace，可以不写。规定了装载到窗口的 URL 是在窗口的浏览历史中创建一个新条目，还是替换浏览历史中的当前条目。支持下面的值：
+							//true - URL 替换浏览历史中的当前条目。 
+							//false - URL 在浏览历史中创建新的条目。 
+	//*/
+
+
+//设置窗口的位置 .moveTo()---到左上角的距离。
+//===>myWindow.moveTo(330,200)==>moveTo(左右,上下)
+	/*
+	var myWindow = window.open("http://www.baidu.com","","width=300px,height=200px")
+	myWindow.moveTo(300,500)
+	//*/
+
+
+
+//
+
+
+
+	//产生随处调动的窗口
+	/*
+	var myWindow = window.open("http://www.baidu.com","","width=300px, height=200px");
+	myWindow.document.write("xxxx");//会直接覆盖http://www.baidu.com
+	
+	setInterval( function() {
+	var x = parseInt( Math.random()*600 );
+	var y = parseInt( Math.random()*1000 );
+	myWindow.moveTo( x,y );
+
+	var w = parseInt( Math.random()*200 );
+	var h = parseInt( Math.random()*700 );
+	myWindow.resizeTo( w,h );
+	},100)
+	//*/
+
+
+//图片每间隔888毫秒钟自动播放
+	onload = function()
+	{
+		var i = 1;
+		//setInterval(语句a,2000)
+		//setInterval(function(){},2000)
+		setInterval(function()
+		{
+			//document.getElementById("img1").src = "imgages/"+i+".jpg";
+			//写好路径
+			document.getElementById("img1").src = "images/"+ i +".jpg"
+			i++;
+			//if ( i>7 )===>可以取到第6张，所以当i=7的时候应该将i置1
+			if( i>=7 )
+			{
+				i=1;//==>到第6张的时候又从头开始
+			}
+		},888);
+		
+	}
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  <div id="div1"></div>
+  <img src="images/1.jpg" id="img1" width="500" />
+ </body>
+</html>

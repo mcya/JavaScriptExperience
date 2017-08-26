@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+   <style>
+#box{display:none;margin:10px 0;padding:10px;border:1px solid #ddd;font-size:30px;}
+    </style>
+
+	<script>
+
+// 点击 “隐藏”按钮，隔5s后，隐藏box
+	// 思路：
+	//   (1) 绑定一个点击函数
+	//   (2) 创建一个延时5s的定时器
+
+
+	//点击显示立刻显示，点击隐藏立即隐藏
+	/*
+	window.onload = function()
+	{
+		var btn1 = document.getElementById("btn1");
+		var btn2 = document.getElementById("btn2");
+		var oDiv = document.getElementById("box");
+		btn1.onclick = function()
+		{
+			oDiv.style.display = "block";
+		}
+		btn2.onclick = function()
+		{
+			oDiv.style.display = "none"; 
+		}
+	}
+	//*/
+
+	//点击显示的时候立刻显示，点击隐藏5秒后隐藏
+	// 思路： 加一个定时器，即是延迟定时器(setTimeout)
+	//*
+	window.onload = function()
+	{
+		var btn1 = document.getElementById("btn1");
+		var btn2 = document.getElementById("btn2");
+		var oDiv = document.getElementById("box");
+		btn1.onclick = function()
+		{
+			oDiv.style.display = "block";
+		}
+		btn2.onclick = function()
+		{
+			setTimeout
+			oDiv.style.display = "none"; 
+		}
+	}
+	//*/
+
+
+
+
+	
+
+
+
+
+
+	</script>
+
+  </head>
+  <body>
+
+<button id="btn1">显示</button>
+<button id="btn2">隐藏</button>
+<div id="box">#box</div>
+
+
+  </body>
+</html>

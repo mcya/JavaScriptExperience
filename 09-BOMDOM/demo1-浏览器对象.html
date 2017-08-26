@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+//window.alert('123');
+// alert('123');
+
+
+// var res = window.prompt("好汉，留下你的大名！");
+
+/*
+// window.onload 是整个页面加载结束
+window.onload = function() {
+
+	// 弹出一个输入对话框
+	// 如果点击是 确定，那么 res 就是输入框的值
+	// 如果点击是 取消，那么 res 就是null
+	var res = window.prompt("好汉，留下你的大名！");
+
+	if (res != null)
+	{
+		// 说明点击了确定按钮
+		document.getElementById("div1").innerHTML = res;
+
+	}
+}
+//*/
+
+/*
+// 弹出确认框
+// 参数： 是弹出对话框的提示
+// 返回值： 如果点击的是确定，那么返回值是true，否则为 false
+var res = window.confirm("你确定吗？");
+
+alert(res);
+//*/
+
+// 需求：自动播放
+//   每隔1秒，换到下一张图片，然后到第6张后，又返回到第一张，重新开始
+
+// 思路:
+//   (1) 创建一个间隔是1s 定时器
+//   (2) 定时器的执行函数中，更新图片
+//         变量 已经到最后一张，那就让它变为 1
+
+//*
+
+window.onload = function()
+{
+	var i = 1;
+
+
+	// setInterval 是 window 对象中的方法
+	window.setInterval(function() {
+
+		// 这个 i 是找的外部的i，所以可以保存上一次的那个值
+		document.getElementById("img1").src = "images/"+ i +".jpg";
+	
+		i++;
+
+		if (i >= 7)
+		{
+			// 已经到最后一张图片，设置为第一张
+			i = 1;
+		}
+
+	}, 1000);
+
+	// 更改图片
+	// document.getElementById("img1").src = "images/2.jpg";
+}
+
+
+//*/
+
+
+
+	</script>
+
+  </head>
+  <body>
+
+<img src="images/1.jpg" id="img1" width="500" />
+
+<!--
+	<div id="div1"></div>
+-->
+  </body>
+</html>

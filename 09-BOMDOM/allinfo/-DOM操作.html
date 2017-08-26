@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+// 设置 Li 的背景
+//   (1) 奇数行 背景颜色为 红的
+//   (2) 偶数行 背景颜色为 黄的
+
+// 思路：
+//  1. 获取所有 li 根据标签名得到
+//  2. 遍历 li，判断奇数和偶数，然后进行相应的操作 style.background
+
+
+onload = function () {
+
+
+	// 得到 id 为 list 的节点
+	// 通过 id 来找节点，速度会快一些，建议多用这种方式
+	var oUl = document.getElementById("list");
+
+	// oUl.style.border = "5px solid black";
+
+
+	// 在 oUl 找所有 标签名为 li 的节点
+	// 因为范围比较小，所以找起来比较快 
+	// 建议大家使用这种方式
+	var allLi = oUl.getElementsByTagName("li");
+
+
+	// document 代表整个页面，包括所有节点
+	// document.getElementsByTagName 在整个页面中找标签名为 li 的所有节点
+	//var allLi = document.getElementsByTagName("li");
+
+	for (var i = 0; i < allLi.length; i++)
+	{
+		allLi[i].style.background = "red";
+
+		if (i % 2 == 1)
+		{
+			allLi[i].style.background = "yellow";
+		}
+	}
+
+}
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+    <ul id="list">
+        <li><a href="http://www.baidu.com" class="baidu" id="baidu">百度</a></li>
+        <li><a href="http://www.baidu.com" class="baidu" id="baidu">百度</a></li>
+        <li><a href="http://www.baidu.com" class="baidu" id="baidu">百度</a></li>
+        <li><a href="http://www.baidu.com" class="baidu" id="baidu">百度</a></li>
+        <li><a href="http://www.baidu.com" class="baidu" id="baidu">百度</a></li>
+	</ul>
+
+
+ </body>
+</html>

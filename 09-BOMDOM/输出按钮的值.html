@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+// 点击按钮，弹出对应的按钮值
+// 思路：
+//  (1) 获取所有的按钮
+//  (2) 给每个按钮都绑定一个点击事件处理函数
+//  (3) 在函数中输出点击按钮(this) 的
+
+	onload = function()
+	{
+		var arr = document.getElementsByTagName("button");
+		for (var i=0; i<arr.length; i++)
+		{
+			arr[i].onclick = function()
+			{
+				alert(this.innerHTML)
+			}
+		}
+	}
+
+	</script>
+
+  </head>
+
+  <body>
+	<button>按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<button>按钮4</button>
+	<button>按钮5</button>
+	<button>按钮6</button>
+	
+  </body>
+</html>

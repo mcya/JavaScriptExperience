@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+
+// 总结：
+//   1. 地址跳转    location.href = "http://www.baidu.com"
+//                  location.href 当前的浏览器完整地址
+
+//       获取地址栏中查询的字符串 location.search  【需要知道如何解析 查询值】
+//                     
+//        刷新浏览器   location.reload()     不强制
+//                     location.reload(true) 强制
+//   2. 浏览器历史记录
+//          后退操作： history.back();
+//          前进操作： history.forward();
+//          当前页面的历史记录条数： history.length
+
+
+
+
+
+
+
+
+window.onload = function() {
+
+	// story.html?wd=洪荒之力&rsv_spt=1&rsv_iqid=0x9d3c9a270000890f
+	
+
+	// 取出? 开始以后的内容
+	//alert(      window.location.search  );
+	
+	// window.location.search
+	// ?wd=洪荒之力&rsv_spt=1&rsv_iqid=0x9d3c9a270000890f
+	
+	// ? wd=洪荒之力  &   rsv_spt=1  &  rsv_iqid=0x9d3c9a270000890f
+
+	// 取出wd后面的值
+
+	// 思路：
+	//   (1) 删掉‘？'
+	//   (2) 按照  & 分割
+	//			wd=洪荒之力
+	//			rsv_spt=1
+	//			rsv_iqid=0x9d3c9a270000890f
+	//   (3) 按照 = 分割， 取出关键字
+
+
+	var str = window.location.search;
+
+	// 去掉?,第一个字符
+	str = str.slice(1);
+
+	// 按照 & 分割
+	var arr = str.split("&");
+	
+	for (var i = 0; i < arr.length; i++ )
+	{
+		// wd=洪荒之力
+		//  ==> wd, 洪荒之力
+		var arrKey = arr[i].split("=");
+
+
+		// decodeURI 将编码之后的中文字符串，还原成中文
+		console.log( decodeURI(arrKey[1])  );
+	}
+
+
+	// alert(str);
+
+	
+
+
+	
+	//console.log(      window.location.search  );
+
+	//console.log(      window.location.href  );
+
+
+	var oSpring = document.getElementById("spring");
+
+	oSpring.onclick = function() {
+		
+		// 页面跳转
+		// location 是 window 对象中的一个子对象
+		// href 是 location 对象中的属性值
+		//window.location.href = "loc-spring.html";
+		
+		// window 可以省略
+		location.href = "loc-spring.html";
+		
+		//alert();
+	}
+}
+
+	</script>
+
+  </head>
+  <body>
+
+
+		<table border="1">
+			<tr>
+				<td><img src="images/1.jpg" /></td>
+				<td><img src="images/2.jpg" /></td>
+			</tr>
+			<tr>
+				<td><a id="spring"> 春 </a></td>
+				<td><a id="summer"> 夏 </a></td>
+			</tr>
+			
+			<tr>
+				<td><img src="images/3.jpg" /></td>
+				<td><img src="images/4.jpg" /></td>
+			</tr>
+			<tr>
+				<td><a href=""> 秋 </a></td>
+				<td><a href=""> 冬 </a></td>
+			</tr>
+			
+			<tr>
+				<td colspan=2>
+				
+				<!-- window.location.reload() 不强制刷新 -->
+				<!-- window.location.reload(true) 强制刷新，从服务器请求最新的文件下载来 -->
+				<a href="javascript: window.location.reload()"> 刷新页面</a> </td>
+			</tr>
+			
+		</table>
+	
+  </body>
+</html>
+

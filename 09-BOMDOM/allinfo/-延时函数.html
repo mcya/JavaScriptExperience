@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+   <style>
+#box{display:none;margin:10px 0;padding:10px;border:1px solid #ddd;font-size:30px;}
+    </style>
+
+	<script>
+
+// 点击 “隐藏”按钮，隔5s后，隐藏box
+	// 思路：
+	//   (1) 绑定一个点击函数
+	//   (2) 创建一个延时5s的定时器
+
+
+window.onload = function() 
+{
+
+	// 给 btn1 这个对象，绑定一个点击处理函数
+	// 也就是说，当点击按钮的时候，执行这个函数
+
+	// 得到的是按钮对象，是btn1
+	var oBtn1 = document.getElementById("btn1");
+	
+	// 得到 div 元素对象
+	var oDiv = document.getElementById("box");
+
+	oBtn1.onclick = function()
+	{
+		// 设置div为显示状态
+		oDiv.style.display = "block";
+	}
+
+	
+	var oBtn2 = document.getElementById("btn2");
+
+
+	var t = 0;
+
+	oBtn2.onclick = function() 
+	{	
+		t = setTimeout(function() {
+			// 这里隔5秒才行，而且只执行一次
+			oDiv.style.display = "none";
+		}, 5000);
+		
+	}
+
+
+	// 鼠标移入到 div 中，执行这个函数
+	oDiv.onmouseover = function()
+	{
+		// 清空隐藏的定时器
+		clearTimeout(t);
+	}
+
+	// 鼠标移开 div，立刻隐藏 div
+	oDiv.onmouseout = function() {
+		oDiv.style.display = "none";
+	}
+
+}
+
+	</script>
+
+  </head>
+  <body>
+
+<button id="btn1" >显示</button>
+<button id="btn2">隐藏</button>
+<div id="box" >#box</div>
+
+
+  </body>
+</html>

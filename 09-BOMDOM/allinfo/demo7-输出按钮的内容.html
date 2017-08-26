@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+onload = function()
+{
+	var allBtn = document.getElementsByTagName("button");
+	
+	for (var i = 0; i < allBtn.length; i++)
+	{
+		allBtn[i].onclick = function() {
+			// 在点击按钮的时候，循环已经结束，
+			// 最外部的i的值变为6了
+
+			// 代表当前点击的那个按钮节点【对象】
+			// 点的是谁，this 就是谁
+			// this
+			
+			// this.style.border = "5px solid red";
+			alert( this.innerHTML );
+			
+			// alert("按钮"+(i)+"");	
+		}
+	
+	}
+
+	/*
+	allBtn[1].onclick = function() {
+		alert("按钮2");
+	}
+	//*/
+}
+	</script>
+
+  </head>
+
+  <body>
+	<button>按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<button>按钮4</button>
+	<button>按钮5</button>
+	<button>按钮6</button>
+	
+  </body>
+</html>

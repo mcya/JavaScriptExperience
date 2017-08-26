@@ -1,0 +1,10 @@
+
+body { margin-top: 40px; background: url(bg1.jpg) no-repeat center center; }
+
+dl { width: 400px; border: 2px solid #ccc; background: #FFFFCC; padding: 20px; margin: 0 auto; filter: alpha(opacity: 70); opacity: 0.7; }
+dt { font-size: 18px; color: #009933; border-bottom: 1px solid #ccc; padding-left: 10px; padding-bottom: 10px; margin-bottom: 20px; }
+dd { margin-left: 0; padding-bottom: 10px; font-size: 14px; padding-left: 10px; }
+.text { width: 300px; height: 30px; line-height: 30px; }
+textarea { width: 300px; height: 120px; overflow: auto; }
+.btn { width: 120px; height: 40px; }
+.center { text-align: center; }

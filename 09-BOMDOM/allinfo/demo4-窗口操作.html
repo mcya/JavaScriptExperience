@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+
+//setInterval
+//clearInterval
+
+//t = setTimeout(....);
+//clearTimeout(t)
+
+
+// window中open函数
+// 作用： 打开新的窗口
+// 参数：第一个参数： 地址
+//       第二个：窗口的名字
+//       第三个：选项
+// 返回值： 新窗口的对象
+
+var myWindow = window.open("http://www.baidu.com", "", "width=200px,height=200px");
+
+// 向新建窗口中输出内容
+myWindow.document.write("XXXXX");
+
+
+setInterval(function() {
+	var x = parseInt(Math.random() * 1000);
+	var y = parseInt(Math.random() * 600);
+
+	myWindow.moveTo(x, y);
+
+	
+	var w = parseInt(Math.random() * 1000);
+	var h = parseInt(Math.random() * 600);
+
+	myWindow.resizeTo(w, h);
+
+}, 1000);
+
+
+
+/*
+setInterval(function() {
+	var w = parseInt(Math.random() * 1000);
+	var h = parseInt(Math.random() * 600);
+
+	myWindow.resizeTo(w, h);
+}, 100);
+//*/
+
+
+// 方法用于把窗口大小调整为指定的宽度和高度。
+// myWindow.resizeTo(500, 200);
+
+
+
+
+/*
+setInterval(function() {
+	var x = parseInt(Math.random() * 1000);
+	var y = parseInt(Math.random() * 600);
+
+	myWindow.moveTo(x, y);
+
+}, 1000);
+//*/
+
+
+// 将新建的窗口移动到 200，200 的位置
+//myWindow.moveTo(200, 200);
+
+
+
+
+
+// window.document.write("123");
+
+
+	</script>
+
+  </head>
+  <body>
+
+		
+  </body>
+</html>

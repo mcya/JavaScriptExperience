@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<style>
+	body {
+		height: 2000px;
+	}
+
+	#div1 {
+		display: none;
+		text-align:center;
+		color: white;
+		line-height: 100px;
+		font-weight: bold;
+		width: 100px;
+		height: 100px;
+		background: red;
+		position: fixed;
+		right: 0;
+		bottom: 0;
+	}
+</style>
+
+
+<script>
+
+// 在页面加载完成之后，自动调用
+// 有些操作必须在页面加载完成之后进行
+// 给window对象绑定了一个 onload 事件
+/*
+window.onload = function()
+{
+
+	// 函数中的代码是最后才执行的
+
+	// 给oBtn对象绑定了一个 onclick 事件
+	oBtn.onclick = function()
+	{
+	}
+}
+//*/
+
+
+// 当滚动到一定位置，出现 div 效果
+// 思路：
+//    判断当前滚动条的位置，
+//       如果达到一定的位置，显示 div
+//       如果没达到一定的位置，隐藏 div
+
+// 给window绑定一个 滚动 事件
+window.onscroll = function()
+{
+	// 当滚动的时候执行这段代码
+
+	// 当前滚动条的位置
+	var t = document.body.scrollTop;
+	
+
+	var oDiv = document.getElementById("div1");
+	
+	if (t >= 500)
+	{
+		oDiv.style.display = "block";
+	}
+	else 
+	{
+		oDiv.style.display = "none";
+	}
+
+	console.log("滚啦滚啦！当前滚动条的位置： " + t);
+}
+
+
+
+window.onload = function() {
+
+	// 给回到顶部的div绑定一个事件处理函数
+	var oDiv = document.getElementById("div1");
+
+
+	oDiv.onclick = function() {
+		
+		// 滚动条滚到顶部
+		document.body.scrollTop = 0;
+	}
+
+}
+</script>
+
+ </head>
+
+ <body>
+  
+  <div id="div1"> 回到顶部 </div>
+ </body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 经典解析 </title>
+<style>
+	/*----1*/
+	/*
+	#div1{
+		height:300px;
+		width:500px;
+		display:block;
+		background-color:red;
+	}
+	*/
+
+	/*----2*/
+	body{
+		height:2222px;
+	}
+	#div1{
+		height:66px;
+		width:666px;
+		display:none;
+		position:fixed;/*必须是position:fixed*/
+		margin:0 auto;
+		background-color:red;
+	}
+</style>
+
+
+<script>
+//1---广告窗口自动关闭, 倒计时5秒后关闭窗口 (分别使用定时器和延时器)
+
+//===>寻找节点，对节点设置延时定时器
+//===>获得div后才能正确执行
+	
+	/*
+	var t = window.setTimeout(function() {
+	alert("哈哈");
+},  1000);
+	//*/
+	//【注意】setTimeout 的用法！
+	//setTimeout具有返回值！==>var a =setTimeout(a,b)
+	//                      ==>var a =setTimeout(function(){},b)
+	//                      ==>表示多少毫秒后执行该函数
+
+
+	/*
+	onload = function()
+	{
+		var oDiv = document.getElementById("div1");
+		setTimeout(function(){
+			oDiv.style.display = "none";
+		},2000)
+	}
+	//*/
+
+
+//2---顶部悬浮,当滚动条滚动到较下方时, 留言信息一直显示在顶部
+
+//思路：
+//   (1) div获得后才能执行onload ?应该没有这个必要吧?只是一个滚动条
+//   (2) 获取节点
+//   (3) 绑定滚动条函数
+//   (4) 滚动条大于某一个值得时候执行CSS代码使得方框居中浮动
+	/*
+	onscroll = function()
+	{
+		var oDiv = document.getElementById("div1");
+		var t = document.body.scrollTop;
+		if ( t>=500 )
+		{
+			oDiv.style.display = "block";
+		}
+		else
+		{
+			oDiv.style.display = "none"
+		}
+	}
+
+	//*/
+
+
+
+//3----?name=green&age=18&school=千锋&class=h5开发&lesson=javascript
+	
+	/*
+	var str = "?name=green&age=18&school=千锋&class=h5开发&lesson=javascript";
+	str = str.slice(1);
+	var arr = str.split("&");
+	for (i=0; i<arr.length; i++	)
+	{
+		var arrKey = arr[i].split("=");
+		//document.write( arrKey[i]+"<br>" )==>无法显示中文
+		//decodeURI==>将编码后的中文字符串还原为中文
+		document.write( decodeURI(arrKey[1])+"<br>" );
+	}
+	//*/
+
+
+
+//4---全选和反选checked
+// ---获得节点
+// ---点击事件
+	/*
+	onload = function(){
+		var oInput = document.getElementById("all");
+		var oBodyli = document.getElementsByName("hobby")
+		oInput.onclick = function()
+		{
+			for (i=0; i<oBodyli.length; i++)
+			{
+				//oBodyli[i].getElementsByName("hobby").checked=true
+				oBodyli[i].checked = !oBodyli[i].checked;
+			}
+		}
+	}
+	//*/
+
+
+
+
+
+
+</script>
+
+ </head>
+
+ <body>
+	<!---------------->
+
+	<!-------1
+	<div id="div1">2秒后自动关闭</div>
+	--------->
+
+
+<!-------2
+	<div id="div1">留言信息</div>
+	------->
+
+
+<!-------4
+	<table id="dataList">
+        <thead>
+            <th><input type="checkbox" name="all" id="all"></th>
+            <th>爱好</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="hobby"></td>
+                <td>篮球</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="hobby"></td>
+                <td>足球</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="hobby"></td>
+                <td>羽毛球</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="hobby"></td>
+                <td>爬山</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="hobby"></td>
+                <td>游泳</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="hobby"></td>
+                <td>购物</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="hobby"></td>
+                <td>看电影</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="hobby"></td>
+                <td>旅游</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="hobby"></td>
+                <td>音乐</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="hobby"></td>
+                <td>画画</td>
+            </tr>
+        </tbody>
+    </table>
+------->
+
+ </body>
+</html>

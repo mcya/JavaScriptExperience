@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+   <style>
+#box{display:none;margin:10px 0;padding:10px;border:1px solid #ddd;font-size:30px;}
+    </style>
+
+	<script>
+/*
+// 创建一个定时器
+// 定时器中的函数只执行一次
+// 参数： 函数,  时间(ms)
+// 返回值： 定时器的标识
+var t = window.setTimeout(function() {
+	alert("哈哈");
+},  1000);
+//*/
+
+// 清除延时执行定时器
+// clearTimeout(t)
+
+//setInterval
+//clearInterval(t)
+
+window.onload = function()
+{
+	var btn1 = document.getElementById("btn1");
+
+	var btn2 = document.getElementById("btn2");
+
+	var oDiv = document.getElementById("box");
+
+	// 给按钮1绑定一个点击处理函数
+	btn1.onclick = function() {
+		oDiv.style.display = "block";
+	}
+
+	// 点击 “隐藏”按钮，隔5s后，隐藏box
+	// 思路：
+	//   (1) 绑定一个点击函数
+	//   (2) 创建一个延时5s的定时器
+
+	//*
+	var timer = null;
+	btn2.onclick = function() {
+		
+		timer = setTimeout(function() {
+			oDiv.style.display = "none";
+		}, 5000);
+	}
+	//*/
+
+
+	// 点击 “隐藏”按钮，隔5s后，隐藏box
+	// 如果鼠标移入这个box，那么取消延时隐藏的计时器
+
+	// 当鼠标移入到 div时，执行一个函数
+	oDiv.onmouseover = function() {
+		console.log("清除了定时器！");
+		clearTimeout(timer);
+	}
+}
+
+
+
+	</script>
+
+  </head>
+  <body>
+
+<button id="btn1">显示</button>
+<button id="btn2">隐藏</button>
+<div id="box">#box</div>
+
+
+  </body>
+</html>
