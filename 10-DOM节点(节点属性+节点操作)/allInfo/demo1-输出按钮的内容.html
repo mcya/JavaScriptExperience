@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+/*
+var obj = {};
+
+obj.age = 18;
+
+alert(obj.age)
+//*/
+
+
+onload = function()
+{
+	var allBtn = document.getElementsByTagName("button");
+	
+	for (var i = 0; i < allBtn.length; i++)
+	{
+		// 点击按钮，弹出这个按钮的下标
+
+		// 在按钮对象中，添加了一个新的属性 xxx，值是 i
+		allBtn[i].xxx = i;
+
+		allBtn[i].onclick = function() {
+			
+			//this.xxx;
+			// 弹出点击按钮对象中的 xxx 属性值
+			// alert( this.xxx );
+
+			// this.innerHTML;
+		}
+	
+	}
+
+}
+	</script>
+
+  </head>
+
+  <body>
+	<button>按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<button>按钮4</button>
+	<button>按钮5</button>
+	<button>按钮6</button>
+	
+  </body>
+</html>

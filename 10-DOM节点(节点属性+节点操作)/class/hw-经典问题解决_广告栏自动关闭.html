@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				background: #fc6;
+				border: 1px solid black;
+				width: 400px;
+				height: 200px;
+				margin: 0 auto;
+			}
+		</style>
+		<script>
+			
+			//onload: 是在页面加载完成后自动执行
+			window.onload = function() {
+				
+				var oBox = document.getElementById("box");
+				var oSec = document.getElementById("sec");
+				
+				//使用定时器
+				/*
+				 * 
+				var timer = setInterval(function(){
+					
+					oSec.innerHTML = oSec.innerHTML-1;
+					
+					if (oSec.innerHTML < 0) {
+						oBox.style.display = "none"; //隐藏box
+						clearInterval(timer); //定时器停止
+					}
+					
+				}, 1000);
+				*/
+				
+				//使用延时器
+				//只会调一次
+				var timeout = setTimeout(fn, 1000);
+				function fn() {
+					
+					oSec.innerHTML--;
+					
+					if (oSec.innerHTML < 0) {
+						oBox.style.display = "none";
+					} else {
+						setTimeout(fn, 1000);
+					}
+				}
+				
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			我是一条广告, 谢谢,<span id="sec">5</span>秒后自动关闭
+		</div>
+	</body>
+</html>

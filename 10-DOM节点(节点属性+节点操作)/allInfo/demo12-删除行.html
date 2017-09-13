@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+		table{margin-top:20px;width:100%;border:1px solid #ddd;border-collapse: collapse;}
+		td{padding:5px 15px;border:1px solid #ddd;}
+
+		/*css3隔行变色*/
+		table tr:nth-child(odd){
+			background-color:#fc0;
+		}
+
+
+/*
+		.odd{background-color:#fc0;} */
+
+
+	</style>
+
+	<script>
+
+window.onload = function(){
+
+	var btn = document.getElementsByTagName("button")[0];
+
+	// 思路：
+	// 1. 获取行数与列数
+	// 2. 根据行数 来创建 对应的 tr 标签
+	//    根据列数 来创建 对应的 td 标签
+	// 3. 将 td 添加到 tr 中
+	//    tr 添加到table中
+	//    table 添加到 body 中
+
+	var oRow = document.getElementById("row");
+	var oCol = document.getElementById("col");
+
+	btn.onclick = function () {
+		
+		// 创建一个 table 标签
+		var oTable = document.createElement("table");
+
+		var rows = parseInt(oRow.value);
+		var cols = parseInt(oCol.value);
+
+		for (var i = 0; i < rows; i++) {
+			// 创建一个 tr 标签
+			var oTr = document.createElement("tr");
+
+			// if (i % 2 == 0) {
+			// 	oTr.className = "odd";
+			// }
+
+			for (var j = 0; j < cols; j++) {
+				// 创建一个 td 标签
+				var oTd = document.createElement("td");
+
+				if (j == cols-1) {
+					var btnDelete = document.createElement("button");
+					btnDelete.innerHTML = "删除";
+
+					// 删除行的思路
+					// 1. 按钮的点击事件处理函数
+					// 2. 将 按钮 的 父节点的 父节点 移除掉
+
+					btnDelete.onclick = function() {
+						oTable.removeChild(this.parentNode.parentNode);
+					}
+
+					oTd.appendChild(btnDelete);
+
+				} else {
+					oTd.innerHTML = (i+1) + "-" + (j+1);
+				}
+
+				oTr.appendChild(oTd);
+			}
+
+			oTable.appendChild(oTr);
+		}
+
+		// 怎么得到body对象？
+		// var oBody = document.getElementsByTagName("body")[0];
+
+		// 获取到 body 节点
+		var oBody = document.body;
+
+		// 将创建好的 table 放到 body 中
+		oBody.appendChild(oTable);
+
+
+
+		// 通过js创建的节点与 html 中直接写节点是一样的
+		// css 对创建的节点都有效的
+		// var t = document.getElementsByTagName("table")[0];
+		// alert(t);
+
+
+
+		// oBody.insertBefore(oTable, oBody.firstChild);
+
+		// oBody.firstElementChild
+		// 获取子节点中的第一个元素节点
+
+		// oBody.insertBefore(oTable, oBody.firstElementChild);
+
+	}
+}
+
+
+
+
+		
+		// // 将创建好的Td放到 tr 中
+		// oTr.appendChild(oTd);
+		// // tr 放到 table 中
+		// oTable.appendChild(oTr);
+
+	</script>
+
+  </head>
+
+  <body>
+行：<input type="text" id="row"> 列：<input type="text" id="col"><button>生成表格</button>
+	
+  </body>
+</html>
+

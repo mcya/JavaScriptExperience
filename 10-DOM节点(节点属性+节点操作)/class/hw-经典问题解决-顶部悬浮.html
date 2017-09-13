@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				height: 2000px;
+				background: url(images/bg1.gif);
+			}
+		</style>
+		<script>
+			
+			window.onscroll = function() {
+				
+				var oBox = document.getElementById("box");
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				
+				if (scrollTop > 400) {
+					oBox.style.position = "fixed"; 
+					oBox.style.top = "0";
+				} 
+				else {
+					oBox.style.position = "absolute";
+					oBox.style.top = "400px";
+				}
+				
+			}
+			 
+		</script>
+	</head>
+	<body>
+		<div id="box" style="background:blue; color: white; height: 30px; width: 100%; position: absolute; top: 400px;"> 留言信息 </div>
+	</body>
+</html>

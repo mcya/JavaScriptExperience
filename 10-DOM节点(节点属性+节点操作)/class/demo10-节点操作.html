@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+window.onload = function(){
+
+	var box = document.getElementById("box");
+
+	// 创建一个新的节点，节点标签名是 h4
+	var newObj = document.createElement("div");
+
+	newObj.innerHTML = "今天有两位同学迟到啦，有节目看啦，开心~";
+
+	// 将这个节点添加到 box 对象中
+	box.appendChild(newObj);
+	
+}
+
+	</script>
+
+  </head>
+
+  <body>
+
+	<div id="box">
+		<h1>day10: Dom节点</h1>
+	</div>
+	
+  </body>
+</html>

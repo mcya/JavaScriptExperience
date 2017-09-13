@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+<style>
+		.hide{display:none;}
+
+		#div1{border:1px solid #ddd;padding:1px;}
+		#div1 h4{margin:1px;background-color:#ddd;padding:15px;}
+		#div1 .content{display:none;height:120px;padding:15px;}
+</style>
+
+	<script>
+
+// 思路：
+// 1. 所有的标题都绑定一个点击事件处理函数
+// 2. 在事件处理函数中，隐藏所有的内容
+// 3. 将当前点击的标题【内容】显示出来
+/*
+window.onload = function()
+{
+	var oDiv = document.getElementById("div1");
+	//获取div节点,是为了更方便找到div中的标签节点、class节点
+	var allH4 = oDiv.getElementsByTagName("h4");
+	var allContent = oDiv.getElementsByClassName("content");
+	for (var i=0; i<allH4.length; i++)
+	{
+		allH4[i].onclick = function(){
+			for (var j=0; j<allContent.length; j++)
+			{
+				allContent[j].style.display = "none";
+			}
+			this.nextElementSibling.style.dispaly="block";
+		}
+	}
+}
+//*/
+window.onload = function()
+//函数执行在HTML加载之后
+{
+	var oDiv = document.getElementById("div1");
+	var allH4 = oDiv.getElementsByTagName("h4");
+	//获取所有的H4标题，因为h4在ID中，所以先找到ID，再从ID中找到H4
+	//===>获取节点的方法：有id先找id,再找 class,标签 这类的，要是没有id就直接找他们
+	//===>【注意】在查找字节的时候，只有Element只有是id的时候才不加s，其他的都要加s，列如 getElementsByTagName getElementsByClassName
+	var allContent = oDiv.getElementsByClassName("content");
+	for (var i = 0; i < allH4.length; i++)//要访问所有的h4节点，所以需要一个循环来遍历
+	{
+		allH4[i].onclick = function() {//对所有的h4都绑定一个点击事件函数
+			// 所有的 div 隐藏掉
+			for (var j = 0; j < allContent.length; j++)
+			{
+				allContent[j].style.display = "none";
+			}
+			this.nextElementSibling.style.display = "block";//再用this
+			//利用this表示点击哪个的时候那就执行函数，类似于tab切换
+			
+			//列子类似如下：(点击哪个哪个就调用active样式)
+			//for (var j = 0; j < allSpan.length; j++)
+			//{
+			//	allSpan[j].className = "";
+			//}
+			//this.className = "active";
+		}
+
+	}
+}
+
+	</script>
+
+  </head>
+
+  <body>
+	<div id="div1">
+		<h4>标题1</h4>
+		<div class="content">#内容1</div>
+		<h4>标题2</h4>
+		<div class="content">#内容2</div>
+		<h4>标题3</h4>
+		<div class="content">#内容3</div>
+		<h4>标题4</h4>
+		<div class="content">#内容4</div>
+		<h4>标题5</h4>
+		<div class="content">#内容5</div>
+	</div>
+	
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+// 思路
+// 1. 获取所有 a 标签
+// 2. 将所有 a 标签绑定一个点击事件处理函数
+// 3. 处理函数中， 将 a 标签 父节点 隐藏掉
+	/*
+	var allA = document.getElementsByTagName("a");
+	allA.onclick = function()
+	{
+		allA.style.display = "none";
+	}
+	//*/
+	/*
+	onload = function()
+	{
+		//var allA = [];
+		var allA = document.getElementsByTagName("a");
+		//先获取所有的a标签
+		//var allAP = allA[i].parentNode
+		//for (i=0; i<allA.length; i++)
+		//{	
+			allA[2].onclick = function()
+			//给按钮创建一个点击的时候才执行的函数
+			{
+				allA[2].parentNode.style.display = "none";
+			}
+		//}
+	
+	}
+	//*/
+	//===>由上面发现点击allA[2]会发生改变的但是，加上了一个for循环之后,把2替换成a就不行了！
+	//============>需要一个this
+	
+	/*
+	onload = function()
+	//--函数执行要在HTML之后，因为需要获取a标签的值
+	{
+		//--var allA = [];可以不写
+		var allA = document.getElementsByTagName("a");
+		//--获取文档中所有a标签的节点，因为需要对a进行操作
+		for (i=0; i<allA.length; i++)
+		//--因为要对每一个a都要操作，所以用一个循环遍历它！
+		{	
+			allA[i].onclick = function()
+			//--对相应的a标签设置一个点击函数，即是点击的时候立即执行。
+			{
+				this.parentNode.style.display = "none";
+				//--this起到一种一一对应的作用，即是你这个的时候就执行这个，也就是说点击哪一个就执行哪一个！经常应用在类似的环境中。
+				//--对多个a标签进行获取，每个a标签都在点击的时候都要执行同一种的方法函数或者说要执行同一种操作的。
+				//--即是对a[i]执行某个函数,i的数值有多个,这时候就需要一个this来起到函数对应的i！this起到一种相对应的效果。
+			}
+		}
+	
+	}
+	//*/
+
+	//重写完整版：
+	//*
+	onload = function()
+	{
+		var allA = document.getElementsByTagName("a");
+		for (var i=0; i<allA.length; i++)
+		{
+			allA[i].onclick = function()
+			{
+				this.parentNode.style.display = "none";
+			}
+		}
+	}
+	//*/
+
+	</script>
+
+  </head>
+
+  <body>
+
+<style>
+  a {cursor: pointer;}
+</style>
+
+<h1> 今日头条 </h1>
+
+<ul id="ul1">
+	<li>我机巡航南海释放重大信号 轰6曾突破日美封锁链  <a>&times;</a></li>
+	<li>少林寺自家门口遇假僧：陪NBA球星韦德拜佛的不是我们... <a>&times;</a></li>
+	<li>李克强谈互联网+物流：既是发展新经济，又能提升传统.. <a>&times;</a></li>
+	<li>这位85后技术男，要实现APP之间的深度链接  <a>&times;</a></li>
+	<li>国内两大白帽子关闭 引猜测  <a>&times;</a></li>
+</ul>
+  </body>
+</html>

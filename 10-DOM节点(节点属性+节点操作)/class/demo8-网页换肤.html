@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+<link id="link" href="css/css2.css" rel="stylesheet" type="text/css" />
+
+	<script>
+
+// 思路
+//   (1) 获取按钮
+//   (2) 给按钮绑定一个点击事件处理函数
+//   (3) 函数中，将 css 文件修改成对应的css文件
+//          <1> 得到 link 标签
+//          <2> link 标签中 href 属性，改成对应的样式文件路径
+
+window.onload = function() 
+{
+	var allInput = document.getElementsByTagName("input");
+
+	// 得到 link 的标签对象
+	var oLink = document.getElementById("link");
+
+
+	for (var i = 0; i < 2; i++)
+	{
+		allInput[i].onclick = function() {
+			var a = this.getAttribute("data-css");
+
+			oLink.href = "css/"+a+".css";
+		}
+	}
+
+
+
+
+
+
+	var btn1 = allInput[0];
+
+	// css 变量类型是 string
+	var css = btn1.getAttribute("data-css");
+
+	// 对于系统的属性，可以直接这样写
+	// btn1.id
+
+	// 在btn1中设置一个属性名为 xxx，值为1
+	btn1.setAttribute("xxx", "1");
+
+	
+	// 移除btn1中 style 属性
+	btn1.removeAttribute("style");
+
+	// 移除掉btn1 style 属性后，btn1的行间样式就消失了
+	// btn1.style.border
+
+
+
+// Lisp 编程语言 古老的  人工智能  
+// JavaScript， 2007，有人说：“所有能用 JS写的程序，最终都会用 JS 来写”
+
+
+
+
+
+	var btn2 = allInput[1];
+	
+	// getAttribute 是DOM对象中的方法
+	// 作用： 获取节点对象中属性值 为对应参数 的属性值
+	// 例如： btn1.getAttribute("data-css") 是获取 btn1 节点对象中对应属性值为 data-css 的值
+	// var css = btn1.getAttribute("data-css");
+
+	// alert(css);
+
+
+	/*
+	btn1.onclick = function() {
+
+		var a = btn1.getAttribute("data-css");
+		oLink.href = "css/"+a+".css";
+		//oLink.href = "css/css1.css";
+	}
+
+	btn2.onclick = function() {
+		var a = btn2.getAttribute("data-css");
+		oLink.href = "css/"+a+".css";
+	}
+	//*/
+}
+
+
+	</script>
+
+  </head>
+
+  <body>
+
+<dl id="message">
+	<form>
+		<dt>
+			<strong>可以换肤的提交框：</strong>
+
+			<!-- data-css 是一个自定义的属性，名字可以随便取-->
+			<input type="button" value="皮肤1" data-css="css1" />
+			<input type="button" value="皮肤2" data-css="css3" />
+		</dt>
+		<dd>输入姓名：<input class="text" type="text" /></dd>
+		<dd>输入密码：<input class="text" type="password" /></dd>
+		<dd>请您留言：<textarea></textarea></dd>
+		<dd class="center"><input class="btn" type="submit" value="提交" /></dd>
+	</form>
+</dl>
+
+	
+  </body>
+</html>

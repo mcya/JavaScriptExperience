@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style>
+		/** 大盒子div **/
+		#progress{
+			position: relative;
+			margin: auto;
+			top: 200px;
+			display: block;
+			width: 150px;
+			height: 20px;
+			border-style: dotted;
+			border-width: thin;
+			border-color: darkgreen;
+		}
+
+		/** 小的div **/
+		#filldiv{
+			position:absolute;
+			top: 0px;
+			left: 0px;
+			width: 0px;
+			height: 20px;
+			background: blue;
+		}
+		/** span标签 **/
+		#percent{
+			position: absolute;
+			top: 0px;
+			left: 200px;
+			
+		}
+	</style>
+
+	<script>
+/*
+var a = 5;
+var b = 3;
+
+var m = 0;
+if (a > b )
+{
+	m = a;
+}
+else
+{
+	m = b;
+}
+//*/
+
+// ? :  三目运算符，条件运算符
+//  优先级别很低
+// 格式： 表达式1 ? 表达式2 : 表达式 3
+// 功能： 先计算表达式1 的值，如果为真，那么执行表达式2
+//                            如果为假，那么执行表达式3
+// 整体表达式的值： 
+//       表达式1的值如果为真，那么是表达式2 的值
+//       表达式1的值如果为假，那么是表达式3 的值
+/*
+var a = 5;
+var b = 100;
+var m = a > b ? a : b;
+
+alert(m);
+//*/
+
+
+
+
+// 进度条思路：
+
+//  (1) 获取进度条 div 和 百分比 的节点对象
+//  (2) 创建一个定时器
+//  (3)  定时更新 div 宽度 和 百分比
+
+window.onload = function() {
+	var oDiv = document.getElementById("filldiv");
+	var oSpan = document.getElementById("percent");
+	
+	// alert(   oDiv.style.width  );
+
+	// 进度条外层的div
+	var oProg =document.getElementById("progress");
+	
+	
+	// 取出 oProg 的 css 样式【对象】
+	// 【注意】非 IE 中使用
+	//  var oStyle = getComputedStyle(oProg);
+
+	
+	// IE 中获取样式对象的方式
+	//  格式： 对象.currentStyle 
+	// 结果就是一个 css 的样式对象
+	// var oStyle = oProg.currentStyle;
+
+
+	// 【兼容写法】
+	//var oStyle = oProg.currentStyle || getComputedStyle(oProg);
+
+	// 因为 IE 中没有 getComputedStyle 方法，所以不能调用这个 getComputedStyle 函数
+	// 用上面那种方式，先写 IE 的
+	// var oStyle = getComputedStyle(oProg) || oProg.currentStyle ;
+
+
+
+
+	// 样式对象 的 width 值
+	//alert(oStyle.width);
+
+	
+	var w = oStyle.width;
+	// 去掉后面的 px
+	// w = w.slice(0, -2);
+	
+	// 强制转换也可以去掉后面的 px
+	w = parseInt(w);
+	// alert(w);
+
+	var count = 0;
+
+	var t = setInterval(function() {
+		oDiv.style.width = count + "px";
+
+		count++;
+
+		if (count > w)
+		{
+			clearInterval(t);
+		}
+
+		// 获取当前进度的百分比
+		var percent = (count / w) * 100;
+	
+		// 取整
+		percent = parseInt(percent);
+
+		oSpan.innerHTML = percent + "%";
+
+	}, 20);
+}
+	</script>
+
+  </head>
+
+  <body>
+
+	<div id="progress">
+		<div id="filldiv"></div>
+		<span id="percent">0</span>
+	</div>
+	
+  </body>
+</html>
+
+
+

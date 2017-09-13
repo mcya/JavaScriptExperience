@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+<style>
+	#tab span{display:inline-block;padding:5px 15px;background-color:#ddd;margin:0 3px;border:1px solid #ddd;border-bottom:none;}
+
+	span.active {
+		color: white;
+		background-color: red !important;
+	}
+
+	.content{padding:15px;border:1px solid #ddd;font-size:24px;background-color:#efefef;}
+</style>
+
+    <script>
+
+// 加载之后才能获取元素
+	// 思路：
+	//   (1) 对于所有的content即是内容方框设置隐藏
+	//   (2) 要执行1那么必须先获取content节点，content是一个class，可以通过获取class名字得到
+	//   (3) 设置隐藏就是对display设置none，多个的隐藏，需要一个遍历
+	//   (4) 对于初始状态除了第一个之外所有的content都隐藏
+	//   (1) [所有]的 span 都绑定一个点击事件处理函数，span是一个标签，所以用标签绑定
+	//   (2)  将所有内容都隐藏，然后显示点击按钮所对应的面板
+
+
+	// 按钮点击颜色 的思路
+	
+	//   (1)  将所有按钮的样式都去掉，
+	//   (2) 然后将当前点击按钮添加一个 active 的样式
+	
+	/*
+	onload = function()
+	{
+		var allContent= document.getElementsByClassName("content");
+		for (var i=0; i<allContent.length; i++)
+		{
+			allContent[i].style.display = "none";
+		}
+		allContent[0].style.display = "block";
+		//上面隐藏了content的内容
+		var oTab = document.getElementById("tab");//获取tab节点		
+		var allSpan = oTab.getElementsByTagName("span");//获取span 标签
+		allSpan[0].className = "active";//设置初始状态上第一个span的样式
+		for (var i = 0; i < allSpan.length; i++)
+		{
+			allSpan[i].xxx = i;			
+			allSpan[i].onclick = function() {
+				
+				for (var j=0; j<allContent.length; j++)
+				{
+					allContent[j].style.display = "none";
+				}
+			
+			var pos = this.xxx;
+			allContent[pos].style.display = "block";
+			for (var j = 0; j < allSpan.length; j++)
+			{
+				allSpan[j].className = "";
+			}
+			//this.calssName = "active";
+			  this.className = "active";
+			//真是日了狗了！！
+			//class  和  calss  我也是醉了
+			//真是烦死，浪费哥哥这么多时间
+			
+		}
+	}
+}
+
+	//*/
+
+
+	//再写一次
+	// (1)  函数在HTML 加载之后
+	// (2)  隐藏其余的content，只显示第一个content
+	// (3)  对span绑定一个点击事件，那么先获得所有的span
+	// (4)  span在id中，为了效率应该先获得ID再获得span
+	// (5)  span 在点击的时候执行红色背景模式，即是样式发生了变化
+	// (6)  第一个span在默认状态下执行红色背景的CSS样式
+	// (7)  每一个span和内容块的下标是一样，每当点击一个span的时候就会发生改变，所以需要获取他们的下标！
+	// (8)  点击它的时候它显示，其余的隐藏,即是将所有内容都隐藏，然后显示点击按钮所对应的面板
+	// (9)  要对所有的span设置操作，所以先要一个遍历
+	// (10) 获得下标的方式：新增一个属性,将i值赋给他
+	// (11) 样式的改变类似于内容的显示，即是：点击的时候有样式，不点击的时候没有样式==>在点击的时候设置样式为acitiv所定义的，不点击的时候就不显示该样式
+	/*
+	onload = function()
+	{
+		var allContent = document.getElementsByClassName("content");
+		for (var i=0; i<allContent.length; i++)
+		{
+			allContent[i].style.display = "none";
+		}
+		allContent[0].style.display = "block";
+		var oTab = document.getElementById("tab");
+		var allSpan = oTab.getElementsByTagName("span");
+		allSpan[0].className = "active";		
+		for (var i = 0; i < allSpan.length; i++)
+		{
+			allSpan[i].xxx = i;//必须要放在点击函数的外面！
+			allSpan[i].onclick = function()
+			{
+				for (var j = 0; j < allContent.length; j++)
+				{
+					//allContent[j].style.display = "none";//点击即消失
+					//allContent[j].style.display = "";//点击无样式，即下拉
+					//我需要的是，点击的时候其他的消失，但我的这个内容是显示的，那就利用this吧，点击就操作，即点击对应的内容显示其他的消失！
+					allContent[j].style.display = "none";
+				}
+				var pos = this.xxx;//是this.xxx 不是this.allSpan[i]
+				allContent[pos].style.display = "block";
+				//点击到对应的按钮显示对应的内容
+				
+				//下面是颜色的改变
+				//类似上面的点击内容显示对应内容，不点击就会隐藏内容。
+				for (var j=0; j<allSpan.length; j++)
+				{
+					allSpan[j].className = "";
+				}
+				this.className = "active"
+			}
+		}
+	}
+	//*/
+
+	//最后一次
+	onload = function()
+	{
+		var allCon = document.getElementsByClassName("content");
+		for (i=0; i<allCon.length; i++)
+		{
+			allCon[i].style.display = "none"
+		}
+		allCon[0].style.display = "block";
+		var oTab = document.getElementById("tab");
+		var allSpan = oTab.getElementsByTagName("span");
+		allSpan[0].className="active"
+		for (i=0; i<allSpan.length; i++)
+		{
+			allSpan[i].xxx = i;
+			allSpan[i].onclick = function()
+			{
+				//颜色切换的变化：
+				for (var j = 0; j < allSpan.length; j++)
+				{
+					allSpan[j].className = "";
+				}
+				this.className = "active";
+				//allSpan[0].className="active"
+				//第一个不是点击的时候才显示的，他是默认显示的
+				
+				//内容的变化：
+				for (var j = 0; j < allCon.length; j++)
+				{
+					allCon[j].style.display = "none";
+				}
+				//var pos = this.xxx;==>可以省略不写
+				allCon[this.xxx].style.display = "block"
+				//主要是下标的应用
+				//先把下标赋值给一个新增的属性，然后利用this来调用该属性即可实现！！！！【终结规律】
+			}
+		}
+	}
+
+	//good
+	//多多推敲，相信孰能开悟，孰能生巧。
+
+	</script>
+
+  </head>
+
+  <body>
+	<div id="tab"><span>辣条</span><span>豆腐</span><span>方便面</span><span>桂林米粉</span></div>
+
+	<div class="content">我喜欢吃辣条</div>
+	<div class="content">吃完豆腐池辣条</div>
+	<div class="content">喜欢去超市捏方便面</div>
+	<div class="content">桂林米粉哪里最正宗</div>
+	
+  </body>
+</html>
+
+

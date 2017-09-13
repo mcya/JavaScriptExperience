@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+<style type="text/css">
+* { padding: 0; margin: 0; }
+li { list-style: none; }
+body { background: #f6f9fc; font-family: arial; }
+
+.calendar { width: 210px; margin: 0 auto; padding: 10px 10px 20px 20px; background: #eae9e9; }
+.calendar ul { width: 210px; overflow: hidden; padding-bottom: 10px; }
+.calendar li { float: left; width: 58px; height: 54px; margin: 10px 10px 0 0; border: 1px solid #fff; background: #424242; color: #fff; text-align: center; cursor: pointer; }
+.calendar li h2 { font-size: 20px; padding-top: 5px; }
+.calendar li p { font-size: 14px; }
+
+.calendar .active { border: 1px solid #424242; background: #fff; color: #e84a7e; }
+.calendar .active p { font-weight: bold; }
+
+.calendar .text { width: 178px; padding: 0 10px 10px; border: 1px solid #fff; padding-top: 10px; background: #f1f1f1; color: #555; }
+.calendar .text h2 {font-size: 14px; margin-bottom: 10px; }
+.calendar .text p { font-size: 12px; line-height: 18px; }
+
+</style>
+
+
+	<script>
+
+
+window.onload = function() {
+
+	var arr=['快过年了，大家可以商量着去哪玩吧～',
+			 '大家好好学习吧222222~~~',
+			 '大家好好学习吧222222333~~~',
+			 '大家好好学习吧222444222~~~',
+			 '大家好好学习555吧222222~~~',
+			 '大家好好学习吧666222222~~~',
+			 '大家好好学习吧227772222~~~',
+			 '大家好好学习吧28888822222~~~',
+			 '大家好好学习吧99999222222~~~',
+			 '大家好好学习10000000吧222222~~~',
+			 '大家好好学习吧111111222222~~~',
+			 '大家好好学习吧22222200000000000~~~'];
+
+
+
+
+// 思路
+// 1. 点击日期时，
+// 2.  更新月份活动
+// 3.  更新月份活动信息： 获取数组中对应的活动信息
+// 4.  更新选中月份的样式，并且是将其他都去掉
+
+	var allLi = document.getElementsByTagName("li");
+
+	var oTxt = document.getElementById("txt");
+	var oH2 = oTxt.getElementsByTagName("h2")[0];
+	var oP = oTxt.getElementsByTagName("p")[0];
+
+	for (var i = 0; i < allLi.length; i++) {
+
+		allLi[i].xxx = i+1;
+		allLi[i].onclick = function() {
+			oH2.innerHTML = this.xxx + "月份活动";
+
+			oP.innerHTML = arr[this.xxx-1];
+
+			for (var j = 0; j < allLi.length; j++) {
+				allLi[j].className = "";
+			}
+			this.className = "active";
+		}
+	}
+
+
+}
+
+
+	</script>
+
+  </head>
+
+  <body>
+	
+
+<div id="tab" class="calendar">
+
+    <ul id="ul">
+        <li class="active"><h2>1</h2><p>JAN</p></li>
+        <li><h2>2</h2><p>FER</p></li>
+        <li><h2>3</h2><p>MAR</p></li>
+        <li><h2>4</h2><p>APR</p></li>
+        <li><h2>5</h2><p>MAY</p></li>
+        <li><h2>6</h2><p>JUN</p></li>
+        <li><h2>7</h2><p>JUL</p></li>
+        <li><h2>8</h2><p>AUG</p></li>
+        <li><h2>9</h2><p>SEP</p></li>
+        <li><h2>10</h2><p>OCT</p></li>
+        <li><h2>11</h2><p>NOV</p></li>
+        <li><h2>12</h2><p>DEC</p></li>
+    </ul>
+    
+    <div class="text" id="txt">
+        <h2>1月活动</h2>
+        <p>快过年了，大家可以商量着去哪玩吧～</p>
+    </div>
+
+</div>
+
+  </body>
+</html>

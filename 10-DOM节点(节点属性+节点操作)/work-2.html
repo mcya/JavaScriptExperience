@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 打分效果 </title>
+<style>
+ul,li{list-style:none;}
+#starts,#starts ul{float:left;}
+#starts{padding-left:16px;padding-top:7px;}
+#starts ul li{width:32px;height:28px;float:left;background:url(star.gif) no-repeat;padding-right:3px;}
+#starts ul li.on{background: url(star.gif) no-repeat 0 -28px; }
+#starts ul span{display:inline;float:left;padding-left:10px;height:31px;line-height:31px;}
+
+</style>
+
+
+<script>
+
+
+//*/
+	/*
+	onload = function()
+	{
+		var oStar = document.getElementById("starts");
+		var oDir = oStar.getElementsByClassName("dir");
+		var allLi = oStar.getElementsByTagName("li");
+		var oInput = oStar.getElementsByClassName("startP");
+		//定义一个函数用于清空样式
+		clearAll = function ()
+		{
+			for (var i = 0; i < allLi.length; i++)
+			{
+				allLi[i].className = "";//清空样式
+			}
+		}
+		for (var i = 0; i < allLi.length; i++)
+		{
+			allLi[i].onclick = function()
+			{
+				var nRel = this.getAttribute("rel");
+				clearAll();
+				oInput.value = nRel;
+				for (var i = 0; i < nRel; i++)
+				{
+					allLi[i].className = "on";
+				}
+				oDir.innerHTML = this.getAttribute("title")
+			}
+			allLi[i].onmouseover = function()
+			//鼠标经过和鼠标点击的样式，那么二者执行的函数一样即可。
+			{
+				var nRel = this.getAttribute("rel");
+				clearAll();
+				//oInput.value = nRel;//==>鼠标点击的时候
+				for (var i = 0; i<nRel; i++)
+				{
+					allLi[i].className = "on";
+				}
+			}
+			allLi[i].onmouseout = function()
+			{
+				clearAll();
+				for (var i = 0; i<oInput.value; i++)
+				{
+					allLi[i].className = "on";
+				}
+			}
+		}
+	}
+//*/
+
+
+</script>
+
+ </head>
+
+ <body>
+	<div id="starts">
+		<ul>
+			<li rel="1" title="特别差，给1分"></li>
+			<li rel="2" title="很差，给2分"></li>
+			<li rel="3" title="一般般，给3分"></li>
+			<li rel="4" title="很好，给4分"></li>
+			<li rel="5" title="非常好，给5分"></li>
+			<span class="dir"></span><!--文字图片居中效果-->
+		</ul>
+		<input type="hidden" value="" class="startP">
+	</div>
+ </body>
+</html>

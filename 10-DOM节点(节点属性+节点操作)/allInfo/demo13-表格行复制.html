@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+	table{margin-top:20px;width:100%;border:1px solid #ddd;border-collapse: collapse;}
+		td{padding:5px 15px;border:1px solid #ddd;}
+
+	</style>
+
+
+	<script>
+
+// 思路：
+// 1. 点击按钮时： 复制 tr(点击按钮的 父节点父节点)
+// 2. 将复制的 tr 添加到 table 中
+//
+
+function btnClick() {
+	var oldTr = this.parentNode.parentNode;
+
+	// cloneNode 没有传递参数 或者 参数为 false
+	//  不会拷贝节点的内容和属性
+
+	// 如果为参数为true，会将整个节点都拷贝一份
+	var newTr = oldTr.cloneNode(true);
+
+	// 要给新行中的 tr 中的复制按钮绑定一个复制的功能
+	// 1. 获取到新行中的 “复制”按钮
+
+	var newBtn = newTr.getElementsByTagName("button")[0];
+	newBtn.onclick = btnClick;
+
+	var oTable = document.getElementsByTagName("table")[0];
+	oTable.appendChild(newTr);
+}
+
+
+
+	window.onload = function(){
+		var oTable = document.getElementsByTagName("table")[0];
+		var allBtn = document.getElementsByTagName("button");
+
+		for (var i = 0; i < allBtn.length; i++) {
+
+			// allBtn[i].onclick = btnClick;
+
+
+
+			//*
+			allBtn[i].onclick = function() {
+
+				var oldTr = this.parentNode.parentNode;
+
+				// cloneNode 没有传递参数 或者 参数为 false
+				//  不会拷贝节点的内容和属性
+
+				// 如果为参数为true，会将整个节点都拷贝一份
+				var newTr = oldTr.cloneNode(true);
+
+				// 要给新行中的 tr 中的复制按钮绑定一个复制的功能
+				// 1. 获取到新行中的 “复制”按钮
+				// 2. 设置 新的复制 按钮点击事件函数
+
+				var newBtn = newTr.getElementsByTagName("button")[0];
+				// arguments.callee 代表当前函数
+				// arguments.caller 代表谁调用了当前函数
+				newBtn.onclick = arguments.callee;
+
+				// newBtn.onclick = this.onclick;
+
+				oTable.appendChild(newTr);
+
+
+
+				// newTr.lastElementChild.firstElementChild
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				// oTable.appendChild(this.parentNode.parentNode);
+
+
+				  // var tr = this.parentNode.parentNode;
+
+				  // var newTr = document.createElement("tr");
+
+				  // var newTd = document.createElement("td");
+
+				  // newTd.innerHTML = tr.firstElementChild.innerHTML;
+
+				  // newTr.appendChild(newTd);
+
+				  // oTable.appendChild(newTr);
+			}
+				//*/
+		}
+	}
+	</script>
+
+  </head>
+
+  <body>
+	<table>
+		<tr>
+			<td>单元格11</td>
+			<td>单元格12</td>
+			<td>单元格13</td>
+			<td>单元格14</td>
+			<td>单元格15</td>
+			<td><button>复制</button></td>
+		</tr>
+		<tr>
+			<td>单元格21</td>
+			<td>单元格22</td>
+			<td>单元格23</td>
+			<td>单元格24</td>
+			<td>单元格25</td>
+			<td><button>复制</button></td>
+		</tr>
+		<tr>
+			<td>单元格31</td>
+			<td>单元格32</td>
+			<td>单元格33</td>
+			<td>单元格34</td>
+			<td>单元格35</td>
+			<td><button>复制</button></td>
+		</tr>
+		<tr>
+			<td>单元格41</td>
+			<td>单元格42</td>
+			<td>单元格43</td>
+			<td>单元格44</td>
+			<td>单元格45</td>
+			<td><button>复制</button></td>
+		</tr>
+		<tr>
+			<td>单元格51</td>
+			<td>单元格52</td>
+			<td>单元格53</td>
+			<td>单元格54</td>
+			<td>单元格55</td>
+			<td><button>复制</button></td>
+		</tr>
+		<tr>
+			<td>单元格61</td>
+			<td>单元格62</td>
+			<td>单元格63</td>
+			<td>单元格64</td>
+			<td>单元格65</td>
+			<td><button>复制</button></td>
+		</tr>
+		<tr>
+			<td>单元格71</td>
+			<td>单元格72</td>
+			<td>单元格73</td>
+			<td>单元格74</td>
+			<td>单元格75</td>
+			<td><button>复制</button></td>
+		</tr>
+		<tr>
+			<td>单元格81</td>
+			<td>单元格82</td>
+			<td>单元格83</td>
+			<td>单元格84</td>
+			<td>单元格85</td>
+			<td><button>复制</button></td>
+		</tr>
+		<tr>
+			<td>单元格91</td>
+			<td>单元格92</td>
+			<td>单元格93</td>
+			<td>单元格94</td>
+			<td>单元格95</td>
+			<td><button>复制</button></td>
+		</tr>
+	</table>
+	
+  </body>
+</html>
+

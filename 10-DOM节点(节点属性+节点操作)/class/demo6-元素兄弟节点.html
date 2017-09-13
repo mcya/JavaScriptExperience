@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+
+<script src="myjs.js"></script>
+
+
+	<script>
+
+
+onload = function() {
+
+
+	// 函数调用 后面一定会有 ()
+	var baidu = getClassName("baidu")[0];
+
+	baidu.style.background = "yellow";
+
+	
+	getNextElem(baidu).style.background = "red";
+
+
+
+
+
+
+	// IE9以下不能使用 nextElementSibling 下一个【元素】节点
+	//baidu.nextElementSibling.style.background = "green";
+
+	// nextSibling 是下一个节点
+	//baidu.nextSibling.style.background = "red";
+	//baidu.nextSibling.nextSibling.style.background = "red";
+
+	/*
+	var node = baidu.nextSibling;
+	while (node.nodeType != 1)
+	{
+		node = node.nextSibling;
+	}
+	node.style.background = "red";
+	//*/
+
+
+	// 解决 IE8以下不能使用 getElementsByClassName 的方法
+	// 1. 获取所有的标签对象
+	// 2. 筛选出对应的类名的对象
+
+	
+	/*
+	// * 是代表整个页面中所有的 标签
+	var allA = document.getElementsByTagName("*");
+
+	var baidu = null; 
+
+	for (var i = 0; i < allA.length; i++)
+	{
+		if (allA[i].className == "baidu")
+		{
+			// 说明找到 class的值为 baidu的那个节点
+			baidu = allA[i];
+			break;
+		}
+	}
+	//*/
+	
+
+	// var baidu = document.getElementsByClassName("baidu")[0];
+
+	
+
+
+	// previousElementSibling 是 baidu 上一个元素节点
+	//baidu.previousElementSibling.style.background = "red";
+
+
+	// nextElementSibling 是baidu下一个元素节点
+	/// baidu.nextElementSibling.style.background = "gxdreen";
+
+}
+	</script>
+
+  </head>
+
+  <body>
+	<h1>获取节点关系</h1>
+    <div id="list">
+	    <a href="http://www.google.com">谷歌</a>
+	    <a href="http://www.baidu.com" class="baidu" id="baidu"><strong>百度</strong></a>
+	    <a href="http://www.yahoo.com">雅虎</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+		table{margin-top:20px;width:100%;border:1px solid #ddd;border-collapse: collapse;}
+		td{padding:5px 15px;border:1px solid #ddd;}
+
+		/*css3隔行变色*/
+		table tr:nth-child(odd){
+			background-color:#fc0;
+		}
+/*
+		.odd{background-color:#fc0;} */
+
+
+	</style>
+
+	<script>
+
+// DOM
+//  【获取】节点对象： id, className, tagName, name
+//    父节点: parentNode
+//    子节点：childNodes
+//    兄弟： previousElementSibling, previousSibling
+//           nextElementSibling, nextSibling
+
+/*
+//  【创建节点】
+window.onload = function() {
+
+	// 创建一个 h1 的标签对象
+	var oH1 = document.createElement("h1");
+
+	oH1.innerHTML = "我是 H1";
+
+	var oDiv = document.getElementById("div1");
+
+	// 添加到Div1上, 这样才会在页面上显示
+	// 将 oH1 添加到 oDiv 中
+	oDiv.appendChild(oH1);
+
+}
+//*/
+
+// 创建表格的思路：
+// 1. 创建一个 table 的标签
+// 2. 创建 tr 的标签对象
+// 3. 循环创建 n 个 td， 将td添加到 tr 中
+// 4. 将 tr添加到table中
+// 5. table 添加到 div1 中
+
+// 【要求】
+//  点击按钮创建，界面上输入 行数 与 列数 对应的表格
+// 思路：
+//   (1) 获取按钮，绑定点击函数
+//   (2) 获取行数 和 列数
+///  (3) 创建
+
+window.onload = function() {
+
+	var oBtn = document.getElementsByTagName("button")[0];
+
+	var oRow = document.getElementById("row");
+	var oCol = document.getElementById("col");
+
+	// 因为加载后的，value是空的，所以取出来的值是空的
+	//var rows = oRow.value;
+
+
+	var oDiv = document.getElementById("div1");
+
+	oBtn.onclick = function() {
+
+	
+		var rows = oRow.value;
+		var cols = oCol.value;
+
+		var oTable = document.createElement("table");
+
+		// 注意创建的table只有添加到 页面中 才会出现
+		for (var i = 0; i < rows; i++)
+		{
+			//【注意】 tr 要循环创建 n 次
+			var oTr = document.createElement("tr");
+
+			for (var j = 0; j < cols; j++)
+			{
+				var oTd = document.createElement("td");
+
+				
+
+				// 在最后一列，添加一个“删除” 按钮
+				// 思路，
+				//  (1) 判断最后一列 j == cols-1
+				//  (2) 创建一个删除按钮  input，
+				//  (3) 添加到 td
+
+				if (j == cols - 1)
+				{
+					var oBtnDel = document.createElement("button");
+
+					oBtnDel.innerHTML = "删除";
+
+					// 点击按钮，删除对应的行
+					//  思路：
+					//    (1) 绑定点击事件处理函数 
+					//    (2) 删除 按钮 的父节点 的父节点 (tr)
+
+					oBtnDel.onclick = function() {
+						//this.parentNode.parentNode.style.display = "none";
+
+						// 删除table中 tr 这个节点
+						oTable.removeChild(this.parentNode.parentNode);
+					}
+
+
+
+					oTd.appendChild(oBtnDel);
+
+
+
+				}
+				else
+				{
+					// 不是最后一行，内容是这个
+					oTd.innerHTML = "XXX";
+				}
+
+
+				oTr.appendChild(oTd);
+			}
+
+
+			oTable.appendChild(oTr);
+		}
+	
+
+		
+		oDiv.appendChild(oTable);
+	}
+}
+
+	</script>
+
+  </head>
+
+  <body>
+
+  <div id="div1"> </div>
+
+行：<input type="text" id="row" value="5"> 列：<input type="text" id="col" value="5"><button>生成表格</button>
+	
+  </body>
+</html>
+

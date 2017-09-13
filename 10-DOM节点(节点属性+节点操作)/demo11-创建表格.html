@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+		table{margin-top:20px;width:100%;border:1px solid #ddd;border-collapse: collapse;}
+		td{padding:5px 15px;border:1px solid #ddd;}
+
+		/*css3隔行变色*/
+		table tr:nth-child(odd){
+			background-color:#fc0;
+		}
+/*
+		.odd{background-color:#fc0;} */
+
+
+	</style>
+
+	<script>
+
+// DOM
+//  【获取】节点对象： id, className, tagName, name
+//    父节点: parentNode
+//    子节点：childNodes
+//    兄弟： previousElementSibling, previousSibling
+//           nextElementSibling, nextSibling
+
+/*
+//  【创建节点】
+window.onload = function() {
+
+	// 创建一个 h1 的标签对象
+	var oH1 = document.createElement("h1");
+
+	oH1.innerHTML = "我是 H1";
+
+	var oDiv = document.getElementById("div1");
+
+	// 添加到Div1上, 这样才会在页面上显示
+	// 将 oH1 添加到 oDiv 中
+	oDiv.appendChild(oH1);
+
+}
+//*/
+
+
+window.onload = function() {
+
+	// 创建表格的思路：
+	// 1. 创建一个 table 的标签
+	// 2. 创建 tr 的标签对象
+	// 3. 循环创建 n 个 td， 将td添加到 tr 中
+	// 4. 将 tr添加到table中
+	// 5. table 添加到 div1 中
+
+	var oTable = document.createElement("table");
+
+	for (var j = 0; j < 5; j++)
+	{
+
+		var oTr = document.createElement("tr");
+
+		for (var i = 0; i < 5; i++)
+		{
+			var oTd = document.createElement("td");
+
+			oTd.innerHTML = "XXX";
+
+			// 将 td 添加到 tr 中
+			oTr.appendChild(oTd);
+		}
+
+		oTable.appendChild(oTr);
+	}
+
+	
+	var oDiv = document.getElementById("div1");
+
+	oDiv.appendChild(oTable);
+}
+
+	</script>
+
+  </head>
+
+  <body>
+
+  <div id="div1"> </div>
+
+
+
+
+
+行：<input type="text" id="row"> 列：<input type="text" id="col"><button>生成表格</button>
+	
+  </body>
+</html>
+

@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+<link id="link" href="css/css2.css" rel="stylesheet" type="text/css" />
+
+	<script>
+
+// 思路
+//   (1) 获取按钮
+//   (2) 给按钮绑定一个点击事件处理函数
+//   (3) 函数中，将 css 文件修改成对应的css文件
+//          <1> 得到 link 标签
+//          <2> link 标签中 href 属性，改成对应的样式文件路径
+
+	/*
+	window.onload = function() 
+	{
+		var allInput = document.getElementsByTagName("input");
+		var btn1 = allInput[0];
+		var btn2 = allInput[1];
+		btn1.onclick = function()
+		{
+			var oLink = document.getElementById("link");
+			oLink.href = "css/css1.css";
+		}
+		btn2.onclick = function()
+		{
+			var oLink = document.getElementById("link");
+			oLink.href = "css/css2.css";
+		}
+	}
+	//*/
+
+	window.onload = function() //函数在执行之后
+	{
+		var allInput = document.getElementsByTagName("input");
+		//获取所有的input标签
+		for (i=0; i<2; i++)//因为每个input都会用到，所以需要一个循环遍历
+		{
+			allInput[i].onclick = function()//绑定点击事件函数
+			{
+				var a = this.getAttribute("data-css");//获取属性值
+				var oLink = document.getElementById("link");
+				//获取id,即是获取css中的link节点
+				oLink.href = "css/"+a+".css";
+				//改变值，相当于改变了CSS链接的名称，即是更换CSS样式
+			}
+		}
+	}
+	//===>获取按钮节点，给按钮绑定点击事件函数，点击的时候发生改变即是点击的改变CSS样式，也就是换一种CSS文件即可。
+	</script>
+
+  </head>
+
+  <body>
+
+<dl id="message">
+	<form>
+		<dt>
+			<strong>可以换肤的提交框：</strong>
+
+			<!-- data-css 是一个自定义的属性，名字可以随便取-->
+			<input type="button" value="皮肤1" data-css="css1" />
+			<input type="button" value="皮肤2" data-css="css2" />
+		</dt>
+		<dd>输入姓名：<input class="text" type="text" /></dd>
+		<dd>输入密码：<input class="text" type="password" /></dd>
+		<dd>请您留言：<textarea></textarea></dd>
+		<dd class="center"><input class="btn" type="submit" value="提交" /></dd>
+	</form>
+</dl>
+
+	
+  </body>
+</html>

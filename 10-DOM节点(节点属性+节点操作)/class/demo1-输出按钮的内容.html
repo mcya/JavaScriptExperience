@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title>如何获取元素下标</title>
+
+	<script>
+
+/*
+var obj = {};
+
+obj.age = 18;
+
+alert(obj.age)
+//*/
+
+/*
+onload = function()
+{
+	var allBtn = document.getElementsByTagName("button");
+	
+	for (var i = 0; i < allBtn.length; i++)
+	{
+		// 点击按钮，弹出这个按钮的下标
+
+		// 在按钮对象中，添加了一个新的属性 xxx，值是 i
+		allBtn[i].xxx = i;
+		allBtn[i].onclick = function() {
+			
+			var a = this.xxx;
+			// 弹出点击按钮对象中的 xxx 属性值
+			alert( a );
+			//alert( this.xxx ) //亦可！一个意思
+
+			// this.innerHTML;//===>无反应
+		}	
+	}
+}
+//*/
+
+
+//如何获取元素下标	
+
+	/*
+	onload = function()
+	{
+		var allBtn = document.getElementsByTagName("button");
+		//先获取所有的button标签的节点，用来操作
+		for (var i = 0; i < allBtn.length; i++)
+		//因为每个按钮都要执行，所以需要一个循环遍历
+		{
+			allBtn[i].xx = i;
+			//对button新建一个属性，用于获取下标
+			allBtn[i].onclick = function(){
+			//点击的时候执行函数
+				alert( this.xx );
+			}
+			//再次用到this
+			//this是用于对所有的按钮进行遍历后，每个按钮都会执行相应的同样的操作，即是点击当前的按钮的时候就执行，所以利用了this标签
+		}
+	}
+	//*/
+
+	//获取下标，再写版本：
+	onload = function()
+	{
+		var allBtn = document.getElementsByTagName("button");
+		for (i=0; i<allBtn.length; i++)
+		{
+			allBtn[i].xxx = i;
+			allBtn[i].onclick = function(){
+				alert(this.xxx)
+			}
+		}
+	}
+	//使用this的一标志之一是 allBtn[i].onclick = function()
+	//获取下标的标准样式：allBtn[i].xxx = i;
+
+
+
+
+
+	</script>
+
+  </head>
+
+  <body>
+	<button>按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<button>按钮4</button>
+	<button>按钮5</button>
+	<button>按钮6</button>
+	
+  </body>
+</html>

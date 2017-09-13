@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+<style>
+	#tab span{display:inline-block;padding:5px 15px;background-color:#ddd;margin:0 3px;border:1px solid #ddd;border-bottom:none;}
+
+	span.active {
+		color: white;
+		background-color: red !important;
+	}
+
+	.content{padding:15px;border:1px solid #ddd;font-size:24px;background-color:#efefef;}
+</style>
+
+    <script>
+
+
+
+
+// 加载之后才能获取元素
+onload = function() {
+
+
+
+	// 思路：
+	//   (1) [所有]的 span 都绑定一个点击事件处理函数
+	//   (2)  将所有内容都隐藏，然后显示点击按钮所对应的面板
+
+	
+	/*
+	var allSpan = document.getElementsByTagName("span");
+
+	for (var i = 0; i < allSpan.length; i++)
+	{
+		allSpan[i].x = i;
+
+		allSpan[i].onclick = function() {
+
+			alert(  this.x );
+		}
+	}
+	//*/
+
+
+
+	// 按钮点击颜色 的思路
+	
+	//   (1)  将所有按钮的样式都去掉，
+	//   (2) 然后将当前点击按钮添加一个 active 的样式
+
+	
+}
+	</script>
+
+  </head>
+
+  <body>
+	<div id="tab"><span>辣条</span><span>豆腐</span><span>方便面</span><span>桂林米粉</span></div>
+
+	<div class="content">我喜欢吃辣条</div>
+	<div class="content">吃完豆腐池辣条</div>
+	<div class="content">喜欢去超市捏方便面</div>
+	<div class="content">桂林米粉哪里最正宗</div>
+	
+  </body>
+</html>
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+// 思路
+// 1. 获取所有 a 标签
+// 2. 将所有 a 标签绑定一个点击事件处理函数
+// 3. 处理函数中， 将 a 标签 父节点 隐藏掉
+
+onload = function() {
+	
+	var allA = document.getElementsByTagName("a");
+
+	for (var i = 0; i < allA.length; i++)
+	{
+		allA[i].onclick = function() {
+			this.parentNode.style.display = "none";
+		}
+	}
+}
+
+
+	</script>
+
+  </head>
+
+  <body>
+
+<style>
+  a {cursor: pointer;}
+</style>
+
+<h1> 今日头条 </h1>
+
+<ul id="ul1">
+	<li>我机巡航南海释放重大信号 轰6曾突破日美封锁链  <a>&times;</a></li>
+	<li>少林寺自家门口遇假僧：陪NBA球星韦德拜佛的不是我们... <a>&times;</a></li>
+	<li>李克强谈互联网+物流：既是发展新经济，又能提升传统.. <a>&times;</a></li>
+	<li>这位85后技术男，要实现APP之间的深度链接  <a>&times;</a></li>
+	<li>国内两大白帽子关闭 引猜测  <a>&times;</a></li>
+</ul>
+  </body>
+</html>

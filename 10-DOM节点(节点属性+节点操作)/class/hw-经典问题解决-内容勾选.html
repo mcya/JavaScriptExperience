@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+// 思路
+// 1. 获取“所有爱好”的节点，以及单个爱好的节点
+// 2. 给节点绑定事件处理函数
+// 3. 点击所有按钮： 将下面所有 checkbox 选中 / 取消
+//    点击其中的一个按钮： 按钮 选中 / 取消
+//                    判断当前所有的子checkbox 是否选中，
+//                    如果选中，那么让 “所有”checkbox 选中
+
+window.onload = function() {
+	var allCb = document.getElementById("all");
+
+	var allHobby = document.getElementsByName("hobby");
+
+	allCb.onclick = function() {
+		for (var i = 0; i < allHobby.length; i++) {
+			allHobby[i].checked = this.checked;
+		}
+	}
+
+	//
+	for (var i = 0; i < allHobby.length; i++) {
+		allHobby[i].onclick = function() {
+
+			// 如何判断当前所有的子节点都选中了
+			var flag = true;
+			for (var j = 0; j < allHobby.length; j++) {
+				if (!allHobby[j].checked) {
+					flag = false;
+					break;
+				}
+			}
+
+			if (flag) {
+				// 说明都选中了
+				allCb.checked = true;
+			} else {
+				allCb.checked = false;
+			}
+
+		}
+	}
+
+
+
+
+
+
+
+/*
+
+	allCb.onclick = function() {
+
+		if (this.checked == true) {
+
+			for (var i = 0; i < allHobby.length; i++) {
+				allHobby[i].checked = true;
+			}
+
+		} else {
+
+			for (var i = 0; i < allHobby.length; i++) {
+				allHobby[i].checked = false;
+			}
+		}
+	}
+*/
+
+
+	// 设置checkbox 的属性值
+	// allCb.checked = false;
+
+	// alert(allCb.checked)
+}
+
+
+
+	</script>
+
+  </head>
+
+  <body>
+
+	<table id="dataList">
+		<thead>
+			<th><input type="checkbox" name="all" id="all"></th>
+			<th>爱好</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox" name="hobby"></td>
+				<td>篮球</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="hobby"></td>
+				<td>足球</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="hobby"></td>
+				<td>羽毛球</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="hobby"></td>
+				<td>爬山</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="hobby"></td>
+				<td>游泳</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="hobby"></td>
+				<td>购物</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="hobby"></td>
+				<td>看电影</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="hobby"></td>
+				<td>旅游</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="hobby"></td>
+				<td>音乐</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="hobby"></td>
+				<td>画画</td>
+			</tr>
+		</tbody>
+	</table>
+
+	
+  </body>
+</html>
+

@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+<link id="link" href="css/css1.css" rel="stylesheet" type="text/css" />
+
+	<script>
+
+/*
+var obj = {
+};
+
+// 1. 修改对象属性的第一种方式
+// obj.age = 18;
+
+// 2. 修改对象的第二种方式
+obj["age"] = 18;
+
+alert(obj.age);
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 网页换肤，思路：
+// 通过修改 css 文件实现换肤的效果
+
+window.onload = function () {
+
+	var oLink = document.getElementById("link");
+
+	// 1. 获取对象属性的值
+	// alert(oLink.href);
+
+	// 2. 第二种方式， 通过 [] 来获取属性的值，[] 中可以写表达式的内容
+	// alert(oLink["href"]);
+
+	// 3. 第三种方式，通过 getAttribute 来获取对象中的属性
+	// alert(oLink.getAttribute("href"));
+
+
+
+
+
+	var allBtn = document.getElementsByTagName("input");
+
+	for (var i = 0; i < allBtn.length; i++) {
+		allBtn[i].onclick = function() {
+			var s = this.getAttribute("data-css");
+			oLink.href = "css/" + s + ".css";
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	allBtn[0].onclick = function() {
+
+		var s = allBtn[0].getAttribute("data-css");
+
+		// s = "css1"
+		//"css/css1.css"
+
+		oLink.href = "css/" + s + ".css";
+	}
+
+	allBtn[1].onclick = function() {
+
+		var s = allBtn[1].getAttribute("data-css");
+
+		// s = "css1"
+		//"css/css1.css"
+
+		oLink.href = "css/" + s + ".css";
+	}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	// alert(allBtn[0].value);
+	
+
+	// data-css
+	// alert(allBtn[0].data-css);
+	// alert(allBtn[0]["data-css"]);
+
+	// getAttribute 与 setAttribute
+
+
+
+
+
+	// 用于获取以及设置 ＤＯＭ　对象的属性值
+	var str = allBtn[0].getAttribute("data-css");
+	alert(str);
+	
+
+
+	allBtn[1].onclick = function() {
+		oLink.href = "css/css3.css";
+	}
+
+	// 给第一个按钮绑定了点击事件处理函数
+	allBtn[0].onclick = function() {
+		// 1. 第一种，设置对象的 href 属性
+		oLink.href = "css/css2.css";
+
+		// var href = "href";
+
+		// 2. 第二种， 修改 oLink 对象中 href 属性
+		// oLink["href"] = "css/css2.css";
+		// oLink[href] = "css/css2.css";
+
+		// 3. 第三种方式，设置 DOM 对象中的属性
+		// oLink.setAttribute("href", "css/css2.css");		
+	}
+*/
+}
+
+
+
+	</script>
+
+  </head>
+
+  <body>
+
+<dl id="message">
+	<form>
+		<dt>
+			<strong>可以换肤的提交框：</strong>
+			<input type="button" value="皮肤1" data-css="css3" />
+			<input type="button" value="皮肤2" data-css="css2" />
+		</dt>
+		<dd>输入姓名：<input class="text" type="text" /></dd>
+		<dd>输入密码：<input class="text" type="password" /></dd>
+		<dd>请您留言：<textarea></textarea></dd>
+		<dd class="center"><input class="btn" type="submit" value="提交" /></dd>
+	</form>
+</dl>
+
+	
+  </body>
+</html>

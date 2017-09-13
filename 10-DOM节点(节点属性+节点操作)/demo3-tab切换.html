@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+<style>
+	#tab span{display:inline-block;padding:5px 15px;background-color:#ddd;margin:0 3px;border:1px solid #ddd;border-bottom:none;}
+
+	span.active {
+		color: white;
+		background-color: red !important;
+	}
+
+	.content{padding:15px;border:1px solid #ddd;font-size:24px;background-color:#efefef;}
+</style>
+
+    <script>
+// 思路：
+// 1. 获取所有的 span 标签
+// 2. 給所有的 span 标签 添加一个单击事件处理函数
+// 3. 事件处理函数中
+//     （1） 将所有 div 隐藏
+//     (2)	将对应的 div 设成显示状态
+
+// document.getElementsByTagName("div");
+
+
+// 加载之后才能获取元素
+onload = function() {
+
+	var allContent = document.getElementsByClassName("content");
+
+	// 全部设成隐藏状态
+	for (var i = 0; i < allContent.length; i++)
+	{
+		allContent[i].style.display = "none";
+	}
+
+	// 将第一个面板设成显示状态
+	
+	allContent[0].style.display = "block";
+
+
+	var oTab = document.getElementById("tab");
+	
+	var allSpan = oTab.getElementsByTagName("span");
+
+	// class 是一个特例，因为 是一个关键字
+	// 设置第一个按钮的样式 class 为 active
+	allSpan[0].className = "active";
+
+
+	// 思路：
+	//   (1) [所有]的 span 都绑定一个点击事件处理函数
+	//   (2)  将所有内容都隐藏，然后显示点击按钮所对应的面板
+
+
+	// 按钮点击颜色 的思路
+	
+	//   (1)  将所有按钮的样式都去掉，
+	//   (2) 然后将当前点击按钮添加一个 active 的样式
+
+	for (var i = 0; i < allSpan.length; i++)
+	{
+
+		// 将 i 的值保存到 按钮对象 中自定义属性 xxx 中
+		allSpan[i].xxx = i;
+		
+		allSpan[i].onclick = function() {
+			
+			// 将所有内容都隐藏
+			/*
+			for (var j = 0; j < allContent.length; j++)
+			{
+				allContent[j].style.display = "none";
+			}
+
+			// 显示点击按钮所对应的面板
+			// 获取点击按钮的下标
+			var pos = this.xxx;
+			//allContent[pos].style.display = "blokc";
+			allContent[pos].style.display = "block";			
+	// 按钮点击颜色 的思路
+	//*/
+	//   (1)  将所有按钮的样式都去掉，
+	//   (2) 然后将当前点击span添加一个 active 的样式
+			for (var j = 0; j < allSpan.length; j++)
+			{
+				// 将所有span的class值都设为 ""
+				allSpan[j].className = "";
+			}
+			//allSpan[ pos ].className = "active";
+			this.className = "active";
+		}
+	}
+}
+	</script>
+
+  </head>
+
+  <body>
+	<div id="tab"><span>辣条</span><span>豆腐</span><span>方便面</span><span>桂林米粉</span></div>
+
+	<div class="content">我喜欢吃辣条</div>
+	<div class="content">吃完豆腐池辣条</div>
+	<div class="content">喜欢去超市捏方便面</div>
+	<div class="content">桂林米粉哪里最正宗</div>
+	
+  </body>
+</html>
+
+

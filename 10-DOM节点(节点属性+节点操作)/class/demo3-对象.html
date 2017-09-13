@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 标题 </title>
+
+<script>
+
+/*
+var obj = {};
+
+
+	obj.age = 8;
+
+obj.onclick = function() {
+	
+	alert(     this.age  );
+   	
+
+	// alert("onclick!");
+}
+
+// alert(obj.xxx);
+
+obj.onclick();
+//*/
+
+
+
+var arr = [];
+
+var obj1 = {};
+var obj2 = {};
+var obj3 = {};
+
+
+arr.push(obj1);
+arr.push(obj2);
+arr.push(obj3);
+
+
+for (var i = 0; i < arr.length; i++)
+{
+	arr[i].num = i;
+	
+	arr[i].onclick = function() {
+		alert(  this.num  );
+	}
+}
+
+
+// 函数调用
+arr[1].onclick();
+
+
+
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

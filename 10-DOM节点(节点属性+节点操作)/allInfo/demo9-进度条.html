@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style>
+		#progress{
+			position: relative;
+			margin: auto;
+			top: 200px;
+			display: block;
+			width: 80px;
+			height: 20px;
+			border-style: dotted;
+			border-width: thin;
+			border-color: darkgreen;
+		}
+		#filldiv{
+			position:absolute;
+			top: 0px;
+			left: 0px;
+			width: 0px;
+			height: 20px;
+			background: blue;
+		}
+		#percent{
+			position: absolute;
+			top: 0px;
+			left: 200px;
+			
+		}
+	</style>
+
+	<script>
+
+
+// var a = 10;
+// var b = 5;
+
+// var max = 0;
+// if (a > b) {
+// 	max = a;
+// } else {
+// 	max = b;
+// }
+
+// alert(max);
+
+// ?: 运算符，称为条件运算符
+// 格式： 表达式1 ? 表达式2 : 表达式3
+// 执行功能：
+//     如果 表达式1 为真，那么执行 表达式2
+//     如果 表达式1 为假，那么执行 表达式3
+// 整体表达式 的值
+//     如果 表达式1 为真，就是 表达式2 的值
+//     如果 表达式1 为假，就是 表达式3 的值
+// var max = (a>b)? a : b;
+
+// alert(max);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 思路
+// 1. 获取到 进度条 与 百分比 的节点
+// 2. 设置定时器，更新 进度条 与 百分比
+// 3. 100% 的时候停止计时器
+
+window.onload = function() {
+
+	var oProgress = document.getElementById("progress");
+	var oFilldiv = document.getElementById("filldiv");
+	var oPercent = document.getElementById("percent");
+
+
+	// 这个在 Firefox、Chrome 等浏览器使用
+	// var objStyle = getComputedStyle(oProgress);
+
+	// IE 使用这个得到样式对象
+	// var objStyle = oProgress.currentStyle;
+
+	// 
+	// 解决兼容的第一种方式： ||
+	// var objStyle = oProgress.currentStyle || getComputedStyle(oProgress);
+
+	// 解决兼容的第二种方式： 条件判断
+	// var objStyle = oProgress.currentStyle;
+	// if (!oProgress.currentStyle) {
+	// 	objStyle = getComputedStyle(oProgress);
+	// }
+
+	// 解决兼容的第三种方式： 条件表达式
+	var objStyle = oProgress.currentStyle ? oProgress.currentStyle : getComputedStyle(oProgress);
+
+	var totalWidth = parseInt(objStyle.width);
+
+	// alert(objStyle.width.slice(0, -2));
+	// alert(parseInt(objStyle.width));
+
+	// alert(oProgress.style.width);
+
+
+	var w = 0;
+	var timer = setInterval(function () {
+
+		w += 1;
+
+		oFilldiv.style.width = w + "px";
+
+		if (w > totalWidth) {
+			clearInterval(timer);
+			return ;
+		}
+
+		// 更新百分比
+		oPercent.innerHTML = parseInt((w / totalWidth) * 100) + "%";
+
+	}, 100);
+}
+
+
+	</script>
+
+  </head>
+
+  <body>
+
+	<div id="progress">
+		<div id="filldiv"></div>
+		<span id="percent">0</span>
+	</div>
+	
+  </body>
+</html>
+
+
+

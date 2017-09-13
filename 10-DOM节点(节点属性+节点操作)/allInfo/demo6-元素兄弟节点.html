@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script>
+
+
+onload = function() {
+
+	var baidu = document.getElementsByClassName("baidu")[0];
+
+	baidu.style.background = "yellow";
+
+
+	// previousElementSibling 是 baidu 上一个元素节点
+	//baidu.previousElementSibling.style.background = "red";
+
+
+	// nextElementSibling 是baidu下一个元素节点
+	baidu.nextElementSibling.style.background = "green";
+
+}
+	</script>
+
+  </head>
+
+  <body>
+	<h1>获取节点关系</h1>
+    <div id="list">
+	    <a href="http://www.google.com">谷歌</a>
+	    <a href="http://www.baidu.com" class="baidu" id="baidu"><strong>百度</strong></a>
+	    <a href="http://www.yahoo.com">雅虎</a>
+    </div>
+  </body>
+</html>

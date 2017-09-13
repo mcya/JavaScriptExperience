@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> 兼容 </title>
+
+<script>
+
+// 解决 IE8以下不能使用 getElementsByClassName 的方法
+	// 1. 获取所有的标签对象
+	// 2. 筛选出对应的类名的对象
+
+	
+	//*
+	// * 是代表整个页面中所有的 标签
+	/*
+	var allA = document.getElementsByTagName("*");
+
+	var baidu = null; 
+
+	for (var i = 0; i < allA.length; i++)
+	{
+		if (allA[i].className == "baidu")
+		{
+			// 说明找到 class的值为 baidu的那个节点
+			baidu = allA[i];
+			break;
+		}
+	}
+	//*/
+	baidu = document.getElementsByClassName("baidu");
+	baidu.innerHTML = "dasdas"
+	//oBody.appendChild(baidu);
+	//var oStyle = baidu.currentStyle || getComputedStyle(baidu);
+	//var oStyle = getComputedStyle(baidu) || baidu.currentStyle;
+
+	//var s = parseInt( oStyle );
+	//document.write( s );
+
+	//baidu.innerHTML = "AAA"
+	//*/
+	
+
+	// var baidu = document.getElementsByClassName("baidu")[0];
+
+
+</script>
+
+ </head>
+
+ <body>
+  <div class = "baidu" style = "width:200px; height:200px;"></div>
+ </body>
+</html>
