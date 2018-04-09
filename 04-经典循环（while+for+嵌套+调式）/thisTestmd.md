@@ -9,7 +9,9 @@
 
  1.文件名差异
   > 相同点: .html .css/less/sass等关于css类型文件 .js
+  
   > React: .jsx
+  
   > Vue: .vue
 
 
