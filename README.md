@@ -1,22 +1,23 @@
 
-#### ÈçÐè×ªÔØÇë×¢Ã÷³ö´¦¡£
-#### ÓÐÃÎÏëµØÐèÒª¸östar¡£
-# ´ó¸Ù #
+#### å¦‚éœ€è½¬è½½è¯·æ³¨æ˜Žå‡ºå¤„ã€‚
+#### æœ‰æ¢¦æƒ³åœ°éœ€è¦ä¸ªstarã€‚
+# å¤§çº² #
 
-- [x] ÈëÃÅÆª(js¶¨Òå+±äÁ¿+»ù±¾ÔËËã)
-- [x] ÔËËãÆª(Êý×Ö+¹ØÏµÓëÂß¼­ÔËËã+ÅÐ¶Ï)
-- [x] Êý×éÆª£¨Êý×é+±éÀú+ÅÅÐò£©
-- [x] ¾­µäÑ­»·£¨while+for+Ç¶Ì×+µ÷Ê½£©
-- [x] ×Ö·û´®Æª£¨String+Math£©
-- [x] º¯ÊýÆª£¨º¯Êý+ÍÆÕ»+µÝ¹é£©
-- [x] DateÈÕÆÚ£¨ÈÕÆÚ¶ÔÏó+¶¨Ê±+ÈÕÆÚ´¦Àí£©
-- [x] ¼òµ¥¶ÔÏó£¨object+arry£©
-- [x] BOM/DOM£¨window¶ÔÏó+»Øµ½¶¥²¿ÊµÏÖ+ÐÞ¸Ä´°¿Ú / DOM¼ò½é+½Úµã¹ØÏµ+½ÚµãÊôÐÔ£©
-- [x] DOM½Úµã(½ÚµãÊôÐÔ+½Úµã²Ù×÷)
-
-
-### ×¢£ºÃ¿Ò»¸öÆªÕÂ¶¼ÓÐ¸ÃÕÂ½ÚÖ÷ÒªÄÚÈÝµÄREADMEÎÄµµ£¬µã»÷ÎÄ¼þ¼Ð½øÈë¼´¿ÉÔÄ¶Á¡£»òÕß£¬¿ÉÒÔÖ±½ÓÔÚ Issues ÖÐ²é¿´¡£
+- [x] å…¥é—¨ç¯‡(jså®šä¹‰+å˜é‡+åŸºæœ¬è¿ç®—)
+- [x] è¿ç®—ç¯‡(æ•°å­—+å…³ç³»ä¸Žé€»è¾‘è¿ç®—+åˆ¤æ–­)
+- [x] æ•°ç»„ç¯‡ï¼ˆæ•°ç»„+éåŽ†+æŽ’åºï¼‰
+- [x] ç»å…¸å¾ªçŽ¯ï¼ˆwhile+for+åµŒå¥—+è°ƒå¼ï¼‰
+- [x] å­—ç¬¦ä¸²ç¯‡ï¼ˆString+Mathï¼‰
+- [x] å‡½æ•°ç¯‡ï¼ˆå‡½æ•°+æŽ¨æ ˆ+é€’å½’ï¼‰
+- [x] Dateæ—¥æœŸï¼ˆæ—¥æœŸå¯¹è±¡+å®šæ—¶+æ—¥æœŸå¤„ç†ï¼‰
+- [x] ç®€å•å¯¹è±¡ï¼ˆobject+arryï¼‰
+- [x] BOM/DOMï¼ˆwindowå¯¹è±¡+å›žåˆ°é¡¶éƒ¨å®žçŽ°+ä¿®æ”¹çª—å£ / DOMç®€ä»‹+èŠ‚ç‚¹å…³ç³»+èŠ‚ç‚¹å±žæ€§ï¼‰
+- [x] DOMèŠ‚ç‚¹(èŠ‚ç‚¹å±žæ€§+èŠ‚ç‚¹æ“ä½œ)
 
 
-#### ÈçÐè×ªÔØÇë×¢Ã÷³ö´¦¡£
-#### ÓÐÃÎÏëµØÐèÒª¸östar¡£
+### æ³¨ï¼šæ¯ä¸€ä¸ªç¯‡ç« éƒ½æœ‰è¯¥ç« èŠ‚ä¸»è¦å†…å®¹çš„READMEæ–‡æ¡£ï¼Œç‚¹å‡»æ–‡ä»¶å¤¹è¿›å…¥å³å¯é˜…è¯»ã€‚æˆ–è€…ï¼Œå¯ä»¥ç›´æŽ¥åœ¨ Issues ä¸­æŸ¥çœ‹ã€‚
+
+
+#### å¦‚éœ€è½¬è½½è¯·æ³¨æ˜Žå‡ºå¤„ã€‚
+#### æœ‰æ¢¦æƒ³åœ°éœ€è¦ä¸ªstarã€‚
+![cmd-markdown-logo](https://github.com/mcya/JavaScriptExperience/blob/master/%E6%88%91%E7%9A%84%E6%8F%90%E9%97%AE%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg)
