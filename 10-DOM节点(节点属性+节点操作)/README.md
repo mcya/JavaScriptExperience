@@ -1,15 +1,15 @@
 
 
-# ´ó¸Ù #
+# å¤§çº² #
 
-1. ½ÚµãÊôĞÔ
-2. ½Úµã²Ù×÷
+1. èŠ‚ç‚¹å±æ€§
+2. èŠ‚ç‚¹æ“ä½œ
 
 
 
-# ÄÚÈİ #
+# å†…å®¹ #
 
-### tab±êÇ©ÇĞ»» ###
+### tabæ ‡ç­¾åˆ‡æ¢ ###
 
 ```
 #tab span{display:inline-block;padding:5px 15px;background-color:#ddd;margin:0 3px;border:1px solid #ddd;border-bottom:none;}
@@ -17,33 +17,33 @@
 
 
 
-<div id="tab"><span>À±Ìõ</span><span>¶¹¸¯</span><span>·½±ãÃæ</span><span>¹ğÁÖÃ×·Û</span></div>
-<div class="content">ÎÒÏ²»¶³ÔÀ±Ìõ</div>
-<div class="content">³ÔÍê¶¹¸¯³ØÀ±Ìõ</div>
-<div class="content">Ï²»¶È¥³¬ÊĞÄó·½±ãÃæ</div>
-<div class="content">¹ğÁÖÃ×·ÛÄÄÀï×îÕı×Ú</div>
+<div id="tab"><span>è¾£æ¡</span><span>è±†è…</span><span>æ–¹ä¾¿é¢</span><span>æ¡‚æ—ç±³ç²‰</span></div>
+<div class="content">æˆ‘å–œæ¬¢åƒè¾£æ¡</div>
+<div class="content">åƒå®Œè±†è…æ± è¾£æ¡</div>
+<div class="content">å–œæ¬¢å»è¶…å¸‚ææ–¹ä¾¿é¢</div>
+<div class="content">æ¡‚æ—ç±³ç²‰å“ªé‡Œæœ€æ­£å®—</div>
 
 ```
 
-## ½ÚµãÖ®¼äµÄ¹ØÏµ ##
+## èŠ‚ç‚¹ä¹‹é—´çš„å…³ç³» ##
 
-×Ó½Úµã: childNodes
+å­èŠ‚ç‚¹: childNodes
 
-¸¸½Úµã: parentNode
+çˆ¶èŠ‚ç‚¹: parentNode
 
-ĞÖµÜ½Úµã:
+å…„å¼ŸèŠ‚ç‚¹:
     nextSibling
 	previousSibling
 
 
 
 ```
-		// °Ù¶ÈÔªËØµÄÉÏÒ»¸ö¡¾ÔªËØ¡¿½Úµã
-		// ²»Ö§³Ö IE8¼°ÒÔÏÂ
+		// ç™¾åº¦å…ƒç´ çš„ä¸Šä¸€ä¸ªã€å…ƒç´ ã€‘èŠ‚ç‚¹
+		// ä¸æ”¯æŒ IE8åŠä»¥ä¸‹
 		// baidu.previousElementSibling.style.color = "red";
 
-		// ¡¾½â¾ö¡¿IE ¼æÈİµÄÎÊÌâ
-		// Ö»Òªµ±Ç°½Úµã²»ÊÇÔªËØ½Úµã£¬ÄÇÃ´Ò»Ö±ÍùÉÏÕÒ
+		// ã€è§£å†³ã€‘IE å…¼å®¹çš„é—®é¢˜
+		// åªè¦å½“å‰èŠ‚ç‚¹ä¸æ˜¯å…ƒç´ èŠ‚ç‚¹ï¼Œé‚£ä¹ˆä¸€ç›´å¾€ä¸Šæ‰¾
 		while (google.nodeType != 1) {
 			google = google.previousSibling;
 		}
@@ -51,27 +51,27 @@
 
 
 
-### ¸¸½ÚµãµÄÓ¦ÓÃ ###
+### çˆ¶èŠ‚ç‚¹çš„åº”ç”¨ ###
 
 ```
 <style>
   a {cursor: pointer;}
 </style>
 
-<h1> ½ñÈÕÍ·Ìõ </h1>
+<h1> ä»Šæ—¥å¤´æ¡ </h1>
 
 <ul id="ul1">
-	<li>ÎÒ»úÑ²º½ÄÏº£ÊÍ·ÅÖØ´óĞÅºÅ ºä6ÔøÍ»ÆÆÈÕÃÀ·âËøÁ´  <a>&times;</a></li>
-	<li>ÉÙÁÖËÂ×Ô¼ÒÃÅ¿ÚÓö¼ÙÉ®£ºÅãNBAÇòĞÇÎ¤µÂ°İ·ğµÄ²»ÊÇÎÒÃÇ... <a>&times;</a></li>
-	<li>Àî¿ËÇ¿Ì¸»¥ÁªÍø+ÎïÁ÷£º¼ÈÊÇ·¢Õ¹ĞÂ¾­¼Ã£¬ÓÖÄÜÌáÉı´«Í³.. <a>&times;</a></li>
-	<li>ÕâÎ»85ºó¼¼ÊõÄĞ£¬ÒªÊµÏÖAPPÖ®¼äµÄÉî¶ÈÁ´½Ó  <a>&times;</a></li>
-	<li>¹úÄÚÁ½´ó°×Ã±×Ó¹Ø±Õ Òı²Â²â  <a>&times;</a></li>
+	<li>æˆ‘æœºå·¡èˆªå—æµ·é‡Šæ”¾é‡å¤§ä¿¡å· è½°6æ›¾çªç ´æ—¥ç¾å°é”é“¾  <a>&times;</a></li>
+	<li>å°‘æ—å¯ºè‡ªå®¶é—¨å£é‡å‡åƒ§ï¼šé™ªNBAçƒæ˜ŸéŸ¦å¾·æ‹œä½›çš„ä¸æ˜¯æˆ‘ä»¬... <a>&times;</a></li>
+	<li>æå…‹å¼ºè°ˆäº’è”ç½‘+ç‰©æµï¼šæ—¢æ˜¯å‘å±•æ–°ç»æµï¼Œåˆèƒ½æå‡ä¼ ç»Ÿ.. <a>&times;</a></li>
+	<li>è¿™ä½85åæŠ€æœ¯ç”·ï¼Œè¦å®ç°APPä¹‹é—´çš„æ·±åº¦é“¾æ¥  <a>&times;</a></li>
+	<li>å›½å†…ä¸¤å¤§ç™½å¸½å­å…³é—­ å¼•çŒœæµ‹  <a>&times;</a></li>
 </ul>
 
 ```
 
 
-### ÊÖ·çÇÙ ###
+### æ‰‹é£ç´ ###
 
 ```
 <style>
@@ -83,36 +83,36 @@
 </style>
 
 	<div id="div1">
-		<h4>±êÌâ1</h4>
-		<div class="content">#ÄÚÈİ1</div>
-		<h4>±êÌâ2</h4>
-		<div class="content">#ÄÚÈİ2</div>
-		<h4>±êÌâ3</h4>
-		<div class="content">#ÄÚÈİ3</div>
-		<h4>±êÌâ4</h4>
-		<div class="content">#ÄÚÈİ4</div>
-		<h4>±êÌâ5</h4>
-		<div class="content">#ÄÚÈİ5</div>
+		<h4>æ ‡é¢˜1</h4>
+		<div class="content">#å†…å®¹1</div>
+		<h4>æ ‡é¢˜2</h4>
+		<div class="content">#å†…å®¹2</div>
+		<h4>æ ‡é¢˜3</h4>
+		<div class="content">#å†…å®¹3</div>
+		<h4>æ ‡é¢˜4</h4>
+		<div class="content">#å†…å®¹4</div>
+		<h4>æ ‡é¢˜5</h4>
+		<div class="content">#å†…å®¹5</div>
 	</div>
 
 
 ```
 
 
-## ½ÚµãÊôĞÔ ##
+## èŠ‚ç‚¹å±æ€§ ##
 
 ```
-box.attributes;      // ½ÚµãÖĞËùÓĞÊôĞÔ
-box.getAttribute('data-index')  // »ñÈ¡ÔªËØ½ÚµãÊôĞÔµÄÖµ
+box.attributes;      // èŠ‚ç‚¹ä¸­æ‰€æœ‰å±æ€§
+box.getAttribute('data-index')  // è·å–å…ƒç´ èŠ‚ç‚¹å±æ€§çš„å€¼
 
-box.setAttribute('data-index',2); // ÉèÖÃ½ÚµãµÄÊôĞÔ
-box.removeAttribute('title') // ÒÆ³ı½ÚµãÊôĞÔ
+box.setAttribute('data-index',2); // è®¾ç½®èŠ‚ç‚¹çš„å±æ€§
+box.removeAttribute('title') // ç§»é™¤èŠ‚ç‚¹å±æ€§
 ```
 
 
-### ÍøÒ³»»·ô ###
+### ç½‘é¡µæ¢è‚¤ ###
 
-css ÑùÊ½±íÔÚ css ÎÄ¼ş¼Ğ
+css æ ·å¼è¡¨åœ¨ css æ–‡ä»¶å¤¹
 ```
 <link id="link" href="css/css1.css" rel="stylesheet" type="text/css" />
 
@@ -120,72 +120,72 @@ css ÑùÊ½±íÔÚ css ÎÄ¼ş¼Ğ
 <dl id="message">
 	<form>
 		<dt>
-			<strong>¿ÉÒÔ»»·ôµÄÌá½»¿ò£º</strong>
-			<input type="button" value="Æ¤·ô1" data-css="css1" />
-			<input type="button" value="Æ¤·ô2" data-css="css2" />
+			<strong>å¯ä»¥æ¢è‚¤çš„æäº¤æ¡†ï¼š</strong>
+			<input type="button" value="çš®è‚¤1" data-css="css1" />
+			<input type="button" value="çš®è‚¤2" data-css="css2" />
 		</dt>
-		<dd>ÊäÈëĞÕÃû£º<input class="text" type="text" /></dd>
-		<dd>ÊäÈëÃÜÂë£º<input class="text" type="password" /></dd>
-		<dd>ÇëÄúÁôÑÔ£º<textarea></textarea></dd>
-		<dd class="center"><input class="btn" type="submit" value="Ìá½»" /></dd>
+		<dd>è¾“å…¥å§“åï¼š<input class="text" type="text" /></dd>
+		<dd>è¾“å…¥å¯†ç ï¼š<input class="text" type="password" /></dd>
+		<dd>è¯·æ‚¨ç•™è¨€ï¼š<textarea></textarea></dd>
+		<dd class="center"><input class="btn" type="submit" value="æäº¤" /></dd>
 	</form>
 </dl>
 
 ```
 
 
-style CSSÄÚÁªÑùÊ½ÊôĞÔÖµ
+style CSSå†…è”æ ·å¼å±æ€§å€¼
 
-Òª»ñÈ¡½Úµã css µÄÑùÊ½Öµ£º
+è¦è·å–èŠ‚ç‚¹ css çš„æ ·å¼å€¼ï¼š
 
-IEÖĞ¿ÉÍ¨¹ı ½Úµã¶ÔÏó.currentStyle À´µÃµ½ Ëù¶ÔÓ¦µÄÑùÊ½¶ÔÏó
+IEä¸­å¯é€šè¿‡ èŠ‚ç‚¹å¯¹è±¡.currentStyle æ¥å¾—åˆ° æ‰€å¯¹åº”çš„æ ·å¼å¯¹è±¡
 
 ```
 var d = document.getElementById("div1");
 
-// ÕâÊÇdiv½ÚµãµÄ css ÑùÊ½ÖĞµÄ width Öµ
+// è¿™æ˜¯divèŠ‚ç‚¹çš„ css æ ·å¼ä¸­çš„ width å€¼
 d.currentStyle.width;
 
-// ÕâÊÇdiv½ÚµãµÄ css ÑùÊ½ÖĞµÄ height Öµ
+// è¿™æ˜¯divèŠ‚ç‚¹çš„ css æ ·å¼ä¸­çš„ height å€¼
 d.currentStyle.height;
 ```
 
 
-Èç¹ûĞèÒª»ñÈ¡ css ÑùÊ½Öµ£¬ Firefox ºÍ chrome ÖĞ£¬
+å¦‚æœéœ€è¦è·å– css æ ·å¼å€¼ï¼Œ Firefox å’Œ chrome ä¸­ï¼Œ
 
-¿ÉÍ¨¹ı window.getComputedStyle(d, null) µÄ·½Ê½À´µÃµ½Ëù¶ÔÓ¦µÄ ÑùÊ½¶ÔÏó
+å¯é€šè¿‡ window.getComputedStyle(d, null) çš„æ–¹å¼æ¥å¾—åˆ°æ‰€å¯¹åº”çš„ æ ·å¼å¯¹è±¡
 
 ```
 
 var d = document.getElementById("div1");
 
-// ÕâÊÇdiv½ÚµãµÄ css ÑùÊ½ÖĞµÄ width Öµ
+// è¿™æ˜¯divèŠ‚ç‚¹çš„ css æ ·å¼ä¸­çš„ width å€¼
 window.getComputedStyle(d, null).width
 
-// ÕâÊÇdiv½ÚµãµÄ css ÑùÊ½ÖĞµÄ height Öµ
+// è¿™æ˜¯divèŠ‚ç‚¹çš„ css æ ·å¼ä¸­çš„ height å€¼
 window.getComputedStyle(d, null).height
 
 ```
 
 
-¼æÈİ´úÂë£º
+å…¼å®¹ä»£ç ï¼š
 
 ```
 var d = document.getElementById("div1");
 
 var obj = d.currentStyle || getComputedStyle(d, null);
 
-// ÕâÊÇdiv½ÚµãµÄ css ÑùÊ½ÖĞµÄ width Öµ
+// è¿™æ˜¯divèŠ‚ç‚¹çš„ css æ ·å¼ä¸­çš„ width å€¼
 obj.width;
 
-// ÕâÊÇdiv½ÚµãµÄ css ÑùÊ½ÖĞµÄ height Öµ
+// è¿™æ˜¯divèŠ‚ç‚¹çš„ css æ ·å¼ä¸­çš„ height å€¼
 obj.height;
 
 ```
 
 
 
-### ½ø¶ÈÌõ ###
+### è¿›åº¦æ¡ ###
 
 ```
 <style>
@@ -225,30 +225,30 @@ obj.height;
 ```
 
 
-## ½Úµã²Ù×÷·½·¨ ##
+## èŠ‚ç‚¹æ“ä½œæ–¹æ³• ##
 
-DOM ²»µ¥µ¥¿ÉÒÔ²éÕÒ½Úµã£¬Ò²¿ÉÒÔ´´½¨½Úµã¡¢¸´ÖÆ½Úµã¡¢²åÈë½Úµã¡¢É¾³ı½ÚµãºÍÌæ»»½Úµã
-
-```
-createElement() //´´½¨Ò»¸öÔªËØ½Úµã
-createTextNode()  //´´½¨Ò»¸öÎÄ±¾½Úµã
-box.appendChild(node)  //°Ñnode½Úµã²åÈëµ½boxÄÚ²¿×îºóµÄÎ»ÖÃ
-box.insertBefore(newNode, existNode)  //°ÑnewNode½Úµã²åÈëµ½exsitNodeµÄÇ°Ãæ
-box.removeChild(node) // ÔÚboxÄÚÒÆ³ı½Úµã
-box.replaceChild(p,h1); // h1Ìæ»»³Ép
-
-box.cloneNode(true) // ¿ËÂ¡½Úµã
+DOM ä¸å•å•å¯ä»¥æŸ¥æ‰¾èŠ‚ç‚¹ï¼Œä¹Ÿå¯ä»¥åˆ›å»ºèŠ‚ç‚¹ã€å¤åˆ¶èŠ‚ç‚¹ã€æ’å…¥èŠ‚ç‚¹ã€åˆ é™¤èŠ‚ç‚¹å’Œæ›¿æ¢èŠ‚ç‚¹
 
 ```
+createElement() //åˆ›å»ºä¸€ä¸ªå…ƒç´ èŠ‚ç‚¹
+createTextNode()  //åˆ›å»ºä¸€ä¸ªæ–‡æœ¬èŠ‚ç‚¹
+box.appendChild(node)  //æŠŠnodeèŠ‚ç‚¹æ’å…¥åˆ°boxå†…éƒ¨æœ€åçš„ä½ç½®
+box.insertBefore(newNode, existNode)  //æŠŠnewNodeèŠ‚ç‚¹æ’å…¥åˆ°exsitNodeçš„å‰é¢
+box.removeChild(node) // åœ¨boxå†…ç§»é™¤èŠ‚ç‚¹
+box.replaceChild(p,h1); // h1æ›¿æ¢æˆp
 
-### Ìí¼Ó±í¸ñ ###
+box.cloneNode(true) // å…‹éš†èŠ‚ç‚¹
+
+```
+
+### æ·»åŠ è¡¨æ ¼ ###
 
 ```
 	<style>
 		table{margin-top:20px;width:100%;border:1px solid #ddd;border-collapse: collapse;}
 		td{padding:5px 15px;border:1px solid #ddd;}
 
-		/*css3¸ôĞĞ±äÉ«*/
+		/*css3éš”è¡Œå˜è‰²*/
 		/*table tr:nth-child(odd){
 			background-color:#efefef;
 		}*/
@@ -256,15 +256,15 @@ box.cloneNode(true) // ¿ËÂ¡½Úµã
 	</style>
 
 
-ĞĞ£º<input type="text" id="row"> ÁĞ£º<input type="text" id="col"><button>Éú³É±í¸ñ</button>
+è¡Œï¼š<input type="text" id="row"> åˆ—ï¼š<input type="text" id="col"><button>ç”Ÿæˆè¡¨æ ¼</button>
 ```
 
-### ±í¸ñĞĞ¸´ÖÆ ###
+### è¡¨æ ¼è¡Œå¤åˆ¶ ###
 
 node.cloneNode(true);
 
-ÉèÖÃÎª true£¬Èç¹ûÄúĞèÒª¿ËÂ¡½Úµã¼°ÆäÊôĞÔ£¬ÒÔ¼°ºó´ú
-ÉèÖÃÎª false£¬Èç¹ûÄúÖ»ĞèÒª¿ËÂ¡½Úµã¼°Æäºó´ú
+è®¾ç½®ä¸º trueï¼Œå¦‚æœæ‚¨éœ€è¦å…‹éš†èŠ‚ç‚¹åŠå…¶å±æ€§ï¼Œä»¥åŠåä»£
+è®¾ç½®ä¸º falseï¼Œå¦‚æœæ‚¨åªéœ€è¦å…‹éš†èŠ‚ç‚¹åŠå…¶åä»£
 
 
 
@@ -274,11 +274,11 @@ node.cloneNode(true);
 
 
 
-# ¾­µäÎÊÌâ #
+# ç»å…¸é—®é¢˜ #
 
 
-1. ¼òÒ×ÈÕÀú
-µ¥»÷Ä³¸ö°´Å¥£¬ÏÔÊ¾Êı×éÖĞ¶ÔÓ¦µÄĞÅÏ¢
+1. ç®€æ˜“æ—¥å†
+å•å‡»æŸä¸ªæŒ‰é’®ï¼Œæ˜¾ç¤ºæ•°ç»„ä¸­å¯¹åº”çš„ä¿¡æ¯
 
 
 ```
@@ -303,18 +303,18 @@ body { background: #f6f9fc; font-family: arial; }
 </style>
 
 
-	var arr=['¿ì¹ıÄêÁË£¬´ó¼Ò¿ÉÒÔÉÌÁ¿×ÅÈ¥ÄÄÍæ°É¡«',
-		'´ó¼ÒºÃºÃÑ§Ï°°É222222~~~',
-		'´ó¼ÒºÃºÃÑ§Ï°°É222222333~~~',
-		'´ó¼ÒºÃºÃÑ§Ï°°É222444222~~~',
-		'´ó¼ÒºÃºÃÑ§Ï°555°É222222~~~',
-		'´ó¼ÒºÃºÃÑ§Ï°°É666222222~~~',
-		'´ó¼ÒºÃºÃÑ§Ï°°É227772222~~~',
-		'´ó¼ÒºÃºÃÑ§Ï°°É28888822222~~~',
-		'´ó¼ÒºÃºÃÑ§Ï°°É99999222222~~~',
-		'´ó¼ÒºÃºÃÑ§Ï°10000000°É222222~~~',
-		'´ó¼ÒºÃºÃÑ§Ï°°É111111222222~~~',
-		'´ó¼ÒºÃºÃÑ§Ï°°É22222200000000000~~~']
+	var arr=['å¿«è¿‡å¹´äº†ï¼Œå¤§å®¶å¯ä»¥å•†é‡ç€å»å“ªç©å§ï½',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ å§222222~~~',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ å§222222333~~~',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ å§222444222~~~',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ 555å§222222~~~',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ å§666222222~~~',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ å§227772222~~~',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ å§28888822222~~~',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ å§99999222222~~~',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ 10000000å§222222~~~',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ å§111111222222~~~',
+		'å¤§å®¶å¥½å¥½å­¦ä¹ å§22222200000000000~~~']
 
 
 
@@ -336,8 +336,8 @@ body { background: #f6f9fc; font-family: arial; }
     </ul>
     
     <div class="text" id="txt">
-        <h2>1ÔÂ»î¶¯</h2>
-        <p>¿ì¹ıÄêÁË£¬´ó¼Ò¿ÉÒÔÉÌÁ¿×ÅÈ¥ÄÄÍæ°É¡«</p>
+        <h2>1æœˆæ´»åŠ¨</h2>
+        <p>å¿«è¿‡å¹´äº†ï¼Œå¤§å®¶å¯ä»¥å•†é‡ç€å»å“ªç©å§ï½</p>
     </div>
 
 </div>
@@ -347,12 +347,83 @@ body { background: #f6f9fc; font-family: arial; }
 
 
 
-2. ÆÀ·ÖĞ§¹û
+2. è¯„åˆ†æ•ˆæœ
     ![](hw1.jpg)
 
-¡¾À©Õ¹¡¿ ±í¸ñ¼´Ê±±à¼­(ĞèÒªÓÃµ½ÊÂ¼şÃ°ÅİÖªÊ¶)
+ã€æ‰©å±•ã€‘ è¡¨æ ¼å³æ—¶ç¼–è¾‘(éœ€è¦ç”¨åˆ°äº‹ä»¶å†’æ³¡çŸ¥è¯†)
 
-µã»÷±í¸ñÄÚÈİ£¬¿ÉÒÔ±à¼­ÎÄ±¾¡£µ±¹â±êÀë¿ª±à¼­¿òºó£¬¿ÉÒÔ½«±à¼­ºóµÄÄÚÈİ±£´æÏÂÀ´
+ç‚¹å‡»è¡¨æ ¼å†…å®¹ï¼Œå¯ä»¥ç¼–è¾‘æ–‡æœ¬ã€‚å½“å…‰æ ‡ç¦»å¼€ç¼–è¾‘æ¡†åï¼Œå¯ä»¥å°†ç¼–è¾‘åçš„å†…å®¹ä¿å­˜ä¸‹æ¥
 
 
+
+
+## react+antd  - xsSystem
+
+> å‚è€ƒé¡¹ç›®åœ°å€ï¼š [react-antd-DEMO-Project](https://github.com/mcya/react-antd-DEMO-Project)
+
+### éªŒè¯æ–¹å¼ - æ·»åŠ ä¸€ä¸ªçš„ç™»å½•æˆ–è€…ç™»å‡ºçš„æ ‡è®°, å†åœ¨routerçš„ä¸­éªŒè¯ã€‚
+
+```js
+import Cookies from 'js-cookie' // npm install js-cookie  -  "js-cookie": "^2.1.1"
+
+export const setCookieItem = (name, value) => { //set Cookies
+  Cookies.set(name, value);
+}
+export const getCookieItem = (name) => { //get Cookies
+	const value = Cookies.get(name);
+	return value === undefined || value === 'undefined' ? null : value;
+}
+export const removeCookieItem = (name) => { //remove Cookies
+  Cookies.remove(name);
+}
+
+/*è·å–ç¼“å­˜åœ¨cookieçš„ç™»å½•æ ‡è®°*/
+export const getUserAuth = () => {
+  return getCookieItem(USER_AUTH);
+}
+/*ç¼“å­˜ç”¨æˆ·ç™»å½•åçš„ä¿¡æ¯*/
+export const cacheLoginInfo = (res) => {
+  setCookieItem(USER_AUTH, true);
+}
+/*sessionè¿‡æœŸæˆ–é€€å‡ºç™»å½•ä¹‹åï¼Œæ¸…é™¤ç”¨æˆ·ç™»å½•ä¿¡æ¯*/
+export const cleanLoginInfo = () => {
+  Cookies.remove(USER_AUTH);
+}
+```
+
+
+```js
+function validate(store, [nextState, replace]) { // åœ¨è·¯ç”±ç¾¤è½½å…¥æ—¶åš filter å¤„ç†, å³åœ¨ <Route>ä¸­éƒ½éœ€è¦è°ƒç”¨ validate
+  const userInfo = getUserAuth();
+  if (!userInfo) {
+    cleanLoginInfo();
+    replace('/login');
+  }
+}
+
+const Routes = ({ history, store }) =>
+<Router history={history}>
+
+	<Route path="login" getComponent={(location, cb)=> { require.ensure([], require => { cb(null, require('../apps/login')) }, 'login') }} />
+
+		<Route
+      path="saleMgr/orderInfo"
+      getComponent={(location, cb)=> { require.ensure([], require => { cb(null, require('../apps/saleMgr/orderInfo')) }, 'saleMgr') }}
+      onEnter={(...args) => {validate(store, args);}}
+    />
+
+    <Route path="/"
+      component={App}
+      onEnter={(...args) => {validate(store, args);}}
+      onChange={(prevState, nextState) => {
+        if (nextState.location.action !== 'POP') { window.scrollTo(0, 0);} //è·¯ç”±åˆ‡æ¢æ–°ç•Œé¢æ—¶ï¼Œé‡ç½®æ»šåŠ¨æ¡ä½ç½®
+      }}
+    >
+			<IndexRedirect to="workBench" />
+      { generateRoutes() }
+		</Route>
+		
+		<Route path="*" component={NotFound} />
+</Router>;
+```
 
